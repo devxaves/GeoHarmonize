@@ -1,0 +1,7812 @@
+{
+  "type": "FeatureCollection",
+  "name": "new_drone_survey",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-142",
+        "plot_number": "PLT-001",
+        "property_id": "MH-PUNE-001",
+        "owner_name": "Ramesh K. Sharma",
+        "recorded_area_sqm": 928.5,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85599710798996,
+              18.519988548056038
+            ],
+            [
+              73.85632817789688,
+              18.519988548056038
+            ],
+            [
+              73.85632817789688,
+              18.520227598507756
+            ],
+            [
+              73.85599710798996,
+              18.520227598507756
+            ],
+            [
+              73.85599710798996,
+              18.519988548056038
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-143",
+        "plot_number": "PLT-002",
+        "property_id": "MH-PUNE-002",
+        "owner_name": "Priya Venkataraman",
+        "recorded_area_sqm": 888.7,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85639005904129,
+              18.520011840990403
+            ],
+            [
+              73.85670199808051,
+              18.520011840990403
+            ],
+            [
+              73.85670199808051,
+              18.520259215841406
+            ],
+            [
+              73.85639005904129,
+              18.520259215841406
+            ],
+            [
+              73.85639005904129,
+              18.520011840990403
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-144",
+        "plot_number": "PLT-003",
+        "property_id": "MH-PUNE-003",
+        "owner_name": "Amit Singh Patel",
+        "recorded_area_sqm": 1060.8,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85671923977682,
+              18.520000618080395
+            ],
+            [
+              73.85705540451556,
+              18.520000618080395
+            ],
+            [
+              73.85705540451556,
+              18.52026703945887
+            ],
+            [
+              73.85671923977682,
+              18.52026703945887
+            ],
+            [
+              73.85671923977682,
+              18.520000618080395
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-145",
+        "plot_number": "PLT-004",
+        "property_id": "MH-PUNE-004",
+        "owner_name": "Sunita Devi Yadav",
+        "recorded_area_sqm": 992.5,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85710175941276,
+              18.520012736938583
+            ],
+            [
+              73.85744609884006,
+              18.520012736938583
+            ],
+            [
+              73.85744609884006,
+              18.520254388369555
+            ],
+            [
+              73.85710175941276,
+              18.520254388369555
+            ],
+            [
+              73.85710175941276,
+              18.520012736938583
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-146",
+        "plot_number": "PLT-005",
+        "property_id": "MH-PUNE-005",
+        "owner_name": "Vijay Prakash Gupta",
+        "recorded_area_sqm": 882.4,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85748863978353,
+              18.51998898562664
+            ],
+            [
+              73.85780829067906,
+              18.51998898562664
+            ],
+            [
+              73.85780829067906,
+              18.520228237109855
+            ],
+            [
+              73.85748863978353,
+              18.520228237109855
+            ],
+            [
+              73.85748863978353,
+              18.51998898562664
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-147",
+        "plot_number": "PLT-006",
+        "property_id": "MH-PUNE-006",
+        "owner_name": "Anjali M. Desai",
+        "recorded_area_sqm": 939.7,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85782622126939,
+              18.51998979370176
+            ],
+            [
+              73.85813519976307,
+              18.51998979370176
+            ],
+            [
+              73.85813519976307,
+              18.52024901862386
+            ],
+            [
+              73.85782622126939,
+              18.52024901862386
+            ],
+            [
+              73.85782622126939,
+              18.51998979370176
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-148",
+        "plot_number": "PLT-007",
+        "property_id": "MH-PUNE-007",
+        "owner_name": "Rajesh Chandra Joshi",
+        "recorded_area_sqm": 860.8,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85823748688472,
+              18.519982913129166
+            ],
+            [
+              73.85853638002312,
+              18.519982913129166
+            ],
+            [
+              73.85853638002312,
+              18.520229264310494
+            ],
+            [
+              73.85823748688472,
+              18.520229264310494
+            ],
+            [
+              73.85823748688472,
+              18.519982913129166
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-149",
+        "plot_number": "PLT-008",
+        "property_id": "MH-PUNE-008",
+        "owner_name": "M. Krishnan Iyer",
+        "recorded_area_sqm": 1028.6,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85859648826903,
+              18.51998777740947
+            ],
+            [
+              73.85892810720202,
+              18.51998777740947
+            ],
+            [
+              73.85892810720202,
+              18.520248664951655
+            ],
+            [
+              73.85859648826903,
+              18.520248664951655
+            ],
+            [
+              73.85859648826903,
+              18.51998777740947
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-150",
+        "plot_number": "PLT-009",
+        "property_id": "MH-PUNE-009",
+        "owner_name": "Suresh Babu Nair",
+        "recorded_area_sqm": 963.1,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85895971885844,
+              18.519989759377584
+            ],
+            [
+              73.8592687919911,
+              18.519989759377584
+            ],
+            [
+              73.8592687919911,
+              18.520252508536306
+            ],
+            [
+              73.85895971885844,
+              18.520252508536306
+            ],
+            [
+              73.85895971885844,
+              18.519989759377584
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-151",
+        "plot_number": "PLT-010",
+        "property_id": "MH-PUNE-010",
+        "owner_name": "Kavita Ashok Kulkarni",
+        "recorded_area_sqm": 967.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8593052772409,
+              18.520010038579063
+            ],
+            [
+              73.85964527233988,
+              18.520010038579063
+            ],
+            [
+              73.85964527233988,
+              18.52024831152697
+            ],
+            [
+              73.8593052772409,
+              18.52024831152697
+            ],
+            [
+              73.8593052772409,
+              18.520010038579063
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-152",
+        "plot_number": "PLT-011",
+        "property_id": "MH-PUNE-011",
+        "owner_name": "Arvind K. Mishra",
+        "recorded_area_sqm": 1046.6,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85968032936482,
+              18.519997005847756
+            ],
+            [
+              73.86002013487554,
+              18.519997005847756
+            ],
+            [
+              73.86002013487554,
+              18.520264327702346
+            ],
+            [
+              73.85968032936482,
+              18.520264327702346
+            ],
+            [
+              73.85968032936482,
+              18.519997005847756
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-153",
+        "plot_number": "PLT-012",
+        "property_id": "MH-PUNE-012",
+        "owner_name": "Pooja Sanjay Bhosale",
+        "recorded_area_sqm": 881.6,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86009289830211,
+              18.52000071831002
+            ],
+            [
+              73.86040826145422,
+              18.52000071831002
+            ],
+            [
+              73.86040826145422,
+              18.52024524844901
+            ],
+            [
+              73.86009289830211,
+              18.52024524844901
+            ],
+            [
+              73.86009289830211,
+              18.52000071831002
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-154",
+        "plot_number": "PLT-013",
+        "property_id": "MH-PUNE-013",
+        "owner_name": "Manoj Kumar Tiwari",
+        "recorded_area_sqm": 1027.6,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86042745991398,
+              18.520013933453892
+            ],
+            [
+              73.86077521360026,
+              18.520013933453892
+            ],
+            [
+              73.86077521360026,
+              18.520266070424785
+            ],
+            [
+              73.86042745991398,
+              18.520266070424785
+            ],
+            [
+              73.86042745991398,
+              18.520013933453892
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-155",
+        "plot_number": "PLT-014",
+        "property_id": "MH-PUNE-014",
+        "owner_name": "Rekha Pandit Chavan",
+        "recorded_area_sqm": 885.2,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86082507083009,
+              18.520006703109303
+            ],
+            [
+              73.86112743998686,
+              18.520006703109303
+            ],
+            [
+              73.86112743998686,
+              18.52024876519713
+            ],
+            [
+              73.86082507083009,
+              18.52024876519713
+            ],
+            [
+              73.86082507083009,
+              18.520006703109303
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-156",
+        "plot_number": "PLT-015",
+        "property_id": "MH-PUNE-015",
+        "owner_name": "S. Dattatraya Pawar",
+        "recorded_area_sqm": 1083.2,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86118477261591,
+              18.520018001584337
+            ],
+            [
+              73.86152676607014,
+              18.520018001584337
+            ],
+            [
+              73.86152676607014,
+              18.520281358077654
+            ],
+            [
+              73.86118477261591,
+              18.520281358077654
+            ],
+            [
+              73.86118477261591,
+              18.520018001584337
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-157",
+        "plot_number": "PLT-016",
+        "property_id": "MH-PUNE-016",
+        "owner_name": "Anita V. Deshmukh",
+        "recorded_area_sqm": 1073.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86155563261613,
+              18.52000877095845
+            ],
+            [
+              73.86189550685047,
+              18.52000877095845
+            ],
+            [
+              73.86189550685047,
+              18.520277419693493
+            ],
+            [
+              73.86155563261613,
+              18.520277419693493
+            ],
+            [
+              73.86155563261613,
+              18.52000877095845
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-158",
+        "plot_number": "PLT-017",
+        "property_id": "MH-PUNE-017",
+        "owner_name": "Prakash Narayan Gupta",
+        "recorded_area_sqm": 1092.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86193652845849,
+              18.520001914878023
+            ],
+            [
+              73.86226218043329,
+              18.520001914878023
+            ],
+            [
+              73.86226218043329,
+              18.52028078574011
+            ],
+            [
+              73.86193652845849,
+              18.52028078574011
+            ],
+            [
+              73.86193652845849,
+              18.520001914878023
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-159",
+        "plot_number": "PLT-018",
+        "property_id": "MH-PUNE-018",
+        "owner_name": "Sunil Kumar Jain",
+        "recorded_area_sqm": 959.9,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86230218277211,
+              18.519998986977473
+            ],
+            [
+              73.86261955582691,
+              18.519998986977473
+            ],
+            [
+              73.86261955582691,
+              18.520260172683987
+            ],
+            [
+              73.86230218277211,
+              18.520260172683987
+            ],
+            [
+              73.86230218277211,
+              18.519998986977473
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-160",
+        "plot_number": "PLT-019",
+        "property_id": "MH-PUNE-019",
+        "owner_name": "Deepa Ramesh Kulkarni",
+        "recorded_area_sqm": 1074.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86264736198687,
+              18.52000550645747
+            ],
+            [
+              73.86298840573174,
+              18.52000550645747
+            ],
+            [
+              73.86298840573174,
+              18.52026948428707
+            ],
+            [
+              73.86264736198687,
+              18.52026948428707
+            ],
+            [
+              73.86264736198687,
+              18.52000550645747
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-161",
+        "plot_number": "PLT-020",
+        "property_id": "MH-PUNE-020",
+        "owner_name": "Vivek Anand Shinde",
+        "recorded_area_sqm": 1041.9,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86303106499064,
+              18.52000506993748
+            ],
+            [
+              73.8633738046029,
+              18.52000506993748
+            ],
+            [
+              73.8633738046029,
+              18.52026731872758
+            ],
+            [
+              73.86303106499064,
+              18.52026731872758
+            ],
+            [
+              73.86303106499064,
+              18.52000506993748
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-162",
+        "plot_number": "PLT-021",
+        "property_id": "MH-PUNE-021",
+        "owner_name": "Lakshmi N. ",
+        "recorded_area_sqm": 930.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85597887416769,
+              18.520291429126033
+            ],
+            [
+              73.85631336418909,
+              18.520291429126033
+            ],
+            [
+              73.85631336418909,
+              18.520531353750147
+            ],
+            [
+              73.85597887416769,
+              18.520531353750147
+            ],
+            [
+              73.85597887416769,
+              18.520291429126033
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-163",
+        "plot_number": "PLT-022",
+        "property_id": "MH-PUNE-022",
+        "owner_name": "R. Prasad",
+        "recorded_area_sqm": 889.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85636098547842,
+              18.5203016060889
+            ],
+            [
+              73.85667045013788,
+              18.5203016060889
+            ],
+            [
+              73.85667045013788,
+              18.52055176038337
+            ],
+            [
+              73.85636098547842,
+              18.52055176038337
+            ],
+            [
+              73.85636098547842,
+              18.5203016060889
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-164",
+        "plot_number": "PLT-023",
+        "property_id": "MH-PUNE-023",
+        "owner_name": "Savita Ben Sharma",
+        "recorded_area_sqm": 889.3,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85672656307398,
+              18.52030775799249
+            ],
+            [
+              73.85702825215276,
+              18.52030775799249
+            ],
+            [
+              73.85702825215276,
+              18.520555535209716
+            ],
+            [
+              73.85672656307398,
+              18.520555535209716
+            ],
+            [
+              73.85672656307398,
+              18.52030775799249
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-165",
+        "plot_number": "PLT-024",
+        "property_id": "MH-PUNE-024",
+        "owner_name": "Nitin Gopalrao Kale",
+        "recorded_area_sqm": 890.7,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85708821144253,
+              18.520296303974785
+            ],
+            [
+              73.85739101401758,
+              18.520296303974785
+            ],
+            [
+              73.85739101401758,
+              18.520545978866117
+            ],
+            [
+              73.85708821144253,
+              18.520545978866117
+            ],
+            [
+              73.85708821144253,
+              18.520296303974785
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-166",
+        "plot_number": "PLT-025",
+        "property_id": "MH-PUNE-025",
+        "owner_name": "Prakash Chandra Gupta",
+        "recorded_area_sqm": 980.2,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8574757887117,
+              18.52028827337558
+            ],
+            [
+              73.85780666214502,
+              18.52028827337558
+            ],
+            [
+              73.85780666214502,
+              18.520541596327096
+            ],
+            [
+              73.8574757887117,
+              18.520541596327096
+            ],
+            [
+              73.8574757887117,
+              18.52028827337558
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-167",
+        "plot_number": "PLT-026",
+        "property_id": "MH-PUNE-026",
+        "owner_name": "Meera K. ",
+        "recorded_area_sqm": 929.9,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85787024192392,
+              18.520303363176566
+            ],
+            [
+              73.85818717642469,
+              18.520303363176566
+            ],
+            [
+              73.85818717642469,
+              18.52055016247186
+            ],
+            [
+              73.85787024192392,
+              18.52055016247186
+            ],
+            [
+              73.85787024192392,
+              18.520303363176566
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-168",
+        "plot_number": "PLT-027",
+        "property_id": "MH-PUNE-027",
+        "owner_name": "Anil Kumar Agarwal",
+        "recorded_area_sqm": 1007.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8582378366016,
+              18.520310623783043
+            ],
+            [
+              73.85854935293726,
+              18.520310623783043
+            ],
+            [
+              73.85854935293726,
+              18.520587963275727
+            ],
+            [
+              73.8582378366016,
+              18.520587963275727
+            ],
+            [
+              73.8582378366016,
+              18.520310623783043
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-169",
+        "plot_number": "PLT-028",
+        "property_id": "MH-PUNE-028",
+        "owner_name": "Sushma Devi Singh",
+        "recorded_area_sqm": 1042.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85856529480417,
+              18.520294070352104
+            ],
+            [
+              73.8588968166619,
+              18.520294070352104
+            ],
+            [
+              73.8588968166619,
+              18.520557653854343
+            ],
+            [
+              73.85856529480417,
+              18.520557653854343
+            ],
+            [
+              73.85856529480417,
+              18.520294070352104
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-170",
+        "plot_number": "PLT-029",
+        "property_id": "MH-PUNE-029",
+        "owner_name": "R. Kumar Verma",
+        "recorded_area_sqm": 962.7,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85897767239753,
+              18.520318137213536
+            ],
+            [
+              73.85928415717656,
+              18.520318137213536
+            ],
+            [
+              73.85928415717656,
+              18.52058676053905
+            ],
+            [
+              73.85897767239753,
+              18.52058676053905
+            ],
+            [
+              73.85897767239753,
+              18.520318137213536
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-171",
+        "plot_number": "PLT-030",
+        "property_id": "MH-PUNE-030",
+        "owner_name": "Geeta Rani Pandey",
+        "recorded_area_sqm": 919.0,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85934237578346,
+              18.520301845292387
+            ],
+            [
+              73.85964845441438,
+              18.520301845292387
+            ],
+            [
+              73.85964845441438,
+              18.520555782420942
+            ],
+            [
+              73.85934237578346,
+              18.520555782420942
+            ],
+            [
+              73.85934237578346,
+              18.520301845292387
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-172",
+        "plot_number": "PLT-031",
+        "property_id": "MH-PUNE-031",
+        "owner_name": "Mohan L. Gupta",
+        "recorded_area_sqm": 1083.4,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85968602693471,
+              18.520288776865385
+            ],
+            [
+              73.86003547691062,
+              18.520288776865385
+            ],
+            [
+              73.86003547691062,
+              18.5205536568553
+            ],
+            [
+              73.85968602693471,
+              18.5205536568553
+            ],
+            [
+              73.85968602693471,
+              18.520288776865385
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-173",
+        "plot_number": "PLT-032",
+        "property_id": "MH-PUNE-032",
+        "owner_name": "Sarita Devi Prasad",
+        "recorded_area_sqm": 1035.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86004645124099,
+              18.520293445181746
+            ],
+            [
+              73.86037319110254,
+              18.520293445181746
+            ],
+            [
+              73.86037319110254,
+              18.520560198980288
+            ],
+            [
+              73.86004645124099,
+              18.520560198980288
+            ],
+            [
+              73.86004645124099,
+              18.520293445181746
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-174",
+        "plot_number": "PLT-033",
+        "property_id": "MH-PUNE-033",
+        "owner_name": "Dinesh Kumar Srivastava",
+        "recorded_area_sqm": 1084.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86043521583345,
+              18.52028660178925
+            ],
+            [
+              73.86077696555925,
+              18.52028660178925
+            ],
+            [
+              73.86077696555925,
+              18.520557193785532
+            ],
+            [
+              73.86043521583345,
+              18.520557193785532
+            ],
+            [
+              73.86043521583345,
+              18.52028660178925
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-175",
+        "plot_number": "PLT-034",
+        "property_id": "MH-PUNE-034",
+        "owner_name": "Usha Rani Mishra",
+        "recorded_area_sqm": 845.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86079138138986,
+              18.52030489027844
+            ],
+            [
+              73.86110090641364,
+              18.52030489027844
+            ],
+            [
+              73.86110090641364,
+              18.520544238488682
+            ],
+            [
+              73.86079138138986,
+              18.520544238488682
+            ],
+            [
+              73.86079138138986,
+              18.52030489027844
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-176",
+        "plot_number": "PLT-035",
+        "property_id": "MH-PUNE-035",
+        "owner_name": "Pankaj Kumar Singh",
+        "recorded_area_sqm": 893.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86117470101281,
+              18.52030257567932
+            ],
+            [
+              73.86148876229784,
+              18.52030257567932
+            ],
+            [
+              73.86148876229784,
+              18.52055182079611
+            ],
+            [
+              73.86117470101281,
+              18.52055182079611
+            ],
+            [
+              73.86117470101281,
+              18.52030257567932
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-177",
+        "plot_number": "PLT-036",
+        "property_id": "MH-PUNE-036",
+        "owner_name": "Nisha G. Sharma",
+        "recorded_area_sqm": 1004.3,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8615571374824,
+              18.520285427979488
+            ],
+            [
+              73.86186571408169,
+              18.520285427979488
+            ],
+            [
+              73.86186571408169,
+              18.52056303018749
+            ],
+            [
+              73.8615571374824,
+              18.52056303018749
+            ],
+            [
+              73.8615571374824,
+              18.520285427979488
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-178",
+        "plot_number": "PLT-037",
+        "property_id": "MH-PUNE-037",
+        "owner_name": "Rahul Dev Pandey",
+        "recorded_area_sqm": 996.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86189751423167,
+              18.520295164154568
+            ],
+            [
+              73.86224102353206,
+              18.520295164154568
+            ],
+            [
+              73.86224102353206,
+              18.52054638062556
+            ],
+            [
+              73.86189751423167,
+              18.52054638062556
+            ],
+            [
+              73.86189751423167,
+              18.520295164154568
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-179",
+        "plot_number": "PLT-038",
+        "property_id": "MH-PUNE-038",
+        "owner_name": "Seema Kumari Singh",
+        "recorded_area_sqm": 985.8,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86228134229025,
+              18.520310449188315
+            ],
+            [
+              73.86261325282017,
+              18.520310449188315
+            ],
+            [
+              73.86261325282017,
+              18.52056506572816
+            ],
+            [
+              73.86228134229025,
+              18.52056506572816
+            ],
+            [
+              73.86228134229025,
+              18.520310449188315
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-180",
+        "plot_number": "PLT-039",
+        "property_id": "MH-PUNE-039",
+        "owner_name": "Vikramaditya Sharma",
+        "recorded_area_sqm": 1029.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86267260049117,
+              18.520313276971404
+            ],
+            [
+              73.86301811423962,
+              18.520313276971404
+            ],
+            [
+              73.86301811423962,
+              18.520570548749212
+            ],
+            [
+              73.86267260049117,
+              18.520570548749212
+            ],
+            [
+              73.86267260049117,
+              18.520313276971404
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-181",
+        "plot_number": "PLT-040",
+        "property_id": "MH-PUNE-040",
+        "owner_name": "Anuradha Joshi",
+        "recorded_area_sqm": 910.9,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86300909531164,
+              18.520280775331482
+            ],
+            [
+              73.86332050152038,
+              18.520280775331482
+            ],
+            [
+              73.86332050152038,
+              18.520529133686804
+            ],
+            [
+              73.86300909531164,
+              18.520529133686804
+            ],
+            [
+              73.86300909531164,
+              18.520280775331482
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-182",
+        "plot_number": "PLT-041",
+        "property_id": "MH-PUNE-041",
+        "owner_name": "Nagaraj S. ",
+        "recorded_area_sqm": 965.4,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85602499539142,
+              18.520593998413748
+            ],
+            [
+              73.85635196721847,
+              18.520593998413748
+            ],
+            [
+              73.85635196721847,
+              18.520843033561306
+            ],
+            [
+              73.85602499539142,
+              18.520843033561306
+            ],
+            [
+              73.85602499539142,
+              18.520593998413748
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-183",
+        "plot_number": "PLT-042",
+        "property_id": "MH-PUNE-042",
+        "owner_name": "Shanti Devi Nagar",
+        "recorded_area_sqm": 1079.4,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85638406165248,
+              18.520606070186208
+            ],
+            [
+              73.85671225241697,
+              18.520606070186208
+            ],
+            [
+              73.85671225241697,
+              18.52088177874732
+            ],
+            [
+              73.85638406165248,
+              18.52088177874732
+            ],
+            [
+              73.85638406165248,
+              18.520606070186208
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-184",
+        "plot_number": "PLT-043",
+        "property_id": "MH-PUNE-043",
+        "owner_name": "K. Kumar Tiwari",
+        "recorded_area_sqm": 898.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85676248058662,
+              18.520587974427293
+            ],
+            [
+              73.85708094911314,
+              18.520587974427293
+            ],
+            [
+              73.85708094911314,
+              18.520835185899177
+            ],
+            [
+              73.85676248058662,
+              18.520835185899177
+            ],
+            [
+              73.85676248058662,
+              18.520587974427293
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-185",
+        "plot_number": "PLT-044",
+        "property_id": "MH-PUNE-044",
+        "owner_name": "Mala Rani Srivastava",
+        "recorded_area_sqm": 1077.2,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85709261911728,
+              18.520585048838992
+            ],
+            [
+              73.85744248984162,
+              18.520585048838992
+            ],
+            [
+              73.85744248984162,
+              18.520844448943325
+            ],
+            [
+              73.85709261911728,
+              18.520844448943325
+            ],
+            [
+              73.85709261911728,
+              18.520585048838992
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-186",
+        "plot_number": "PLT-045",
+        "property_id": "MH-PUNE-045",
+        "owner_name": "Ganesh Prasad Gupta",
+        "recorded_area_sqm": 862.6,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85748319847909,
+              18.520588718581635
+            ],
+            [
+              73.85778547122322,
+              18.520588718581635
+            ],
+            [
+              73.85778547122322,
+              18.520828697469405
+            ],
+            [
+              73.85748319847909,
+              18.520828697469405
+            ],
+            [
+              73.85748319847909,
+              18.520588718581635
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-187",
+        "plot_number": "PLT-046",
+        "property_id": "MH-PUNE-046",
+        "owner_name": "Kamla D. Prasad",
+        "recorded_area_sqm": 948.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85786334490491,
+              18.520586711565734
+            ],
+            [
+              73.85816660148426,
+              18.520586711565734
+            ],
+            [
+              73.85816660148426,
+              18.520851064299485
+            ],
+            [
+              73.85786334490491,
+              18.520851064299485
+            ],
+            [
+              73.85786334490491,
+              18.520586711565734
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-188",
+        "plot_number": "PLT-047",
+        "property_id": "MH-PUNE-047",
+        "owner_name": "Hari Shankar Sharma",
+        "recorded_area_sqm": 1038.4,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85823239628259,
+              18.520584581314854
+            ],
+            [
+              73.85857148044921,
+              18.520584581314854
+            ],
+            [
+              73.85857148044921,
+              18.52084031203346
+            ],
+            [
+              73.85823239628259,
+              18.52084031203346
+            ],
+            [
+              73.85823239628259,
+              18.520584581314854
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-189",
+        "plot_number": "PLT-048",
+        "property_id": "MH-PUNE-048",
+        "owner_name": "Rama Devi Sharma",
+        "recorded_area_sqm": 872.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85861323603865,
+              18.520584323949983
+            ],
+            [
+              73.85891407124322,
+              18.520584323949983
+            ],
+            [
+              73.85891407124322,
+              18.520838351960016
+            ],
+            [
+              73.85861323603865,
+              18.520838351960016
+            ],
+            [
+              73.85861323603865,
+              18.520584323949983
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-190",
+        "plot_number": "PLT-049",
+        "property_id": "MH-PUNE-049",
+        "owner_name": "Shiv Kumar Singh",
+        "recorded_area_sqm": 1099.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85895059786222,
+              18.52060709389147
+            ],
+            [
+              73.85930039423468,
+              18.52060709389147
+            ],
+            [
+              73.85930039423468,
+              18.520867316693966
+            ],
+            [
+              73.85895059786222,
+              18.520867316693966
+            ],
+            [
+              73.85895059786222,
+              18.52060709389147
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-191",
+        "plot_number": "PLT-050",
+        "property_id": "MH-PUNE-050",
+        "owner_name": "P. Devi Singh",
+        "recorded_area_sqm": 1094.0,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85932483272208,
+              18.5206086005882
+            ],
+            [
+              73.8596733143369,
+              18.5206086005882
+            ],
+            [
+              73.8596733143369,
+              18.520882753335695
+            ],
+            [
+              73.85932483272208,
+              18.520882753335695
+            ],
+            [
+              73.85932483272208,
+              18.5206086005882
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-192",
+        "plot_number": "PLT-051",
+        "property_id": "MH-PUNE-051",
+        "owner_name": "Mukesh K. Gupta",
+        "recorded_area_sqm": 917.3,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85974999999999,
+              18.520639999999997
+            ],
+            [
+              73.86004810275364,
+              18.520639999999997
+            ],
+            [
+              73.86004810275364,
+              18.52090827031641
+            ],
+            [
+              73.85974999999999,
+              18.52090827031641
+            ],
+            [
+              73.85974999999999,
+              18.520639999999997
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-193",
+        "plot_number": "PLT-052",
+        "property_id": "MH-PUNE-052",
+        "owner_name": "Saraswati Devi Gupta",
+        "recorded_area_sqm": 1026.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86008362404424,
+              18.520614011729563
+            ],
+            [
+              73.8604169138386,
+              18.520614011729563
+            ],
+            [
+              73.8604169138386,
+              18.52087456448344
+            ],
+            [
+              73.86008362404424,
+              18.52087456448344
+            ],
+            [
+              73.86008362404424,
+              18.520614011729563
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-194",
+        "plot_number": "PLT-053",
+        "property_id": "MH-PUNE-053",
+        "owner_name": "Arun Kumar Sharma",
+        "recorded_area_sqm": 986.1,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86042105275325,
+              18.52061935377406
+            ],
+            [
+              73.86073256107572,
+              18.52061935377406
+            ],
+            [
+              73.86073256107572,
+              18.5208842741696
+            ],
+            [
+              73.86042105275325,
+              18.5208842741696
+            ],
+            [
+              73.86042105275325,
+              18.52061935377406
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-195",
+        "plot_number": "PLT-054",
+        "property_id": "MH-PUNE-054",
+        "owner_name": "Nirmala Devi Sharma",
+        "recorded_area_sqm": 906.4,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86080236018826,
+              18.52059713512053
+            ],
+            [
+              73.86110571667737,
+              18.52059713512053
+            ],
+            [
+              73.86110571667737,
+              18.520853395261057
+            ],
+            [
+              73.86080236018826,
+              18.520853395261057
+            ],
+            [
+              73.86080236018826,
+              18.52059713512053
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-196",
+        "plot_number": "PLT-055",
+        "property_id": "MH-PUNE-055",
+        "owner_name": "Sachin Tendulkar",
+        "recorded_area_sqm": 1071.9,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86118029803947,
+              18.520593649246994
+            ],
+            [
+              73.86150161853405,
+              18.520593649246994
+            ],
+            [
+              73.86150161853405,
+              18.52087170951595
+            ],
+            [
+              73.86118029803947,
+              18.52087170951595
+            ],
+            [
+              73.86118029803947,
+              18.520593649246994
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-197",
+        "plot_number": "PLT-056",
+        "property_id": "MH-PUNE-056",
+        "owner_name": "Anjali B. ",
+        "recorded_area_sqm": 1033.0,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8615661165459,
+              18.520584221554824
+            ],
+            [
+              73.86190959882528,
+              18.520584221554824
+            ],
+            [
+              73.86190959882528,
+              18.520833283894955
+            ],
+            [
+              73.8615661165459,
+              18.520833283894955
+            ],
+            [
+              73.8615661165459,
+              18.520584221554824
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-198",
+        "plot_number": "PLT-057",
+        "property_id": "MH-PUNE-057",
+        "owner_name": "R. Kumar Sharma",
+        "recorded_area_sqm": 945.6,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8619267792553,
+              18.520613148292437
+            ],
+            [
+              73.86225056002624,
+              18.520613148292437
+            ],
+            [
+              73.86225056002624,
+              18.520858651671418
+            ],
+            [
+              73.8619267792553,
+              18.520858651671418
+            ],
+            [
+              73.8619267792553,
+              18.520613148292437
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-199",
+        "plot_number": "PLT-058",
+        "property_id": "MH-PUNE-058",
+        "owner_name": "Priya Venkataraman",
+        "recorded_area_sqm": 1145.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86228677435726,
+              18.52060935181216
+            ],
+            [
+              73.86263218731882,
+              18.52060935181216
+            ],
+            [
+              73.86263218731882,
+              18.52088391359209
+            ],
+            [
+              73.86228677435726,
+              18.52088391359209
+            ],
+            [
+              73.86228677435726,
+              18.52060935181216
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-200",
+        "plot_number": "PLT-059",
+        "property_id": "MH-PUNE-059",
+        "owner_name": "Amit Singh Patel",
+        "recorded_area_sqm": 976.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8626485041198,
+              18.52061232796875
+            ],
+            [
+              73.86296167247136,
+              18.52061232796875
+            ],
+            [
+              73.86296167247136,
+              18.520877163847533
+            ],
+            [
+              73.8626485041198,
+              18.520877163847533
+            ],
+            [
+              73.8626485041198,
+              18.52061232796875
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-201",
+        "plot_number": "PLT-060",
+        "property_id": "MH-PUNE-060",
+        "owner_name": "Sunita Devi Yadav",
+        "recorded_area_sqm": 959.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8630291748752,
+              18.52059742297972
+            ],
+            [
+              73.86335864581129,
+              18.52059742297972
+            ],
+            [
+              73.86335864581129,
+              18.520841842228997
+            ],
+            [
+              73.8630291748752,
+              18.520841842228997
+            ],
+            [
+              73.8630291748752,
+              18.52059742297972
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-202",
+        "plot_number": "PLT-061",
+        "property_id": "MH-PUNE-061",
+        "owner_name": "Vijay P. Gupta",
+        "recorded_area_sqm": 1054.3,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85598841977689,
+              18.5209140685264
+            ],
+            [
+              73.8563259515939,
+              18.5209140685264
+            ],
+            [
+              73.8563259515939,
+              18.521174722445668
+            ],
+            [
+              73.85598841977689,
+              18.521174722445668
+            ],
+            [
+              73.85598841977689,
+              18.5209140685264
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-203",
+        "plot_number": "PLT-062",
+        "property_id": "MH-PUNE-062",
+        "owner_name": "Anjali Mohan Desai",
+        "recorded_area_sqm": 1019.0,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8563493331449,
+              18.52091526524736
+            ],
+            [
+              73.85668771103504,
+              18.52091526524736
+            ],
+            [
+              73.85668771103504,
+              18.52117554010159
+            ],
+            [
+              73.8563493331449,
+              18.52117554010159
+            ],
+            [
+              73.8563493331449,
+              18.52091526524736
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-204",
+        "plot_number": "PLT-063",
+        "property_id": "MH-PUNE-063",
+        "owner_name": "Rajesh Chandra Joshi",
+        "recorded_area_sqm": 873.3,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85673823542332,
+              18.52090441326817
+            ],
+            [
+              73.85703576544788,
+              18.52090441326817
+            ],
+            [
+              73.85703576544788,
+              18.521156027822563
+            ],
+            [
+              73.85673823542332,
+              18.521156027822563
+            ],
+            [
+              73.85673823542332,
+              18.52090441326817
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-205",
+        "plot_number": "PLT-064",
+        "property_id": "MH-PUNE-064",
+        "owner_name": "M. Krishnan Iyer",
+        "recorded_area_sqm": 953.2,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85708643499989,
+              18.520914038113453
+            ],
+            [
+              73.85738495752886,
+              18.520914038113453
+            ],
+            [
+              73.85738495752886,
+              18.521191060255337
+            ],
+            [
+              73.85708643499989,
+              18.521191060255337
+            ],
+            [
+              73.85708643499989,
+              18.520914038113453
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-206",
+        "plot_number": "PLT-065",
+        "property_id": "MH-PUNE-065",
+        "owner_name": "Suresh Babu Nair",
+        "recorded_area_sqm": 1091.4,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8574656059925,
+              18.520911913294274
+            ],
+            [
+              73.8578092388911,
+              18.520911913294274
+            ],
+            [
+              73.8578092388911,
+              18.521184843246505
+            ],
+            [
+              73.8574656059925,
+              18.521184843246505
+            ],
+            [
+              73.8574656059925,
+              18.520911913294274
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-207",
+        "plot_number": "PLT-066",
+        "property_id": "MH-PUNE-066",
+        "owner_name": "Kavita A. Kulkarni",
+        "recorded_area_sqm": 874.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85786901599899,
+              18.520908047350016
+            ],
+            [
+              73.85818266049057,
+              18.520908047350016
+            ],
+            [
+              73.85818266049057,
+              18.52114848020701
+            ],
+            [
+              73.85786901599899,
+              18.52114848020701
+            ],
+            [
+              73.85786901599899,
+              18.520908047350016
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-208",
+        "plot_number": "PLT-067",
+        "property_id": "MH-PUNE-067",
+        "owner_name": "Arvind Kumar Mishra",
+        "recorded_area_sqm": 1093.6,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8581955075557,
+              18.520917922503113
+            ],
+            [
+              73.85853910305967,
+              18.520917922503113
+            ],
+            [
+              73.85853910305967,
+              18.521195694379816
+            ],
+            [
+              73.8581955075557,
+              18.521195694379816
+            ],
+            [
+              73.8581955075557,
+              18.520917922503113
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-209",
+        "plot_number": "PLT-068",
+        "property_id": "MH-PUNE-068",
+        "owner_name": "Pooja Sanjay Bhosale",
+        "recorded_area_sqm": 931.2,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8586010037332,
+              18.520899543113874
+            ],
+            [
+              73.85890300053943,
+              18.520899543113874
+            ],
+            [
+              73.85890300053943,
+              18.521157954713335
+            ],
+            [
+              73.8586010037332,
+              18.521157954713335
+            ],
+            [
+              73.8586010037332,
+              18.520899543113874
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-210",
+        "plot_number": "PLT-069",
+        "property_id": "MH-PUNE-069",
+        "owner_name": "Manoj Kumar Tiwari",
+        "recorded_area_sqm": 954.7,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85896953046696,
+              18.52090583611599
+            ],
+            [
+              73.85927066412418,
+              18.52090583611599
+            ],
+            [
+              73.85927066412418,
+              18.52117578140693
+            ],
+            [
+              73.85896953046696,
+              18.52117578140693
+            ],
+            [
+              73.85896953046696,
+              18.52090583611599
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-211",
+        "plot_number": "PLT-070",
+        "property_id": "MH-PUNE-070",
+        "owner_name": "Rekha Pandit Chavan",
+        "recorded_area_sqm": 949.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85934464664341,
+              18.520883722134023
+            ],
+            [
+              73.85968235295094,
+              18.520883722134023
+            ],
+            [
+              73.85968235295094,
+              18.52112711457553
+            ],
+            [
+              73.85934464664341,
+              18.52112711457553
+            ],
+            [
+              73.85934464664341,
+              18.520883722134023
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-212",
+        "plot_number": "PLT-071",
+        "property_id": "MH-PUNE-071",
+        "owner_name": "Sanjay D. Pawar",
+        "recorded_area_sqm": 994.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85970958935775,
+              18.520892248241207
+            ],
+            [
+              73.8600320416826,
+              18.520892248241207
+            ],
+            [
+              73.8600320416826,
+              18.521153339992132
+            ],
+            [
+              73.85970958935775,
+              18.521153339992132
+            ],
+            [
+              73.85970958935775,
+              18.520892248241207
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-213",
+        "plot_number": "PLT-072",
+        "property_id": "MH-PUNE-072",
+        "owner_name": "Anita Vijay Deshmukh",
+        "recorded_area_sqm": 1000.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86006866302444,
+              18.520901236877247
+            ],
+            [
+              73.86038007849746,
+              18.520901236877247
+            ],
+            [
+              73.86038007849746,
+              18.521175879064973
+            ],
+            [
+              73.86006866302444,
+              18.521175879064973
+            ],
+            [
+              73.86006866302444,
+              18.520901236877247
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-214",
+        "plot_number": "PLT-073",
+        "property_id": "MH-PUNE-073",
+        "owner_name": "Prakash Narayan Gupta",
+        "recorded_area_sqm": 938.8,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86045229677184,
+              18.52089323165189
+            ],
+            [
+              73.8607720115137,
+              18.52089323165189
+            ],
+            [
+              73.8607720115137,
+              18.52114012717652
+            ],
+            [
+              73.86045229677184,
+              18.52114012717652
+            ],
+            [
+              73.86045229677184,
+              18.52089323165189
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-215",
+        "plot_number": "PLT-074",
+        "property_id": "MH-PUNE-074",
+        "owner_name": "Sunil Kumar Jain",
+        "recorded_area_sqm": 1005.1,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86079854582135,
+              18.52089005614705
+            ],
+            [
+              73.86112435886601,
+              18.52089005614705
+            ],
+            [
+              73.86112435886601,
+              18.52115871325195
+            ],
+            [
+              73.86079854582135,
+              18.52115871325195
+            ],
+            [
+              73.86079854582135,
+              18.52089005614705
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-216",
+        "plot_number": "PLT-075",
+        "property_id": "MH-PUNE-075",
+        "owner_name": "Deepa Ramesh Kulkarni",
+        "recorded_area_sqm": 910.9,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86116462921466,
+              18.52088478218965
+            ],
+            [
+              73.86147268964548,
+              18.52088478218965
+            ],
+            [
+              73.86147268964548,
+              18.521135874273885
+            ],
+            [
+              73.86116462921466,
+              18.521135874273885
+            ],
+            [
+              73.86116462921466,
+              18.52088478218965
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-217",
+        "plot_number": "PLT-076",
+        "property_id": "MH-PUNE-076",
+        "owner_name": "Vivek A. Shinde",
+        "recorded_area_sqm": 1071.7,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86156310948047,
+              18.520887405993697
+            ],
+            [
+              73.8619128548217,
+              18.520887405993697
+            ],
+            [
+              73.8619128548217,
+              18.52115270087212
+            ],
+            [
+              73.86156310948047,
+              18.52115270087212
+            ],
+            [
+              73.86156310948047,
+              18.520887405993697
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-218",
+        "plot_number": "PLT-077",
+        "property_id": "MH-PUNE-077",
+        "owner_name": "Lakshmi Narayanan",
+        "recorded_area_sqm": 1006.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86191920992935,
+              18.520908983400044
+            ],
+            [
+              73.86223971018376,
+              18.520908983400044
+            ],
+            [
+              73.86223971018376,
+              18.52116872158537
+            ],
+            [
+              73.86191920992935,
+              18.52116872158537
+            ],
+            [
+              73.86191920992935,
+              18.520908983400044
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-219",
+        "plot_number": "PLT-078",
+        "property_id": "MH-PUNE-078",
+        "owner_name": "R. Prasad",
+        "recorded_area_sqm": 862.2,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86229123184346,
+              18.52089131994813
+            ],
+            [
+              73.86259508456374,
+              18.52089131994813
+            ],
+            [
+              73.86259508456374,
+              18.521138757236287
+            ],
+            [
+              73.86229123184346,
+              18.521138757236287
+            ],
+            [
+              73.86229123184346,
+              18.52089131994813
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-220",
+        "plot_number": "PLT-079",
+        "property_id": "MH-PUNE-079",
+        "owner_name": "Savita Ben Sharma",
+        "recorded_area_sqm": 954.5,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86264470587889,
+              18.520889099326542
+            ],
+            [
+              73.86295995537091,
+              18.520889099326542
+            ],
+            [
+              73.86295995537091,
+              18.521151808292718
+            ],
+            [
+              73.86264470587889,
+              18.521151808292718
+            ],
+            [
+              73.86264470587889,
+              18.520889099326542
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-221",
+        "plot_number": "PLT-080",
+        "property_id": "MH-PUNE-080",
+        "owner_name": "Nitin Gopalrao Kale",
+        "recorded_area_sqm": 887.2,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86300570741835,
+              18.52090136540357
+            ],
+            [
+              73.86331528844181,
+              18.52090136540357
+            ],
+            [
+              73.86331528844181,
+              18.52114861453372
+            ],
+            [
+              73.86300570741835,
+              18.52114861453372
+            ],
+            [
+              73.86300570741835,
+              18.52090136540357
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-222",
+        "plot_number": "PLT-081",
+        "property_id": "MH-PUNE-081",
+        "owner_name": "Prakash C. Gupta",
+        "recorded_area_sqm": 947.3,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85602371474656,
+              18.52120213435867
+            ],
+            [
+              73.85632494188357,
+              18.52120213435867
+            ],
+            [
+              73.85632494188357,
+              18.521466640682878
+            ],
+            [
+              73.85602371474656,
+              18.521466640682878
+            ],
+            [
+              73.85602371474656,
+              18.52120213435867
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-223",
+        "plot_number": "PLT-082",
+        "property_id": "MH-PUNE-082",
+        "owner_name": "Meera Krishnan",
+        "recorded_area_sqm": 1003.4,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85635131397464,
+              18.521214738447892
+            ],
+            [
+              73.85666083341829,
+              18.521214738447892
+            ],
+            [
+              73.85666083341829,
+              18.521490766088437
+            ],
+            [
+              73.85635131397464,
+              18.521490766088437
+            ],
+            [
+              73.85635131397464,
+              18.521214738447892
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-224",
+        "plot_number": "PLT-083",
+        "property_id": "MH-PUNE-083",
+        "owner_name": "Anil Kumar Agarwal",
+        "recorded_area_sqm": 968.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85675863598674,
+              18.521202962568786
+            ],
+            [
+              73.85710126684525,
+              18.521202962568786
+            ],
+            [
+              73.85710126684525,
+              18.52144393857748
+            ],
+            [
+              73.85675863598674,
+              18.52144393857748
+            ],
+            [
+              73.85675863598674,
+              18.521202962568786
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-225",
+        "plot_number": "PLT-084",
+        "property_id": "MH-PUNE-084",
+        "owner_name": "Sushma Devi Singh",
+        "recorded_area_sqm": 943.2,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8571070234399,
+              18.521187374546816
+            ],
+            [
+              73.8574170186832,
+              18.521187374546816
+            ],
+            [
+              73.8574170186832,
+              18.521453471613505
+            ],
+            [
+              73.8571070234399,
+              18.521453471613505
+            ],
+            [
+              73.8571070234399,
+              18.521187374546816
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-226",
+        "plot_number": "PLT-085",
+        "property_id": "MH-PUNE-085",
+        "owner_name": "R. Kumar Verma",
+        "recorded_area_sqm": 900.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85750205317983,
+              18.52119910916749
+            ],
+            [
+              73.85781080061221,
+              18.52119910916749
+            ],
+            [
+              73.85781080061221,
+              18.521442666265138
+            ],
+            [
+              73.85750205317983,
+              18.521442666265138
+            ],
+            [
+              73.85750205317983,
+              18.52119910916749
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-227",
+        "plot_number": "PLT-086",
+        "property_id": "MH-PUNE-086",
+        "owner_name": "Geeta R. Pandey",
+        "recorded_area_sqm": 1075.3,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85784503537211,
+              18.52118296328681
+            ],
+            [
+              73.85819164986974,
+              18.52118296328681
+            ],
+            [
+              73.85819164986974,
+              18.521444947096732
+            ],
+            [
+              73.85784503537211,
+              18.521444947096732
+            ],
+            [
+              73.85784503537211,
+              18.52118296328681
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-228",
+        "plot_number": "PLT-087",
+        "property_id": "MH-PUNE-087",
+        "owner_name": "Mohan Lal Gupta",
+        "recorded_area_sqm": 1030.1,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8581976804537,
+              18.521185967903378
+            ],
+            [
+              73.85851999568258,
+              18.521185967903378
+            ],
+            [
+              73.85851999568258,
+              18.5214569219192
+            ],
+            [
+              73.8581976804537,
+              18.5214569219192
+            ],
+            [
+              73.8581976804537,
+              18.521185967903378
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-229",
+        "plot_number": "PLT-088",
+        "property_id": "MH-PUNE-088",
+        "owner_name": "Sarita Devi Prasad",
+        "recorded_area_sqm": 960.0,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85858019177559,
+              18.521219756724907
+            ],
+            [
+              73.85892008536797,
+              18.521219756724907
+            ],
+            [
+              73.85892008536797,
+              18.52146575394131
+            ],
+            [
+              73.85858019177559,
+              18.52146575394131
+            ],
+            [
+              73.85858019177559,
+              18.521219756724907
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-230",
+        "plot_number": "PLT-089",
+        "property_id": "MH-PUNE-089",
+        "owner_name": "Dinesh Kumar Srivastava",
+        "recorded_area_sqm": 926.5,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85897322217227,
+              18.52120425270605
+            ],
+            [
+              73.85927581104,
+              18.52120425270605
+            ],
+            [
+              73.85927581104,
+              18.52146035685571
+            ],
+            [
+              73.85897322217227,
+              18.52146035685571
+            ],
+            [
+              73.85897322217227,
+              18.52120425270605
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-231",
+        "plot_number": "PLT-090",
+        "property_id": "MH-PUNE-090",
+        "owner_name": "Usha Rani Mishra",
+        "recorded_area_sqm": 965.0,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85931628435685,
+              18.521200902901406
+            ],
+            [
+              73.85963602223455,
+              18.521200902901406
+            ],
+            [
+              73.85963602223455,
+              18.521458517937464
+            ],
+            [
+              73.85931628435685,
+              18.521458517937464
+            ],
+            [
+              73.85931628435685,
+              18.521200902901406
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-232",
+        "plot_number": "PLT-091",
+        "property_id": "MH-PUNE-091",
+        "owner_name": "Pankaj K. Singh",
+        "recorded_area_sqm": 1081.5,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85969713605019,
+              18.521214406666633
+            ],
+            [
+              73.86003291253229,
+              18.521214406666633
+            ],
+            [
+              73.86003291253229,
+              18.52148068797762
+            ],
+            [
+              73.85969713605019,
+              18.52148068797762
+            ],
+            [
+              73.85969713605019,
+              18.521214406666633
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-233",
+        "plot_number": "PLT-092",
+        "property_id": "MH-PUNE-092",
+        "owner_name": "N. Gupta Sharma",
+        "recorded_area_sqm": 999.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86006026901221,
+              18.521204841092842
+            ],
+            [
+              73.8604094376858,
+              18.521204841092842
+            ],
+            [
+              73.8604094376858,
+              18.521446974643432
+            ],
+            [
+              73.86006026901221,
+              18.521446974643432
+            ],
+            [
+              73.86006026901221,
+              18.521204841092842
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-234",
+        "plot_number": "PLT-093",
+        "property_id": "MH-PUNE-093",
+        "owner_name": "Rahul Dev Pandey",
+        "recorded_area_sqm": 927.9,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86045200446527,
+              18.521217903608015
+            ],
+            [
+              73.86077064208258,
+              18.521217903608015
+            ],
+            [
+              73.86077064208258,
+              18.52147015431744
+            ],
+            [
+              73.86045200446527,
+              18.52147015431744
+            ],
+            [
+              73.86045200446527,
+              18.521217903608015
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-235",
+        "plot_number": "PLT-094",
+        "property_id": "MH-PUNE-094",
+        "owner_name": "Seema Kumari Singh",
+        "recorded_area_sqm": 980.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86079555125977,
+              18.521206417125487
+            ],
+            [
+              73.86113828906792,
+              18.521206417125487
+            ],
+            [
+              73.86113828906792,
+              18.521454860691513
+            ],
+            [
+              73.86079555125977,
+              18.521454860691513
+            ],
+            [
+              73.86079555125977,
+              18.521206417125487
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-236",
+        "plot_number": "PLT-095",
+        "property_id": "MH-PUNE-095",
+        "owner_name": "Vikramaditya Sharma",
+        "recorded_area_sqm": 900.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8611636906774,
+              18.521183002594757
+            ],
+            [
+              73.8614711766451,
+              18.521183002594757
+            ],
+            [
+              73.8614711766451,
+              18.521439844363766
+            ],
+            [
+              73.8611636906774,
+              18.521439844363766
+            ],
+            [
+              73.8611636906774,
+              18.521183002594757
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-237",
+        "plot_number": "PLT-096",
+        "property_id": "MH-PUNE-096",
+        "owner_name": "Anuradha J. ",
+        "recorded_area_sqm": 926.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86154752518523,
+              18.521203752447803
+            ],
+            [
+              73.86186717397132,
+              18.521203752447803
+            ],
+            [
+              73.86186717397132,
+              18.52145345134388
+            ],
+            [
+              73.86154752518523,
+              18.52145345134388
+            ],
+            [
+              73.86154752518523,
+              18.521203752447803
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-238",
+        "plot_number": "PLT-097",
+        "property_id": "MH-PUNE-097",
+        "owner_name": "Nagaraj Srinivasan",
+        "recorded_area_sqm": 1022.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86190657381172,
+              18.521208278233196
+            ],
+            [
+              73.86221718865023,
+              18.521208278233196
+            ],
+            [
+              73.86221718865023,
+              18.521485055388364
+            ],
+            [
+              73.86190657381172,
+              18.521485055388364
+            ],
+            [
+              73.86190657381172,
+              18.521208278233196
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-239",
+        "plot_number": "PLT-098",
+        "property_id": "MH-PUNE-098",
+        "owner_name": "Shanti Devi Nagar",
+        "recorded_area_sqm": 1059.7,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86228770156632,
+              18.521207495396805
+            ],
+            [
+              73.86260846593044,
+              18.521207495396805
+            ],
+            [
+              73.86260846593044,
+              18.521481672059206
+            ],
+            [
+              73.86228770156632,
+              18.521481672059206
+            ],
+            [
+              73.86228770156632,
+              18.521207495396805
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-240",
+        "plot_number": "PLT-099",
+        "property_id": "MH-PUNE-099",
+        "owner_name": "K. Kumar Tiwari",
+        "recorded_area_sqm": 929.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86267439140133,
+              18.521205002320286
+            ],
+            [
+              73.86300078348023,
+              18.521205002320286
+            ],
+            [
+              73.86300078348023,
+              18.521445127030127
+            ],
+            [
+              73.86267439140133,
+              18.521445127030127
+            ],
+            [
+              73.86267439140133,
+              18.521205002320286
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-241",
+        "plot_number": "PLT-100",
+        "property_id": "MH-PUNE-100",
+        "owner_name": "Mala Rani Srivastava",
+        "recorded_area_sqm": 1126.1,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86305168342292,
+              18.521197005558644
+            ],
+            [
+              73.86340164575252,
+              18.521197005558644
+            ],
+            [
+              73.86340164575252,
+              18.521470118717218
+            ],
+            [
+              73.86305168342292,
+              18.521470118717218
+            ],
+            [
+              73.86305168342292,
+              18.521197005558644
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-242",
+        "plot_number": "PLT-101",
+        "property_id": "MH-PUNE-101",
+        "owner_name": "Ganesh P. Gupta",
+        "recorded_area_sqm": 1155.7,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85596,
+              18.52147
+            ],
+            [
+              73.8563083723035,
+              18.52147
+            ],
+            [
+              73.8563083723035,
+              18.521746907413288
+            ],
+            [
+              73.85596,
+              18.521746907413288
+            ],
+            [
+              73.85596,
+              18.52147
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-243",
+        "plot_number": "PLT-102",
+        "property_id": "MH-PUNE-102",
+        "owner_name": "Kamla Devi Prasad",
+        "recorded_area_sqm": 973.3,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85634857049185,
+              18.52148663691157
+            ],
+            [
+              73.8566906270179,
+              18.52148663691157
+            ],
+            [
+              73.8566906270179,
+              18.521731621978212
+            ],
+            [
+              73.85634857049185,
+              18.521731621978212
+            ],
+            [
+              73.85634857049185,
+              18.52148663691157
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-244",
+        "plot_number": "PLT-103",
+        "property_id": "MH-PUNE-103",
+        "owner_name": "Hari Shankar Sharma",
+        "recorded_area_sqm": 925.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8567524478861,
+              18.521502768281973
+            ],
+            [
+              73.85707544404518,
+              18.521502768281973
+            ],
+            [
+              73.85707544404518,
+              18.52174974566854
+            ],
+            [
+              73.8567524478861,
+              18.52174974566854
+            ],
+            [
+              73.8567524478861,
+              18.521502768281973
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-245",
+        "plot_number": "PLT-104",
+        "property_id": "MH-PUNE-104",
+        "owner_name": "Rama Devi Sharma",
+        "recorded_area_sqm": 910.9,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8570912176829,
+              18.521507547119647
+            ],
+            [
+              73.85740977229827,
+              18.521507547119647
+            ],
+            [
+              73.85740977229827,
+              18.521748009806444
+            ],
+            [
+              73.8570912176829,
+              18.521748009806444
+            ],
+            [
+              73.8570912176829,
+              18.521507547119647
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-246",
+        "plot_number": "PLT-105",
+        "property_id": "MH-PUNE-105",
+        "owner_name": "Shiv Kumar Singh",
+        "recorded_area_sqm": 1041.6,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85750213381203,
+              18.521500018887085
+            ],
+            [
+              73.85781952990078,
+              18.521500018887085
+            ],
+            [
+              73.85781952990078,
+              18.521779401858524
+            ],
+            [
+              73.85750213381203,
+              18.521779401858524
+            ],
+            [
+              73.85750213381203,
+              18.521500018887085
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-247",
+        "plot_number": "PLT-106",
+        "property_id": "MH-PUNE-106",
+        "owner_name": "Parvati D. Singh",
+        "recorded_area_sqm": 987.4,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85782902209259,
+              18.521481594431368
+            ],
+            [
+              73.85814044525314,
+              18.521481594431368
+            ],
+            [
+              73.85814044525314,
+              18.52175252539665
+            ],
+            [
+              73.85782902209259,
+              18.52175252539665
+            ],
+            [
+              73.85782902209259,
+              18.521481594431368
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-248",
+        "plot_number": "PLT-107",
+        "property_id": "MH-PUNE-107",
+        "owner_name": "Mukesh Kumar Gupta",
+        "recorded_area_sqm": 942.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85821111607916,
+              18.521490014716097
+            ],
+            [
+              73.85853250401844,
+              18.521490014716097
+            ],
+            [
+              73.85853250401844,
+              18.521745781030507
+            ],
+            [
+              73.85821111607916,
+              18.521745781030507
+            ],
+            [
+              73.85821111607916,
+              18.521490014716097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-249",
+        "plot_number": "PLT-108",
+        "property_id": "MH-PUNE-108",
+        "owner_name": "Saraswati Devi Gupta",
+        "recorded_area_sqm": 1148.6,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8586130955551,
+              18.521513438344556
+            ],
+            [
+              73.85896085473125,
+              18.521513438344556
+            ],
+            [
+              73.85896085473125,
+              18.521793246097516
+            ],
+            [
+              73.8586130955551,
+              18.521793246097516
+            ],
+            [
+              73.8586130955551,
+              18.521513438344556
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-250",
+        "plot_number": "PLT-109",
+        "property_id": "MH-PUNE-109",
+        "owner_name": "Arun Kumar Sharma",
+        "recorded_area_sqm": 1040.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85898253931389,
+              18.521519982896674
+            ],
+            [
+              73.85930921715087,
+              18.521519982896674
+            ],
+            [
+              73.85930921715087,
+              18.521788156044238
+            ],
+            [
+              73.85898253931389,
+              18.521788156044238
+            ],
+            [
+              73.85898253931389,
+              18.521519982896674
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-251",
+        "plot_number": "PLT-110",
+        "property_id": "MH-PUNE-110",
+        "owner_name": "Nirmala Devi Sharma",
+        "recorded_area_sqm": 913.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8593184755513,
+              18.521481609266925
+            ],
+            [
+              73.85962410238463,
+              18.521481609266925
+            ],
+            [
+              73.85962410238463,
+              18.521732070995597
+            ],
+            [
+              73.8593184755513,
+              18.521732070995597
+            ],
+            [
+              73.8593184755513,
+              18.521481609266925
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-252",
+        "plot_number": "PLT-111",
+        "property_id": "MH-PUNE-111",
+        "owner_name": "Sachin T. ",
+        "recorded_area_sqm": 1100.6,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85969852504115,
+              18.521506060379576
+            ],
+            [
+              73.86004688228282,
+              18.521506060379576
+            ],
+            [
+              73.86004688228282,
+              18.52176838595179
+            ],
+            [
+              73.85969852504115,
+              18.52176838595179
+            ],
+            [
+              73.85969852504115,
+              18.521506060379576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-253",
+        "plot_number": "PLT-112",
+        "property_id": "MH-PUNE-112",
+        "owner_name": "Anjali Bhagwat",
+        "recorded_area_sqm": 1040.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86005407445735,
+              18.521503413185012
+            ],
+            [
+              73.86038003970542,
+              18.521503413185012
+            ],
+            [
+              73.86038003970542,
+              18.52177282815855
+            ],
+            [
+              73.86005407445735,
+              18.52177282815855
+            ],
+            [
+              73.86005407445735,
+              18.521503413185012
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-254",
+        "plot_number": "PLT-113",
+        "property_id": "MH-PUNE-113",
+        "owner_name": "R. Kumar Sharma",
+        "recorded_area_sqm": 918.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86043958629011,
+              18.52148364969625
+            ],
+            [
+              73.86074008746694,
+              18.52148364969625
+            ],
+            [
+              73.86074008746694,
+              18.52174618515522
+            ],
+            [
+              73.86043958629011,
+              18.52174618515522
+            ],
+            [
+              73.86043958629011,
+              18.52148364969625
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-255",
+        "plot_number": "PLT-114",
+        "property_id": "MH-PUNE-114",
+        "owner_name": "Priya Venkataraman",
+        "recorded_area_sqm": 1064.5,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86080166541969,
+              18.52150680534038
+            ],
+            [
+              73.8611255650648,
+              18.52150680534038
+            ],
+            [
+              73.8611255650648,
+              18.521780619575846
+            ],
+            [
+              73.86080166541969,
+              18.521780619575846
+            ],
+            [
+              73.86080166541969,
+              18.52150680534038
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-256",
+        "plot_number": "PLT-115",
+        "property_id": "MH-PUNE-115",
+        "owner_name": "Amit Singh Patel",
+        "recorded_area_sqm": 987.4,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86117149018317,
+              18.52150774694696
+            ],
+            [
+              73.86147725540138,
+              18.52150774694696
+            ],
+            [
+              73.86147725540138,
+              18.521786099660897
+            ],
+            [
+              73.86117149018317,
+              18.521786099660897
+            ],
+            [
+              73.86117149018317,
+              18.52150774694696
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-257",
+        "plot_number": "PLT-116",
+        "property_id": "MH-PUNE-116",
+        "owner_name": "Sunita D. Yadav",
+        "recorded_area_sqm": 874.0,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86157225967698,
+              18.52151254264139
+            ],
+            [
+              73.8618739655289,
+              18.52151254264139
+            ],
+            [
+              73.8618739655289,
+              18.52175834728975
+            ],
+            [
+              73.86157225967698,
+              18.52175834728975
+            ],
+            [
+              73.86157225967698,
+              18.52151254264139
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-258",
+        "plot_number": "PLT-117",
+        "property_id": "MH-PUNE-117",
+        "owner_name": "Vijay Prakash Gupta",
+        "recorded_area_sqm": 1018.0,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86191774129543,
+              18.521492580686285
+            ],
+            [
+              73.86224648063852,
+              18.521492580686285
+            ],
+            [
+              73.86224648063852,
+              18.521758939613537
+            ],
+            [
+              73.86191774129543,
+              18.521758939613537
+            ],
+            [
+              73.86191774129543,
+              18.521492580686285
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-259",
+        "plot_number": "PLT-118",
+        "property_id": "MH-PUNE-118",
+        "owner_name": "Anjali Mohan Desai",
+        "recorded_area_sqm": 885.7,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86231350923634,
+              18.52149616700228
+            ],
+            [
+              73.86262335744082,
+              18.52149616700228
+            ],
+            [
+              73.86262335744082,
+              18.521739202240067
+            ],
+            [
+              73.86231350923634,
+              18.521739202240067
+            ],
+            [
+              73.86231350923634,
+              18.52149616700228
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-260",
+        "plot_number": "PLT-119",
+        "property_id": "MH-PUNE-119",
+        "owner_name": "Rajesh Chandra Joshi",
+        "recorded_area_sqm": 1007.1,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86268440596074,
+              18.52150630641546
+            ],
+            [
+              73.86302864604473,
+              18.52150630641546
+            ],
+            [
+              73.86302864604473,
+              18.521754647460067
+            ],
+            [
+              73.86268440596074,
+              18.521754647460067
+            ],
+            [
+              73.86268440596074,
+              18.52150630641546
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-261",
+        "plot_number": "PLT-120",
+        "property_id": "MH-PUNE-120",
+        "owner_name": "M. Krishnan Iyer",
+        "recorded_area_sqm": 1011.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86302566237853,
+              18.521487503301657
+            ],
+            [
+              73.8633543746341,
+              18.521487503301657
+            ],
+            [
+              73.8633543746341,
+              18.52175151732509
+            ],
+            [
+              73.86302566237853,
+              18.52175151732509
+            ],
+            [
+              73.86302566237853,
+              18.521487503301657
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-262",
+        "plot_number": "PLT-121",
+        "property_id": "MH-PUNE-121",
+        "owner_name": "Suresh B. Nair",
+        "recorded_area_sqm": 1001.0,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8560128221577,
+              18.521805016349685
+            ],
+            [
+              73.85633233146575,
+              18.521805016349685
+            ],
+            [
+              73.85633233146575,
+              18.522067530585836
+            ],
+            [
+              73.8560128221577,
+              18.522067530585836
+            ],
+            [
+              73.8560128221577,
+              18.521805016349685
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-263",
+        "plot_number": "PLT-122",
+        "property_id": "MH-PUNE-122",
+        "owner_name": "Kavita Ashok Kulkarni",
+        "recorded_area_sqm": 1085.8,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85635517791192,
+              18.521801968785564
+            ],
+            [
+              73.85668012400448,
+              18.521801968785564
+            ],
+            [
+              73.85668012400448,
+              18.522079226448387
+            ],
+            [
+              73.85635517791192,
+              18.522079226448387
+            ],
+            [
+              73.85635517791192,
+              18.521801968785564
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-264",
+        "plot_number": "PLT-123",
+        "property_id": "MH-PUNE-123",
+        "owner_name": "Arvind Kumar Mishra",
+        "recorded_area_sqm": 948.8,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85673690580474,
+              18.521807930001163
+            ],
+            [
+              73.85704512941271,
+              18.521807930001163
+            ],
+            [
+              73.85704512941271,
+              18.522076010056796
+            ],
+            [
+              73.85673690580474,
+              18.522076010056796
+            ],
+            [
+              73.85673690580474,
+              18.521807930001163
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-265",
+        "plot_number": "PLT-124",
+        "property_id": "MH-PUNE-124",
+        "owner_name": "Pooja Sanjay Bhosale",
+        "recorded_area_sqm": 913.1,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85713365734078,
+              18.52180435486668
+            ],
+            [
+              73.8574436883533,
+              18.52180435486668
+            ],
+            [
+              73.8574436883533,
+              18.522058977872245
+            ],
+            [
+              73.85713365734078,
+              18.522058977872245
+            ],
+            [
+              73.85713365734078,
+              18.52180435486668
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-266",
+        "plot_number": "PLT-125",
+        "property_id": "MH-PUNE-125",
+        "owner_name": "Manoj Kumar Tiwari",
+        "recorded_area_sqm": 983.0,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85746291890818,
+              18.521802033560277
+            ],
+            [
+              73.85779568264489,
+              18.521802033560277
+            ],
+            [
+              73.85779568264489,
+              18.522052633437628
+            ],
+            [
+              73.85746291890818,
+              18.522052633437628
+            ],
+            [
+              73.85746291890818,
+              18.521802033560277
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-267",
+        "plot_number": "PLT-126",
+        "property_id": "MH-PUNE-126",
+        "owner_name": "Rekha P. Chavan",
+        "recorded_area_sqm": 1019.7,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85782966046007,
+              18.521819690285575
+            ],
+            [
+              73.85814375976287,
+              18.521819690285575
+            ],
+            [
+              73.85814375976287,
+              18.522089268594257
+            ],
+            [
+              73.85782966046007,
+              18.522089268594257
+            ],
+            [
+              73.85782966046007,
+              18.521819690285575
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-268",
+        "plot_number": "PLT-127",
+        "property_id": "MH-PUNE-127",
+        "owner_name": "S. Dattatraya Pawar",
+        "recorded_area_sqm": 929.0,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85821807239469,
+              18.521784698645963
+            ],
+            [
+              73.8585193809082,
+              18.521784698645963
+            ],
+            [
+              73.8585193809082,
+              18.522041946637913
+            ],
+            [
+              73.85821807239469,
+              18.522041946637913
+            ],
+            [
+              73.85821807239469,
+              18.521784698645963
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-269",
+        "plot_number": "PLT-128",
+        "property_id": "MH-PUNE-128",
+        "owner_name": "Anita Vijay Deshmukh",
+        "recorded_area_sqm": 1151.2,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85858991877522,
+              18.52180866413304
+            ],
+            [
+              73.85893983763337,
+              18.52180866413304
+            ],
+            [
+              73.85893983763337,
+              18.522088500183852
+            ],
+            [
+              73.85858991877522,
+              18.522088500183852
+            ],
+            [
+              73.85858991877522,
+              18.52180866413304
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-270",
+        "plot_number": "PLT-129",
+        "property_id": "MH-PUNE-129",
+        "owner_name": "Prakash Narayan Gupta",
+        "recorded_area_sqm": 899.6,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85894867124483,
+              18.52181338895782
+            ],
+            [
+              73.85925001743269,
+              18.52181338895782
+            ],
+            [
+              73.85925001743269,
+              18.522060341438937
+            ],
+            [
+              73.85894867124483,
+              18.522060341438937
+            ],
+            [
+              73.85894867124483,
+              18.52181338895782
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-271",
+        "plot_number": "PLT-130",
+        "property_id": "MH-PUNE-130",
+        "owner_name": "Sunil Kumar Jain",
+        "recorded_area_sqm": 1007.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8593171865453,
+              18.521802050603075
+            ],
+            [
+              73.85962860956707,
+              18.521802050603075
+            ],
+            [
+              73.85962860956707,
+              18.52207924749695
+            ],
+            [
+              73.8593171865453,
+              18.52207924749695
+            ],
+            [
+              73.8593171865453,
+              18.521802050603075
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-272",
+        "plot_number": "PLT-131",
+        "property_id": "MH-PUNE-131",
+        "owner_name": "Deepa R. Kulkarni",
+        "recorded_area_sqm": 1135.8,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85972109340749,
+              18.521800329635663
+            ],
+            [
+              73.86006483877661,
+              18.521800329635663
+            ],
+            [
+              73.86006483877661,
+              18.522075258985847
+            ],
+            [
+              73.85972109340749,
+              18.522075258985847
+            ],
+            [
+              73.85972109340749,
+              18.521800329635663
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-273",
+        "plot_number": "PLT-132",
+        "property_id": "MH-PUNE-132",
+        "owner_name": "Vivek Anand Shinde",
+        "recorded_area_sqm": 926.7,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86008820134671,
+              18.521791049896112
+            ],
+            [
+              73.86040510151886,
+              18.521791049896112
+            ],
+            [
+              73.86040510151886,
+              18.522035675263073
+            ],
+            [
+              73.86008820134671,
+              18.522035675263073
+            ],
+            [
+              73.86008820134671,
+              18.521791049896112
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-274",
+        "plot_number": "PLT-133",
+        "property_id": "MH-PUNE-133",
+        "owner_name": "Lakshmi Narayanan",
+        "recorded_area_sqm": 1073.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86043574712117,
+              18.521817369935746
+            ],
+            [
+              73.8607770187313,
+              18.521817369935746
+            ],
+            [
+              73.8607770187313,
+              18.5220849186126
+            ],
+            [
+              73.86043574712117,
+              18.5220849186126
+            ],
+            [
+              73.86043574712117,
+              18.521817369935746
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-275",
+        "plot_number": "PLT-134",
+        "property_id": "MH-PUNE-134",
+        "owner_name": "R. Prasad",
+        "recorded_area_sqm": 1069.3,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86082602747366,
+              18.52179131355933
+            ],
+            [
+              73.86115564055636,
+              18.52179131355933
+            ],
+            [
+              73.86115564055636,
+              18.522070777348002
+            ],
+            [
+              73.86082602747366,
+              18.522070777348002
+            ],
+            [
+              73.86082602747366,
+              18.52179131355933
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-276",
+        "plot_number": "PLT-135",
+        "property_id": "MH-PUNE-135",
+        "owner_name": "Savita Ben Sharma",
+        "recorded_area_sqm": 928.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8611843468861,
+              18.521819956093328
+            ],
+            [
+              73.86151618064278,
+              18.521819956093328
+            ],
+            [
+              73.86151618064278,
+              18.522058284663828
+            ],
+            [
+              73.8611843468861,
+              18.522058284663828
+            ],
+            [
+              73.8611843468861,
+              18.521819956093328
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-277",
+        "plot_number": "PLT-136",
+        "property_id": "MH-PUNE-136",
+        "owner_name": "Nitin G. Kale",
+        "recorded_area_sqm": 992.9,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86153242977092,
+              18.521801543223106
+            ],
+            [
+              73.86187282773801,
+              18.521801543223106
+            ],
+            [
+              73.86187282773801,
+              18.5220521171307
+            ],
+            [
+              73.86153242977092,
+              18.5220521171307
+            ],
+            [
+              73.86153242977092,
+              18.521801543223106
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-278",
+        "plot_number": "PLT-137",
+        "property_id": "MH-PUNE-137",
+        "owner_name": "Prakash Chandra Gupta",
+        "recorded_area_sqm": 1080.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86192259587085,
+              18.521801737202516
+            ],
+            [
+              73.86225492377838,
+              18.521801737202516
+            ],
+            [
+              73.86225492377838,
+              18.522079172262682
+            ],
+            [
+              73.86192259587085,
+              18.522079172262682
+            ],
+            [
+              73.86192259587085,
+              18.521801737202516
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-279",
+        "plot_number": "PLT-138",
+        "property_id": "MH-PUNE-138",
+        "owner_name": "Meera Krishnan",
+        "recorded_area_sqm": 879.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86228108886752,
+              18.52178754609495
+            ],
+            [
+              73.86258563915102,
+              18.52178754609495
+            ],
+            [
+              73.86258563915102,
+              18.522030394099104
+            ],
+            [
+              73.86228108886752,
+              18.522030394099104
+            ],
+            [
+              73.86228108886752,
+              18.52178754609495
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-280",
+        "plot_number": "PLT-139",
+        "property_id": "MH-PUNE-139",
+        "owner_name": "Anil Kumar Agarwal",
+        "recorded_area_sqm": 945.9,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86266358988209,
+              18.52178934249784
+            ],
+            [
+              73.86296670927092,
+              18.52178934249784
+            ],
+            [
+              73.86296670927092,
+              18.522050577890756
+            ],
+            [
+              73.86266358988209,
+              18.522050577890756
+            ],
+            [
+              73.86266358988209,
+              18.52178934249784
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-281",
+        "plot_number": "PLT-140",
+        "property_id": "MH-PUNE-140",
+        "owner_name": "Sushma Devi Singh",
+        "recorded_area_sqm": 976.9,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86300718236495,
+              18.521809788206063
+            ],
+            [
+              73.8633189806461,
+              18.521809788206063
+            ],
+            [
+              73.8633189806461,
+              18.522073191058798
+            ],
+            [
+              73.86300718236495,
+              18.522073191058798
+            ],
+            [
+              73.86300718236495,
+              18.521809788206063
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-282",
+        "plot_number": "PLT-141",
+        "property_id": "MH-PUNE-141",
+        "owner_name": "Rakesh K. Verma",
+        "recorded_area_sqm": 980.5,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85601557044512,
+              18.522095443150096
+            ],
+            [
+              73.85635074508495,
+              18.522095443150096
+            ],
+            [
+              73.85635074508495,
+              18.522341994237213
+            ],
+            [
+              73.85601557044512,
+              18.522341994237213
+            ],
+            [
+              73.85601557044512,
+              18.522095443150096
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-283",
+        "plot_number": "PLT-142",
+        "property_id": "MH-PUNE-142",
+        "owner_name": "Geeta Rani Pandey",
+        "recorded_area_sqm": 967.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85638603737759,
+              18.522119232725544
+            ],
+            [
+              73.85671683487043,
+              18.522119232725544
+            ],
+            [
+              73.85671683487043,
+              18.522368320049413
+            ],
+            [
+              73.85638603737759,
+              18.522368320049413
+            ],
+            [
+              73.85638603737759,
+              18.522119232725544
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-284",
+        "plot_number": "PLT-143",
+        "property_id": "MH-PUNE-143",
+        "owner_name": "Mohan Lal Gupta",
+        "recorded_area_sqm": 1053.8,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85671685098056,
+              18.522100091646003
+            ],
+            [
+              73.85703999890279,
+              18.522100091646003
+            ],
+            [
+              73.85703999890279,
+              18.522376115778627
+            ],
+            [
+              73.85671685098056,
+              18.522376115778627
+            ],
+            [
+              73.85671685098056,
+              18.522100091646003
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-285",
+        "plot_number": "PLT-144",
+        "property_id": "MH-PUNE-144",
+        "owner_name": "Sarita Devi Prasad",
+        "recorded_area_sqm": 968.3,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85712848501566,
+              18.52211496761496
+            ],
+            [
+              73.85747040546062,
+              18.52211496761496
+            ],
+            [
+              73.85747040546062,
+              18.522356844150604
+            ],
+            [
+              73.85712848501566,
+              18.522356844150604
+            ],
+            [
+              73.85712848501566,
+              18.52211496761496
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-286",
+        "plot_number": "PLT-145",
+        "property_id": "MH-PUNE-145",
+        "owner_name": "Dinesh Kumar Srivastava",
+        "recorded_area_sqm": 950.3,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85748129755433,
+              18.52209827712298
+            ],
+            [
+              73.85780103528239,
+              18.52209827712298
+            ],
+            [
+              73.85780103528239,
+              18.522347897692384
+            ],
+            [
+              73.85748129755433,
+              18.522347897692384
+            ],
+            [
+              73.85748129755433,
+              18.52209827712298
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-287",
+        "plot_number": "PLT-146",
+        "property_id": "MH-PUNE-146",
+        "owner_name": "Usha R. Mishra",
+        "recorded_area_sqm": 926.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85784549893098,
+              18.522106191253055
+            ],
+            [
+              73.85814318507965,
+              18.522106191253055
+            ],
+            [
+              73.85814318507965,
+              18.52237657826042
+            ],
+            [
+              73.85784549893098,
+              18.52237657826042
+            ],
+            [
+              73.85784549893098,
+              18.522106191253055
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-288",
+        "plot_number": "PLT-147",
+        "property_id": "MH-PUNE-147",
+        "owner_name": "Pankaj Kumar Singh",
+        "recorded_area_sqm": 958.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85821847453003,
+              18.522118768145223
+            ],
+            [
+              73.85854942298234,
+              18.522118768145223
+            ],
+            [
+              73.85854942298234,
+              18.522367770266246
+            ],
+            [
+              73.85821847453003,
+              18.522367770266246
+            ],
+            [
+              73.85821847453003,
+              18.522118768145223
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-289",
+        "plot_number": "PLT-148",
+        "property_id": "MH-PUNE-148",
+        "owner_name": "N. Gupta Sharma",
+        "recorded_area_sqm": 1054.2,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85859963522992,
+              18.522105993466102
+            ],
+            [
+              73.85893604985262,
+              18.522105993466102
+            ],
+            [
+              73.85893604985262,
+              18.52236716404379
+            ],
+            [
+              73.85859963522992,
+              18.52236716404379
+            ],
+            [
+              73.85859963522992,
+              18.522105993466102
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-290",
+        "plot_number": "PLT-149",
+        "property_id": "MH-PUNE-149",
+        "owner_name": "Rahul Dev Pandey",
+        "recorded_area_sqm": 889.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85897761706683,
+              18.522114373687366
+            ],
+            [
+              73.85929757063008,
+              18.522114373687366
+            ],
+            [
+              73.85929757063008,
+              18.52235277981475
+            ],
+            [
+              73.85897761706683,
+              18.52235277981475
+            ],
+            [
+              73.85897761706683,
+              18.522114373687366
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-291",
+        "plot_number": "PLT-150",
+        "property_id": "MH-PUNE-150",
+        "owner_name": "Seema Kumari Singh",
+        "recorded_area_sqm": 989.6,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8593208330577,
+              18.522108748697008
+            ],
+            [
+              73.85962228336035,
+              18.522108748697008
+            ],
+            [
+              73.85962228336035,
+              18.522383839165528
+            ],
+            [
+              73.8593208330577,
+              18.522383839165528
+            ],
+            [
+              73.8593208330577,
+              18.522108748697008
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-292",
+        "plot_number": "PLT-151",
+        "property_id": "MH-PUNE-151",
+        "owner_name": "Vikramaditya S. ",
+        "recorded_area_sqm": 1030.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85971861915085,
+              18.52208143596399
+            ],
+            [
+              73.86006357540086,
+              18.52208143596399
+            ],
+            [
+              73.86006357540086,
+              18.522342350756137
+            ],
+            [
+              73.85971861915085,
+              18.522342350756137
+            ],
+            [
+              73.85971861915085,
+              18.52208143596399
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-293",
+        "plot_number": "PLT-152",
+        "property_id": "MH-PUNE-152",
+        "owner_name": "Anuradha Joshi",
+        "recorded_area_sqm": 1084.0,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86007655805084,
+              18.52211683716395
+            ],
+            [
+              73.86041787428938,
+              18.52211683716395
+            ],
+            [
+              73.86041787428938,
+              18.522379302565742
+            ],
+            [
+              73.86007655805084,
+              18.522379302565742
+            ],
+            [
+              73.86007655805084,
+              18.52211683716395
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-294",
+        "plot_number": "PLT-153",
+        "property_id": "MH-PUNE-153",
+        "owner_name": "Nagaraj Srinivasan",
+        "recorded_area_sqm": 851.9,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86045233831834,
+              18.522097358858876
+            ],
+            [
+              73.86075761324209,
+              18.522097358858876
+            ],
+            [
+              73.86075761324209,
+              18.522340711570685
+            ],
+            [
+              73.86045233831834,
+              18.522340711570685
+            ],
+            [
+              73.86045233831834,
+              18.522097358858876
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-295",
+        "plot_number": "PLT-154",
+        "property_id": "MH-PUNE-154",
+        "owner_name": "Shanti Devi Nagar",
+        "recorded_area_sqm": 1013.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86081668739143,
+              18.522114903169303
+            ],
+            [
+              73.86113037095481,
+              18.522114903169303
+            ],
+            [
+              73.86113037095481,
+              18.52239066039183
+            ],
+            [
+              73.86081668739143,
+              18.52239066039183
+            ],
+            [
+              73.86081668739143,
+              18.522114903169303
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-296",
+        "plot_number": "PLT-155",
+        "property_id": "MH-PUNE-155",
+        "owner_name": "K. Kumar Tiwari",
+        "recorded_area_sqm": 1063.2,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86118970005813,
+              18.52211613696248
+            ],
+            [
+              73.86152899647914,
+              18.52211613696248
+            ],
+            [
+              73.86152899647914,
+              18.522390286470927
+            ],
+            [
+              73.86118970005813,
+              18.522390286470927
+            ],
+            [
+              73.86118970005813,
+              18.52211613696248
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-297",
+        "plot_number": "PLT-156",
+        "property_id": "MH-PUNE-156",
+        "owner_name": "Mala R. Srivastava",
+        "recorded_area_sqm": 992.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86156480717325,
+              18.522091734711037
+            ],
+            [
+              73.86190950071666,
+              18.522091734711037
+            ],
+            [
+              73.86190950071666,
+              18.522338557925647
+            ],
+            [
+              73.86156480717325,
+              18.522338557925647
+            ],
+            [
+              73.86156480717325,
+              18.522091734711037
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-298",
+        "plot_number": "PLT-157",
+        "property_id": "MH-PUNE-157",
+        "owner_name": "Ganesh Prasad Gupta",
+        "recorded_area_sqm": 887.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86190227848978,
+              18.522101246652724
+            ],
+            [
+              73.86221287880109,
+              18.522101246652724
+            ],
+            [
+              73.86221287880109,
+              18.522343563984833
+            ],
+            [
+              73.86190227848978,
+              18.522343563984833
+            ],
+            [
+              73.86190227848978,
+              18.522101246652724
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-299",
+        "plot_number": "PLT-158",
+        "property_id": "MH-PUNE-158",
+        "owner_name": "Kamla Devi Prasad",
+        "recorded_area_sqm": 1066.6,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86230462597369,
+              18.52208679934596
+            ],
+            [
+              73.86264308207639,
+              18.52208679934596
+            ],
+            [
+              73.86264308207639,
+              18.52236193300342
+            ],
+            [
+              73.86230462597369,
+              18.52236193300342
+            ],
+            [
+              73.86230462597369,
+              18.52208679934596
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-300",
+        "plot_number": "PLT-159",
+        "property_id": "MH-PUNE-159",
+        "owner_name": "Hari Shankar Sharma",
+        "recorded_area_sqm": 973.9,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86267854197992,
+              18.52210478841474
+            ],
+            [
+              73.86299737679289,
+              18.52210478841474
+            ],
+            [
+              73.86299737679289,
+              18.522368856198167
+            ],
+            [
+              73.86267854197992,
+              18.522368856198167
+            ],
+            [
+              73.86267854197992,
+              18.52210478841474
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-301",
+        "plot_number": "PLT-160",
+        "property_id": "MH-PUNE-160",
+        "owner_name": "Rama Devi Sharma",
+        "recorded_area_sqm": 992.6,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8630506414508,
+              18.522085724708802
+            ],
+            [
+              73.86335625550106,
+              18.522085724708802
+            ],
+            [
+              73.86335625550106,
+              18.52236277971146
+            ],
+            [
+              73.8630506414508,
+              18.52236277971146
+            ],
+            [
+              73.8630506414508,
+              18.522085724708802
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-302",
+        "plot_number": "PLT-161",
+        "property_id": "MH-PUNE-161",
+        "owner_name": "Shiv K. Singh",
+        "recorded_area_sqm": 1091.0,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85598769886697,
+              18.522390213068327
+            ],
+            [
+              73.85633059066602,
+              18.522390213068327
+            ],
+            [
+              73.85633059066602,
+              18.52266921372171
+            ],
+            [
+              73.85598769886697,
+              18.52266921372171
+            ],
+            [
+              73.85598769886697,
+              18.522390213068327
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-303",
+        "plot_number": "PLT-162",
+        "property_id": "MH-PUNE-162",
+        "owner_name": "P. Devi Singh",
+        "recorded_area_sqm": 1110.7,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85638523165385,
+              18.522416048376947
+            ],
+            [
+              73.85672529716915,
+              18.522416048376947
+            ],
+            [
+              73.85672529716915,
+              18.522691067857544
+            ],
+            [
+              73.85638523165385,
+              18.522691067857544
+            ],
+            [
+              73.85638523165385,
+              18.522416048376947
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-304",
+        "plot_number": "PLT-163",
+        "property_id": "MH-PUNE-163",
+        "owner_name": "Mukesh Kumar Gupta",
+        "recorded_area_sqm": 935.5,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85672289878109,
+              18.522397669191346
+            ],
+            [
+              73.85702170006509,
+              18.522397669191346
+            ],
+            [
+              73.85702170006509,
+              18.52266660489916
+            ],
+            [
+              73.85672289878109,
+              18.52266660489916
+            ],
+            [
+              73.85672289878109,
+              18.522397669191346
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-305",
+        "plot_number": "PLT-164",
+        "property_id": "MH-PUNE-164",
+        "owner_name": "Saraswati Devi Gupta",
+        "recorded_area_sqm": 1020.7,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85711437858525,
+              18.522405557548094
+            ],
+            [
+              73.85742931832232,
+              18.522405557548094
+            ],
+            [
+              73.85742931832232,
+              18.52268265181531
+            ],
+            [
+              73.85711437858525,
+              18.52268265181531
+            ],
+            [
+              73.85711437858525,
+              18.522405557548094
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-306",
+        "plot_number": "PLT-165",
+        "property_id": "MH-PUNE-165",
+        "owner_name": "Arun Kumar Sharma",
+        "recorded_area_sqm": 1074.8,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85746750491121,
+              18.52241381215701
+            ],
+            [
+              73.857807122256,
+              18.52241381215701
+            ],
+            [
+              73.857807122256,
+              18.5226881028462
+            ],
+            [
+              73.85746750491121,
+              18.5226881028462
+            ],
+            [
+              73.85746750491121,
+              18.52241381215701
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-307",
+        "plot_number": "PLT-166",
+        "property_id": "MH-PUNE-166",
+        "owner_name": "Nirmala D. Sharma",
+        "recorded_area_sqm": 980.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85784423466245,
+              18.522399328322443
+            ],
+            [
+              73.85818429900156,
+              18.522399328322443
+            ],
+            [
+              73.85818429900156,
+              18.522648534162247
+            ],
+            [
+              73.85784423466245,
+              18.522648534162247
+            ],
+            [
+              73.85784423466245,
+              18.522399328322443
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-308",
+        "plot_number": "PLT-167",
+        "property_id": "MH-PUNE-167",
+        "owner_name": "Sachin Tendulkar",
+        "recorded_area_sqm": 994.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85822359613461,
+              18.522402992477208
+            ],
+            [
+              73.85856243329634,
+              18.522402992477208
+            ],
+            [
+              73.85856243329634,
+              18.522645532493517
+            ],
+            [
+              73.85822359613461,
+              18.522645532493517
+            ],
+            [
+              73.85822359613461,
+              18.522402992477208
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-309",
+        "plot_number": "PLT-168",
+        "property_id": "MH-PUNE-168",
+        "owner_name": "Anjali Bhagwat",
+        "recorded_area_sqm": 1116.0,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85857976153768,
+              18.522419117779386
+            ],
+            [
+              73.85892305029378,
+              18.522419117779386
+            ],
+            [
+              73.85892305029378,
+              18.522693178695942
+            ],
+            [
+              73.85857976153768,
+              18.522693178695942
+            ],
+            [
+              73.85857976153768,
+              18.522419117779386
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-310",
+        "plot_number": "PLT-169",
+        "property_id": "MH-PUNE-169",
+        "owner_name": "R. Kumar Sharma",
+        "recorded_area_sqm": 1000.2,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.858948724019,
+              18.522402637160678
+            ],
+            [
+              73.85925790178918,
+              18.522402637160678
+            ],
+            [
+              73.85925790178918,
+              18.52267493379811
+            ],
+            [
+              73.858948724019,
+              18.52267493379811
+            ],
+            [
+              73.858948724019,
+              18.522402637160678
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-311",
+        "plot_number": "PLT-170",
+        "property_id": "MH-PUNE-170",
+        "owner_name": "Priya Venkataraman",
+        "recorded_area_sqm": 954.1,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85934223344206,
+              18.522381961770034
+            ],
+            [
+              73.85966389936189,
+              18.522381961770034
+            ],
+            [
+              73.85966389936189,
+              18.522632779786463
+            ],
+            [
+              73.85934223344206,
+              18.522632779786463
+            ],
+            [
+              73.85934223344206,
+              18.522381961770034
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-312",
+        "plot_number": "PLT-171",
+        "property_id": "MH-PUNE-171",
+        "owner_name": "Amit S. Patel",
+        "recorded_area_sqm": 974.2,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85969983636431,
+              18.522416166211638
+            ],
+            [
+              73.86003909200302,
+              18.522416166211638
+            ],
+            [
+              73.86003909200302,
+              18.52266372522211
+            ],
+            [
+              73.85969983636431,
+              18.52266372522211
+            ],
+            [
+              73.85969983636431,
+              18.522416166211638
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-313",
+        "plot_number": "PLT-172",
+        "property_id": "MH-PUNE-172",
+        "owner_name": "Sunita Devi Yadav",
+        "recorded_area_sqm": 856.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86008494300597,
+              18.52240428259993
+            ],
+            [
+              73.8603836853888,
+              18.52240428259993
+            ],
+            [
+              73.8603836853888,
+              18.522650394051038
+            ],
+            [
+              73.86008494300597,
+              18.522650394051038
+            ],
+            [
+              73.86008494300597,
+              18.52240428259993
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-314",
+        "plot_number": "PLT-173",
+        "property_id": "MH-PUNE-173",
+        "owner_name": "Vijay Prakash Gupta",
+        "recorded_area_sqm": 1025.2,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86044683089389,
+              18.522404835646526
+            ],
+            [
+              73.86076156464632,
+              18.522404835646526
+            ],
+            [
+              73.86076156464632,
+              18.522679138470092
+            ],
+            [
+              73.86044683089389,
+              18.522679138470092
+            ],
+            [
+              73.86044683089389,
+              18.522404835646526
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-315",
+        "plot_number": "PLT-174",
+        "property_id": "MH-PUNE-174",
+        "owner_name": "Anjali Mohan Desai",
+        "recorded_area_sqm": 1042.6,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86082104641883,
+              18.522406367261613
+            ],
+            [
+              73.86116930809679,
+              18.522406367261613
+            ],
+            [
+              73.86116930809679,
+              18.52265609051131
+            ],
+            [
+              73.86082104641883,
+              18.52265609051131
+            ],
+            [
+              73.86082104641883,
+              18.522406367261613
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-316",
+        "plot_number": "PLT-175",
+        "property_id": "MH-PUNE-175",
+        "owner_name": "Rajesh Chandra Joshi",
+        "recorded_area_sqm": 1000.2,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86118641240517,
+              18.522416136148163
+            ],
+            [
+              73.86151759019646,
+              18.522416136148163
+            ],
+            [
+              73.86151759019646,
+              18.522670922640305
+            ],
+            [
+              73.86118641240517,
+              18.522670922640305
+            ],
+            [
+              73.86118641240517,
+              18.522416136148163
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-317",
+        "plot_number": "PLT-176",
+        "property_id": "MH-PUNE-176",
+        "owner_name": "Meena K. Iyer",
+        "recorded_area_sqm": 1073.5,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8615404466442,
+              18.522397632927607
+            ],
+            [
+              73.86188945700277,
+              18.522397632927607
+            ],
+            [
+              73.86188945700277,
+              18.52265815398837
+            ],
+            [
+              73.8615404466442,
+              18.52265815398837
+            ],
+            [
+              73.8615404466442,
+              18.522397632927607
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-318",
+        "plot_number": "PLT-177",
+        "property_id": "MH-PUNE-177",
+        "owner_name": "Suresh Babu Nair",
+        "recorded_area_sqm": 977.4,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86193161798839,
+              18.52238360533503
+            ],
+            [
+              73.86227842793825,
+              18.52238360533503
+            ],
+            [
+              73.86227842793825,
+              18.52262644968861
+            ],
+            [
+              73.86193161798839,
+              18.52262644968861
+            ],
+            [
+              73.86193161798839,
+              18.52238360533503
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-319",
+        "plot_number": "PLT-178",
+        "property_id": "MH-PUNE-178",
+        "owner_name": "Kavita Ashok Kulkarni",
+        "recorded_area_sqm": 983.0,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86230237404325,
+              18.522387025602818
+            ],
+            [
+              73.86265082007533,
+              18.522387025602818
+            ],
+            [
+              73.86265082007533,
+              18.522632525451098
+            ],
+            [
+              73.86230237404325,
+              18.522632525451098
+            ],
+            [
+              73.86230237404325,
+              18.522387025602818
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-320",
+        "plot_number": "PLT-179",
+        "property_id": "MH-PUNE-179",
+        "owner_name": "Arvind Kumar Mishra",
+        "recorded_area_sqm": 1020.8,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86266197038795,
+              18.52241885958325
+            ],
+            [
+              73.86301000343953,
+              18.52241885958325
+            ],
+            [
+              73.86301000343953,
+              18.522668009170477
+            ],
+            [
+              73.86266197038795,
+              18.522668009170477
+            ],
+            [
+              73.86266197038795,
+              18.52241885958325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-321",
+        "plot_number": "PLT-180",
+        "property_id": "MH-PUNE-180",
+        "owner_name": "Pooja Sanjay Bhosale",
+        "recorded_area_sqm": 899.6,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86305067434871,
+              18.522413218904784
+            ],
+            [
+              73.86335386548244,
+              18.522413218904784
+            ],
+            [
+              73.86335386548244,
+              18.522669470582645
+            ],
+            [
+              73.86305067434871,
+              18.522669470582645
+            ],
+            [
+              73.86305067434871,
+              18.522413218904784
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-322",
+        "plot_number": "PLT-181",
+        "property_id": "MH-PUNE-181",
+        "owner_name": "Manoj K. Tiwari",
+        "recorded_area_sqm": 1009.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85601623449062,
+              18.522699273913194
+            ],
+            [
+              73.85635198310631,
+              18.522699273913194
+            ],
+            [
+              73.85635198310631,
+              18.52295044836039
+            ],
+            [
+              73.85601623449062,
+              18.52295044836039
+            ],
+            [
+              73.85601623449062,
+              18.522699273913194
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-323",
+        "plot_number": "PLT-182",
+        "property_id": "MH-PUNE-182",
+        "owner_name": "Rekha Pandit Chavan",
+        "recorded_area_sqm": 980.9,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85638232796754,
+              18.522693548610153
+            ],
+            [
+              73.85671165393234,
+              18.522693548610153
+            ],
+            [
+              73.85671165393234,
+              18.52295302837866
+            ],
+            [
+              73.85638232796754,
+              18.52295302837866
+            ],
+            [
+              73.85638232796754,
+              18.522693548610153
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-324",
+        "plot_number": "PLT-183",
+        "property_id": "MH-PUNE-183",
+        "owner_name": "S. Dattatraya Pawar",
+        "recorded_area_sqm": 1006.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85676314466463,
+              18.522685630280602
+            ],
+            [
+              73.85708086742487,
+              18.522685630280602
+            ],
+            [
+              73.85708086742487,
+              18.52294784697843
+            ],
+            [
+              73.85676314466463,
+              18.52294784697843
+            ],
+            [
+              73.85676314466463,
+              18.522685630280602
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-325",
+        "plot_number": "PLT-184",
+        "property_id": "MH-PUNE-184",
+        "owner_name": "Anita Vijay Deshmukh",
+        "recorded_area_sqm": 1006.3,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85712800702984,
+              18.522708968668482
+            ],
+            [
+              73.85743887996142,
+              18.522708968668482
+            ],
+            [
+              73.85743887996142,
+              18.522976737650403
+            ],
+            [
+              73.85712800702984,
+              18.522976737650403
+            ],
+            [
+              73.85712800702984,
+              18.522708968668482
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-326",
+        "plot_number": "PLT-185",
+        "property_id": "MH-PUNE-185",
+        "owner_name": "Prakash Narayan Gupta",
+        "recorded_area_sqm": 960.4,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85750336348735,
+              18.52271218350576
+            ],
+            [
+              73.85780095227946,
+              18.52271218350576
+            ],
+            [
+              73.85780095227946,
+              18.522989057662713
+            ],
+            [
+              73.85750336348735,
+              18.522989057662713
+            ],
+            [
+              73.85750336348735,
+              18.52271218350576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-327",
+        "plot_number": "PLT-186",
+        "property_id": "MH-PUNE-186",
+        "owner_name": "Sunil K. Jain",
+        "recorded_area_sqm": 1029.0,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85786453409843,
+              18.522680556746206
+            ],
+            [
+              73.85819030282828,
+              18.522680556746206
+            ],
+            [
+              73.85819030282828,
+              18.52294877280617
+            ],
+            [
+              73.85786453409843,
+              18.52294877280617
+            ],
+            [
+              73.85786453409843,
+              18.522680556746206
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-328",
+        "plot_number": "PLT-187",
+        "property_id": "MH-PUNE-187",
+        "owner_name": "Deepa Ramesh Kulkarni",
+        "recorded_area_sqm": 1063.2,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85821773930138,
+              18.522706913135277
+            ],
+            [
+              73.85855419168047,
+              18.522706913135277
+            ],
+            [
+              73.85855419168047,
+              18.522973079532463
+            ],
+            [
+              73.85821773930138,
+              18.522973079532463
+            ],
+            [
+              73.85821773930138,
+              18.522706913135277
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-329",
+        "plot_number": "PLT-188",
+        "property_id": "MH-PUNE-188",
+        "owner_name": "Vivek Anand Shinde",
+        "recorded_area_sqm": 920.1,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85859422800458,
+              18.52271289669205
+            ],
+            [
+              73.85891084963184,
+              18.52271289669205
+            ],
+            [
+              73.85891084963184,
+              18.522953835592116
+            ],
+            [
+              73.85859422800458,
+              18.522953835592116
+            ],
+            [
+              73.85859422800458,
+              18.52271289669205
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-330",
+        "plot_number": "PLT-189",
+        "property_id": "MH-PUNE-189",
+        "owner_name": "Lakshmi Narayanan",
+        "recorded_area_sqm": 955.7,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8589404173051,
+              18.52268935287609
+            ],
+            [
+              73.85927278978356,
+              18.52268935287609
+            ],
+            [
+              73.85927278978356,
+              18.522941221277602
+            ],
+            [
+              73.8589404173051,
+              18.522941221277602
+            ],
+            [
+              73.8589404173051,
+              18.52268935287609
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-331",
+        "plot_number": "PLT-190",
+        "property_id": "MH-PUNE-190",
+        "owner_name": "R. Prasad",
+        "recorded_area_sqm": 1034.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85934921174226,
+              18.522702456295292
+            ],
+            [
+              73.85966319231362,
+              18.522702456295292
+            ],
+            [
+              73.85966319231362,
+              18.52297607293703
+            ],
+            [
+              73.85934921174226,
+              18.52297607293703
+            ],
+            [
+              73.85934921174226,
+              18.522702456295292
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-332",
+        "plot_number": "PLT-191",
+        "property_id": "MH-PUNE-191",
+        "owner_name": "Savita B. Sharma",
+        "recorded_area_sqm": 1006.6,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.85968606835999,
+              18.522682528681646
+            ],
+            [
+              73.8600213554588,
+              18.522682528681646
+            ],
+            [
+              73.8600213554588,
+              18.52293314221691
+            ],
+            [
+              73.85968606835999,
+              18.52293314221691
+            ],
+            [
+              73.85968606835999,
+              18.522682528681646
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-333",
+        "plot_number": "PLT-192",
+        "property_id": "MH-PUNE-192",
+        "owner_name": "Nitin Gopalrao Kale",
+        "recorded_area_sqm": 935.4,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86009046938192,
+              18.52269208760698
+            ],
+            [
+              73.86040420682669,
+              18.52269208760698
+            ],
+            [
+              73.86040420682669,
+              18.522947240109144
+            ],
+            [
+              73.86009046938192,
+              18.522947240109144
+            ],
+            [
+              73.86009046938192,
+              18.52269208760698
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-334",
+        "plot_number": "PLT-193",
+        "property_id": "MH-PUNE-193",
+        "owner_name": "Prakash Chandra Gupta",
+        "recorded_area_sqm": 926.6,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86042198885062,
+              18.522717850461316
+            ],
+            [
+              73.86074061487093,
+              18.522717850461316
+            ],
+            [
+              73.86074061487093,
+              18.52296826797982
+            ],
+            [
+              73.86042198885062,
+              18.52296826797982
+            ],
+            [
+              73.86042198885062,
+              18.522717850461316
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-335",
+        "plot_number": "PLT-194",
+        "property_id": "MH-PUNE-194",
+        "owner_name": "Meera Krishnan",
+        "recorded_area_sqm": 935.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86080963123095,
+              18.522683887679946
+            ],
+            [
+              73.8611138138404,
+              18.522683887679946
+            ],
+            [
+              73.8611138138404,
+              18.522939546425963
+            ],
+            [
+              73.86080963123095,
+              18.522939546425963
+            ],
+            [
+              73.86080963123095,
+              18.522683887679946
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-336",
+        "plot_number": "PLT-195",
+        "property_id": "MH-PUNE-195",
+        "owner_name": "Anil Kumar Agarwal",
+        "recorded_area_sqm": 1097.1,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86116178320242,
+              18.522698145750276
+            ],
+            [
+              73.86150865229513,
+              18.522698145750276
+            ],
+            [
+              73.86150865229513,
+              18.52296459310398
+            ],
+            [
+              73.86116178320242,
+              18.52296459310398
+            ],
+            [
+              73.86116178320242,
+              18.522698145750276
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-337",
+        "plot_number": "PLT-196",
+        "property_id": "MH-PUNE-196",
+        "owner_name": "Sushma D. Singh",
+        "recorded_area_sqm": 1064.1,
+        "land_use": "residential",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86156215700608,
+              18.52271783896343
+            ],
+            [
+              73.86190705429723,
+              18.52271783896343
+            ],
+            [
+              73.86190705429723,
+              18.5229816905899
+            ],
+            [
+              73.86156215700608,
+              18.5229816905899
+            ],
+            [
+              73.86156215700608,
+              18.52271783896343
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-338",
+        "plot_number": "PLT-197",
+        "property_id": "MH-PUNE-197",
+        "owner_name": "R. Kumar Verma",
+        "recorded_area_sqm": 956.0,
+        "land_use": "commercial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86193211345073,
+              18.522686180916097
+            ],
+            [
+              73.86224541331914,
+              18.522686180916097
+            ],
+            [
+              73.86224541331914,
+              18.52294719427905
+            ],
+            [
+              73.86193211345073,
+              18.52294719427905
+            ],
+            [
+              73.86193211345073,
+              18.522686180916097
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-339",
+        "plot_number": "PLT-198",
+        "property_id": "MH-PUNE-198",
+        "owner_name": "Geeta Rani Pandey",
+        "recorded_area_sqm": 869.4,
+        "land_use": "agricultural",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86226995108174,
+              18.52269957388151
+            ],
+            [
+              73.86256747239358,
+              18.52269957388151
+            ],
+            [
+              73.86256747239358,
+              18.52294962425762
+            ],
+            [
+              73.86226995108174,
+              18.52294962425762
+            ],
+            [
+              73.86226995108174,
+              18.52269957388151
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-340",
+        "plot_number": "PLT-199",
+        "property_id": "MH-PUNE-199",
+        "owner_name": "Mohan Lal Gupta",
+        "recorded_area_sqm": 979.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.86268257607627,
+              18.522681308651475
+            ],
+            [
+              73.86300264520415,
+              18.522681308651475
+            ],
+            [
+              73.86300264520415,
+              18.522943668012285
+            ],
+            [
+              73.86268257607627,
+              18.522943668012285
+            ],
+            [
+              73.86268257607627,
+              18.522681308651475
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-341",
+        "plot_number": "PLT-200",
+        "property_id": "MH-PUNE-200",
+        "owner_name": "Sarita Devi Prasad",
+        "recorded_area_sqm": 1025.7,
+        "land_use": "mixed",
+        "source_system": "drone_ori"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              73.8630271691543,
+              18.522718022206796
+            ],
+            [
+              73.86335904119954,
+              18.522718022206796
+            ],
+            [
+              73.86335904119954,
+              18.522975551710786
+            ],
+            [
+              73.8630271691543,
+              18.522975551710786
+            ],
+            [
+              73.8630271691543,
+              18.522718022206796
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

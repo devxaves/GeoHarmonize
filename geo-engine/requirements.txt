@@ -1,0 +1,48 @@
+# GeoHarmonize — Geo Engine Dependencies
+# Python 3.11+
+# Install: pip install -r requirements.txt
+# Requires: PostgreSQL with PostGIS, local Tesseract binary
+
+# ── Web framework ─────────────────────────────────────────────────
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.20        # multipart file upload support
+
+# ── Database ──────────────────────────────────────────────────────
+psycopg2-binary==2.9.10         # PostgreSQL + PostGIS
+asyncpg==0.30.0                 # async PostgreSQL driver
+
+# ── Geospatial ────────────────────────────────────────────────────
+geopandas==1.0.1
+shapely==2.0.6
+pyproj==3.7.0
+fiona==1.10.1                   # vector I/O (GeoPackage, Shapefile, GeoJSON)
+rasterio==1.4.3                 # raster I/O (ORI/DSM/DTM)
+# GDAL==3.10.0                    # requires libgdal to be installed — fiona/rasterio bundle their own
+numpy==2.2.0
+
+# ── Attribute matching ────────────────────────────────────────────
+rapidfuzz==3.10.1               # RapidFuzz for owner name / survey number matching
+
+# ── Confidence model ─────────────────────────────────────────────
+scikit-learn==1.6.0             # weighted scoring — explainable, no black-box
+
+# ── OCR ───────────────────────────────────────────────────────────
+pytesseract==0.3.13             # Tesseract OCR wrapper (Tesseract binary must be installed separately)
+Pillow==11.1.0                  # Image preprocessing for OCR
+
+# ── CV / Building footprint extraction ───────────────────────────
+torch>=2.6.0                    # CPU-only build OK for demo
+torchvision>=0.21.0             # Pretrained Mask R-CNN
+# samgeo==0.13.0                # SAM for geospatial — optional heavier alternative
+                                # Uncomment if you have GPU. Use torchvision Mask R-CNN otherwise.
+
+# ── Configuration & utilities ────────────────────────────────────
+pydantic==2.10.3
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+httpx==0.28.1                   # for any outbound HTTP calls
+structlog==24.4.0               # structured logging
+
+# ── Export ───────────────────────────────────────────────────────
+# GeoPackage export handled by fiona/geopandas (gpkg driver)

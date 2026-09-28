@@ -1,0 +1,201 @@
+survey_number,plot_number,owner_name,area_sqm,land_use,village,district,state
+SY-142,PLT-001,Ramesh Kumar Sharma,930.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-143,PLT-002,Priya Venkataraman,906.7,commercial,Pune Ward 01,Pune,Maharashtra
+SY-144,PLT-003,Amit Singh Patel,1052.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-145,PLT-004,Sunita Devi Yadav,977.8,industrial,Pune Ward 01,Pune,Maharashtra
+SY-146,PLT-005,Vijay Prakash Gupta,898.6,mixed,Pune Ward 01,Pune,Maharashtra
+SY-147,PLT-006,Anjali Mohan Desai,941.1,residential,Pune Ward 01,Pune,Maharashtra
+SY-148,PLT-007,Rajesh Chandra Joshi,865.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-149,PLT-008,Meena Krishnan Iyer,1016.6,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-150,PLT-009,Suresh Babu Nair,954.2,industrial,Pune Ward 01,Pune,Maharashtra
+SY-151,PLT-010,Kavita Ashok Kulkarni,951.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-152,PLT-011,Arvind Kumar Mishra,1067.4,residential,Pune Ward 01,Pune,Maharashtra
+SY-153,PLT-012,Pooja Sanjay Bhosale,906.1,commercial,Pune Ward 01,Pune,Maharashtra
+SY-154,PLT-013,Manoj Kumar Tiwari,1030.3,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-155,PLT-014,Rekha Pandit Chavan,860.0,industrial,Pune Ward 01,Pune,Maharashtra
+SY-156,PLT-015,Sanjay Dattatraya Pawar,1058.3,mixed,Pune Ward 01,Pune,Maharashtra
+SY-157,PLT-016,Anita Vijay Deshmukh,1072.9,residential,Pune Ward 01,Pune,Maharashtra
+SY-158,PLT-017,Prakash Narayan Gupta,1067.1,commercial,Pune Ward 01,Pune,Maharashtra
+SY-159,PLT-018,Sunil Kumar Jain,974.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-160,PLT-019,Deepa Ramesh Kulkarni,1057.9,industrial,Pune Ward 01,Pune,Maharashtra
+SY-161,PLT-020,Vivek Anand Shinde,1056.2,mixed,Pune Ward 01,Pune,Maharashtra
+SY-162,PLT-021,Lakshmi Narayanan,943.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-163,PLT-022,Raghavendra Prasad,909.6,commercial,Pune Ward 01,Pune,Maharashtra
+SY-164,PLT-023,Savita Ben Sharma,878.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-165,PLT-024,Nitin Gopalrao Kale,888.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-166,PLT-025,Prakash Chandra Gupta,984.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-167,PLT-026,Meera Krishnan,919.1,residential,Pune Ward 01,Pune,Maharashtra
+SY-168,PLT-027,Anil Kumar Agarwal,1015.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-169,PLT-028,Sushma Devi Singh,1026.8,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-170,PLT-029,Rakesh Kumar Verma,967.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-171,PLT-030,Geeta Rani Pandey,913.3,mixed,Pune Ward 01,Pune,Maharashtra
+SY-172,PLT-031,Mohan Lal Gupta,1087.6,residential,Pune Ward 01,Pune,Maharashtra
+SY-173,PLT-032,Sarita Devi Prasad,1024.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-174,PLT-033,Dinesh Kumar Srivastava,1086.6,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-175,PLT-034,Usha Rani Mishra,870.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-176,PLT-035,Pankaj Kumar Singh,919.8,mixed,Pune Ward 01,Pune,Maharashtra
+SY-177,PLT-036,Nisha Gupta Sharma,1006.6,residential,Pune Ward 01,Pune,Maharashtra
+SY-178,PLT-037,Rahul Dev Pandey,1014.0,commercial,Pune Ward 01,Pune,Maharashtra
+SY-179,PLT-038,Seema Kumari Singh,993.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-180,PLT-039,Vikramaditya Sharma,1044.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-181,PLT-040,Anuradha Joshi,908.8,mixed,Pune Ward 01,Pune,Maharashtra
+SY-182,PLT-041,Nagaraj Srinivasan,956.8,residential,Pune Ward 01,Pune,Maharashtra
+SY-183,PLT-042,Shanti Devi Nagar,1063.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-184,PLT-043,Krishna Kumar Tiwari,925.1,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-185,PLT-044,Mala Rani Srivastava,1066.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-186,PLT-045,Ganesh Prasad Gupta,852.4,mixed,Pune Ward 01,Pune,Maharashtra
+SY-187,PLT-046,Kamla Devi Prasad,942.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-188,PLT-047,Hari Shankar Sharma,1018.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-189,PLT-048,Rama Devi Sharma,898.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-190,PLT-049,Shiv Kumar Singh,1069.6,industrial,Pune Ward 01,Pune,Maharashtra
+SY-191,PLT-050,Parvati Devi Singh,1122.6,mixed,Pune Ward 01,Pune,Maharashtra
+SY-192,PLT-051,Mukesh Kumar Gupta,939.7,residential,Pune Ward 01,Pune,Maharashtra
+SY-193,PLT-052,Saraswati Devi Gupta,1020.4,commercial,Pune Ward 01,Pune,Maharashtra
+SY-194,PLT-053,Arun Kumar Sharma,969.7,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-195,PLT-054,Nirmala Devi Sharma,913.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-196,PLT-055,Sachin Tendulkar,1049.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-197,PLT-056,Anjali Bhagwat,1005.2,residential,Pune Ward 01,Pune,Maharashtra
+SY-198,PLT-057,Ramesh Kumar Sharma,934.0,commercial,Pune Ward 01,Pune,Maharashtra
+SY-199,PLT-058,Priya Venkataraman,1114.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-200,PLT-059,Amit Singh Patel,974.6,industrial,Pune Ward 01,Pune,Maharashtra
+SY-201,PLT-060,Sunita Devi Yadav,946.2,mixed,Pune Ward 01,Pune,Maharashtra
+SY-202,PLT-061,Vijay Prakash Gupta,1033.8,residential,Pune Ward 01,Pune,Maharashtra
+SY-203,PLT-062,Anjali Mohan Desai,1034.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-204,PLT-063,Rajesh Chandra Joshi,879.7,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-205,PLT-064,Meena Krishnan Iyer,971.7,industrial,Pune Ward 01,Pune,Maharashtra
+SY-206,PLT-065,Suresh Babu Nair,1102.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-207,PLT-066,Kavita Ashok Kulkarni,886.1,residential,Pune Ward 01,Pune,Maharashtra
+SY-208,PLT-067,Arvind Kumar Mishra,1121.5,commercial,Pune Ward 01,Pune,Maharashtra
+SY-209,PLT-068,Pooja Sanjay Bhosale,917.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-210,PLT-069,Manoj Kumar Tiwari,955.2,industrial,Pune Ward 01,Pune,Maharashtra
+SY-211,PLT-070,Rekha Pandit Chavan,965.8,mixed,Pune Ward 01,Pune,Maharashtra
+SY-212,PLT-071,Sanjay Dattatraya Pawar,989.3,residential,Pune Ward 01,Pune,Maharashtra
+SY-213,PLT-072,Anita Vijay Deshmukh,1005.0,commercial,Pune Ward 01,Pune,Maharashtra
+SY-214,PLT-073,Prakash Narayan Gupta,927.5,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-215,PLT-074,Sunil Kumar Jain,1028.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-216,PLT-075,Deepa Ramesh Kulkarni,908.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-217,PLT-076,Vivek Anand Shinde,1090.3,residential,Pune Ward 01,Pune,Maharashtra
+SY-218,PLT-077,Lakshmi Narayanan,978.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-219,PLT-078,Raghavendra Prasad,883.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-220,PLT-079,Savita Ben Sharma,973.2,industrial,Pune Ward 01,Pune,Maharashtra
+SY-221,PLT-080,Nitin Gopalrao Kale,899.4,mixed,Pune Ward 01,Pune,Maharashtra
+SY-222,PLT-081,Prakash Chandra Gupta,936.2,residential,Pune Ward 01,Pune,Maharashtra
+SY-223,PLT-082,Meera Krishnan,1003.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-224,PLT-083,Anil Kumar Agarwal,970.2,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-225,PLT-084,Sushma Devi Singh,969.3,industrial,Pune Ward 01,Pune,Maharashtra
+SY-226,PLT-085,Rakesh Kumar Verma,883.6,mixed,Pune Ward 01,Pune,Maharashtra
+SY-227,PLT-086,Geeta Rani Pandey,1067.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-228,PLT-087,Mohan Lal Gupta,1026.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-229,PLT-088,Sarita Devi Prasad,982.5,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-230,PLT-089,Dinesh Kumar Srivastava,910.6,industrial,Pune Ward 01,Pune,Maharashtra
+SY-231,PLT-090,Usha Rani Mishra,967.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-232,PLT-091,Pankaj Kumar Singh,1050.6,residential,Pune Ward 01,Pune,Maharashtra
+SY-233,PLT-092,Nisha Gupta Sharma,993.4,commercial,Pune Ward 01,Pune,Maharashtra
+SY-234,PLT-093,Rahul Dev Pandey,944.5,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-235,PLT-094,Seema Kumari Singh,1000.6,industrial,Pune Ward 01,Pune,Maharashtra
+SY-236,PLT-095,Vikramaditya Sharma,928.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-237,PLT-096,Anuradha Joshi,937.9,residential,Pune Ward 01,Pune,Maharashtra
+SY-238,PLT-097,Nagaraj Srinivasan,1010.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-239,PLT-098,Shanti Devi Nagar,1033.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-240,PLT-099,Krishna Kumar Tiwari,920.9,industrial,Pune Ward 01,Pune,Maharashtra
+SY-241,PLT-100,Mala Rani Srivastava,1123.1,mixed,Pune Ward 01,Pune,Maharashtra
+SY-242,PLT-101,Ganesh Prasad Gupta,1133.5,residential,Pune Ward 01,Pune,Maharashtra
+SY-243,PLT-102,Kamla Devi Prasad,984.7,commercial,Pune Ward 01,Pune,Maharashtra
+SY-244,PLT-103,Hari Shankar Sharma,937.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-245,PLT-104,Rama Devi Sharma,900.1,industrial,Pune Ward 01,Pune,Maharashtra
+SY-246,PLT-105,Shiv Kumar Singh,1042.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-247,PLT-106,Parvati Devi Singh,991.4,residential,Pune Ward 01,Pune,Maharashtra
+SY-248,PLT-107,Mukesh Kumar Gupta,965.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-249,PLT-108,Saraswati Devi Gupta,1143.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-250,PLT-109,Arun Kumar Sharma,1029.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-251,PLT-110,Nirmala Devi Sharma,899.5,mixed,Pune Ward 01,Pune,Maharashtra
+SY-252,PLT-111,Sachin Tendulkar,1073.8,residential,Pune Ward 01,Pune,Maharashtra
+SY-253,PLT-112,Anjali Bhagwat,1031.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-254,PLT-113,Ramesh Kumar Sharma,927.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-255,PLT-114,Priya Venkataraman,1042.1,industrial,Pune Ward 01,Pune,Maharashtra
+SY-256,PLT-115,Amit Singh Patel,1000.1,mixed,Pune Ward 01,Pune,Maharashtra
+SY-257,PLT-116,Sunita Devi Yadav,871.4,residential,Pune Ward 01,Pune,Maharashtra
+SY-258,PLT-117,Vijay Prakash Gupta,1028.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-259,PLT-118,Anjali Mohan Desai,884.9,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-260,PLT-119,Rajesh Chandra Joshi,1004.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-261,PLT-120,Meena Krishnan Iyer,1019.8,mixed,Pune Ward 01,Pune,Maharashtra
+SY-262,PLT-121,Suresh Babu Nair,985.6,residential,Pune Ward 01,Pune,Maharashtra
+SY-263,PLT-122,Kavita Ashok Kulkarni,1058.6,commercial,Pune Ward 01,Pune,Maharashtra
+SY-264,PLT-123,Arvind Kumar Mishra,970.9,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-265,PLT-124,Pooja Sanjay Bhosale,927.6,industrial,Pune Ward 01,Pune,Maharashtra
+SY-266,PLT-125,Manoj Kumar Tiwari,979.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-267,PLT-126,Rekha Pandit Chavan,995.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-268,PLT-127,Sanjay Dattatraya Pawar,910.8,commercial,Pune Ward 01,Pune,Maharashtra
+SY-269,PLT-128,Anita Vijay Deshmukh,1150.6,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-270,PLT-129,Prakash Narayan Gupta,874.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-271,PLT-130,Sunil Kumar Jain,1014.4,mixed,Pune Ward 01,Pune,Maharashtra
+SY-272,PLT-131,Deepa Ramesh Kulkarni,1110.5,residential,Pune Ward 01,Pune,Maharashtra
+SY-273,PLT-132,Vivek Anand Shinde,910.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-274,PLT-133,Lakshmi Narayanan,1072.9,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-275,PLT-134,Raghavendra Prasad,1082.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-276,PLT-135,Savita Ben Sharma,929.3,mixed,Pune Ward 01,Pune,Maharashtra
+SY-277,PLT-136,Nitin Gopalrao Kale,1002.2,residential,Pune Ward 01,Pune,Maharashtra
+SY-278,PLT-137,Prakash Chandra Gupta,1083.4,commercial,Pune Ward 01,Pune,Maharashtra
+SY-279,PLT-138,Meera Krishnan,869.1,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-280,PLT-139,Anil Kumar Agarwal,930.5,industrial,Pune Ward 01,Pune,Maharashtra
+SY-281,PLT-140,Sushma Devi Singh,965.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-282,PLT-141,Rakesh Kumar Verma,971.0,residential,Pune Ward 01,Pune,Maharashtra
+SY-283,PLT-142,Geeta Rani Pandey,968.2,commercial,Pune Ward 01,Pune,Maharashtra
+SY-284,PLT-143,Mohan Lal Gupta,1048.1,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-285,PLT-144,Sarita Devi Prasad,971.8,industrial,Pune Ward 01,Pune,Maharashtra
+SY-286,PLT-145,Dinesh Kumar Srivastava,937.8,mixed,Pune Ward 01,Pune,Maharashtra
+SY-287,PLT-146,Usha Rani Mishra,945.8,residential,Pune Ward 01,Pune,Maharashtra
+SY-288,PLT-147,Pankaj Kumar Singh,968.3,commercial,Pune Ward 01,Pune,Maharashtra
+SY-289,PLT-148,Nisha Gupta Sharma,1032.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-290,PLT-149,Rahul Dev Pandey,896.3,industrial,Pune Ward 01,Pune,Maharashtra
+SY-291,PLT-150,Seema Kumari Singh,974.4,mixed,Pune Ward 01,Pune,Maharashtra
+SY-292,PLT-151,Vikramaditya Sharma,1057.6,residential,Pune Ward 01,Pune,Maharashtra
+SY-293,PLT-152,Anuradha Joshi,1052.6,commercial,Pune Ward 01,Pune,Maharashtra
+SY-294,PLT-153,Nagaraj Srinivasan,872.9,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-295,PLT-154,Shanti Devi Nagar,1016.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-296,PLT-155,Krishna Kumar Tiwari,1093.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-297,PLT-156,Mala Rani Srivastava,999.7,residential,Pune Ward 01,Pune,Maharashtra
+SY-298,PLT-157,Ganesh Prasad Gupta,884.4,commercial,Pune Ward 01,Pune,Maharashtra
+SY-299,PLT-158,Kamla Devi Prasad,1094.2,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-300,PLT-159,Hari Shankar Sharma,989.3,industrial,Pune Ward 01,Pune,Maharashtra
+SY-301,PLT-160,Rama Devi Sharma,994.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-302,PLT-161,Shiv Kumar Singh,1124.1,residential,Pune Ward 01,Pune,Maharashtra
+SY-303,PLT-162,Parvati Devi Singh,1099.0,commercial,Pune Ward 01,Pune,Maharashtra
+SY-304,PLT-163,Mukesh Kumar Gupta,944.2,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-305,PLT-164,Saraswati Devi Gupta,1025.4,industrial,Pune Ward 01,Pune,Maharashtra
+SY-306,PLT-165,Arun Kumar Sharma,1094.6,mixed,Pune Ward 01,Pune,Maharashtra
+SY-307,PLT-166,Nirmala Devi Sharma,995.8,residential,Pune Ward 01,Pune,Maharashtra
+SY-308,PLT-167,Sachin Tendulkar,965.7,commercial,Pune Ward 01,Pune,Maharashtra
+SY-309,PLT-168,Anjali Bhagwat,1105.5,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-310,PLT-169,Ramesh Kumar Sharma,989.2,industrial,Pune Ward 01,Pune,Maharashtra
+SY-311,PLT-170,Priya Venkataraman,948.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-312,PLT-171,Amit Singh Patel,986.9,residential,Pune Ward 01,Pune,Maharashtra
+SY-313,PLT-172,Sunita Devi Yadav,863.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-314,PLT-173,Vijay Prakash Gupta,1014.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-315,PLT-174,Anjali Mohan Desai,1021.9,industrial,Pune Ward 01,Pune,Maharashtra
+SY-316,PLT-175,Rajesh Chandra Joshi,991.5,mixed,Pune Ward 01,Pune,Maharashtra
+SY-317,PLT-176,Meena Krishnan Iyer,1068.4,residential,Pune Ward 01,Pune,Maharashtra
+SY-318,PLT-177,Suresh Babu Nair,989.6,commercial,Pune Ward 01,Pune,Maharashtra
+SY-319,PLT-178,Kavita Ashok Kulkarni,1005.2,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-320,PLT-179,Arvind Kumar Mishra,1018.9,industrial,Pune Ward 01,Pune,Maharashtra
+SY-321,PLT-180,Pooja Sanjay Bhosale,912.9,mixed,Pune Ward 01,Pune,Maharashtra
+SY-322,PLT-181,Manoj Kumar Tiwari,990.9,residential,Pune Ward 01,Pune,Maharashtra
+SY-323,PLT-182,Rekha Pandit Chavan,1004.1,commercial,Pune Ward 01,Pune,Maharashtra
+SY-324,PLT-183,Sanjay Dattatraya Pawar,979.0,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-325,PLT-184,Anita Vijay Deshmukh,978.1,industrial,Pune Ward 01,Pune,Maharashtra
+SY-326,PLT-185,Prakash Narayan Gupta,968.2,mixed,Pune Ward 01,Pune,Maharashtra
+SY-327,PLT-186,Sunil Kumar Jain,1026.7,residential,Pune Ward 01,Pune,Maharashtra
+SY-328,PLT-187,Deepa Ramesh Kulkarni,1052.3,commercial,Pune Ward 01,Pune,Maharashtra
+SY-329,PLT-188,Vivek Anand Shinde,896.4,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-330,PLT-189,Lakshmi Narayanan,983.7,industrial,Pune Ward 01,Pune,Maharashtra
+SY-331,PLT-190,Raghavendra Prasad,1009.5,mixed,Pune Ward 01,Pune,Maharashtra
+SY-332,PLT-191,Savita Ben Sharma,987.4,residential,Pune Ward 01,Pune,Maharashtra
+SY-333,PLT-192,Nitin Gopalrao Kale,940.6,commercial,Pune Ward 01,Pune,Maharashtra
+SY-334,PLT-193,Prakash Chandra Gupta,937.6,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-335,PLT-194,Meera Krishnan,913.8,industrial,Pune Ward 01,Pune,Maharashtra
+SY-336,PLT-195,Anil Kumar Agarwal,1086.0,mixed,Pune Ward 01,Pune,Maharashtra
+SY-337,PLT-196,Sushma Devi Singh,1069.3,residential,Pune Ward 01,Pune,Maharashtra
+SY-338,PLT-197,Rakesh Kumar Verma,960.9,commercial,Pune Ward 01,Pune,Maharashtra
+SY-339,PLT-198,Geeta Rani Pandey,874.2,agricultural,Pune Ward 01,Pune,Maharashtra
+SY-340,PLT-199,Mohan Lal Gupta,986.7,industrial,Pune Ward 01,Pune,Maharashtra
+SY-341,PLT-200,Sarita Devi Prasad,1004.3,mixed,Pune Ward 01,Pune,Maharashtra

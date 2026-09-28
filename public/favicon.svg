@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Minimalist, Professional Foundation Container -->
+  <rect width="512" height="512" rx="112" fill="#0F172A"/>
+
+  <!-- Subtle precision grid ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#1E293B" stroke-width="4"/>
+
+  <!-- The Setu (Bridge) Arch: Simple, Bold, Precision Curve -->
+  <path
+    d="M 124 332 C 124 172, 388 172, 388 332"
+    fill="none"
+    stroke="#F59E0B"
+    stroke-width="32"
+    stroke-linecap="round"
+  />
+
+  <!-- Apex Survey Pin / GIS Node -->
+  <circle cx="256" cy="172" r="18" fill="#FFFFFF"/>
+  <circle cx="256" cy="172" r="8" fill="#F59E0B"/>
+
+  <!-- The Bhoomi (Land Parcels): Two Clean Geometric Foundations -->
+  <rect x="124" y="356" width="120" height="32" rx="8" fill="#10B981"/>
+  <rect x="268" y="356" width="120" height="32" rx="8" fill="#059669"/>
+</svg>

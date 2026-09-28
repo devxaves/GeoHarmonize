@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "name": "new_drone_survey",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-142/A",
+        "plot_number": "PLT-001",
+        "property_id": "MH-PUNE-001",
+        "owner_name": "Ramesh K. Sharma",
+        "recorded_area_sqm": 418.0,
+        "land_use": "residential",
+        "source_system": "drone_ori",
+        "_note": "Slight boundary drift (~3m NE), name typo (K. instead of Kumar), area 0.6% difference"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.856025, 18.520015],
+          [73.856420, 18.520010],
+          [73.856415, 18.520395],
+          [73.856010, 18.520385],
+          [73.856025, 18.520015]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-143",
+        "plot_number": "PLT-002",
+        "property_id": "MH-PUNE-002",
+        "owner_name": "P. Venkataraman",
+        "recorded_area_sqm": 308.5,
+        "land_use": "commercial",
+        "source_system": "drone_ori",
+        "_note": "Minor boundary drift, name abbreviated (P. instead of Priya)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.856410, 18.520005],
+          [73.856760, 18.520000],
+          [73.856755, 18.520285],
+          [73.856395, 18.520275],
+          [73.856410, 18.520005]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-144/1",
+        "plot_number": "PLT-003",
+        "property_id": "MH-PUNE-003",
+        "owner_name": "Mohammed Iqbal",
+        "recorded_area_sqm": 560.0,
+        "land_use": "agricultural",
+        "source_system": "drone_ori",
+        "_note": "Larger boundary shift (new survey found encroachment), area +1.8%, surname 'Khan' missing"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.856010, 18.520390],
+          [73.856590, 18.520385],
+          [73.856580, 18.520770],
+          [73.855990, 18.520760],
+          [73.856010, 18.520390]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-147",
+        "plot_number": "PLT-006",
+        "property_id": "MH-PUNE-006",
+        "owner_name": "New Owner Arun Joshi",
+        "recorded_area_sqm": 225.0,
+        "land_use": "residential",
+        "source_system": "drone_ori",
+        "_note": "NEW parcel not in legacy cadastral — newly demarcated plot. Low IoU with anything existing."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.856900, 18.520500],
+          [73.857200, 18.520500],
+          [73.857200, 18.520750],
+          [73.856900, 18.520750],
+          [73.856900, 18.520500]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "survey_number": "SY-146",
+        "plot_number": "PLT-005",
+        "property_id": "MH-PUNE-005",
+        "owner_name": "Suresh C. Patel",
+        "recorded_area_sqm": 672.0,
+        "land_use": "industrial",
+        "source_system": "drone_ori",
+        "_note": "Large boundary shift — industrial lot has been partially encroached. ~15% area mismatch."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.856050, 18.520770],
+          [73.856750, 18.520780],
+          [73.856740, 18.521180],
+          [73.856040, 18.521170],
+          [73.856050, 18.520770]
+        ]]
+      }
+    }
+  ]
+}
