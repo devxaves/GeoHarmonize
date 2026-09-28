@@ -1,0 +1,4 @@
+# GeoHarmonize Render Docker Configuration
+build:
+  builder: docker
+  dockerfilePath: geo-engine/Dockerfile
