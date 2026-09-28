@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GeoHarmonize — HarmonizeReviewMap Component
+ * GeoSync — HarmonizeReviewMap Component
  * Interactive Web-GIS map built with MapLibre GL JS.
  * Renders:
  * - Base layers: OSM Streets & Esri World Imagery (Satellite)
@@ -14,7 +14,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import type { Map as MapLibreMap, GeoJSONSource } from "maplibre-gl";
-import { Layers, Satellite, ZoomIn, ZoomOut, Maximize2, Sparkles, AlertTriangle } from "lucide-react";
+import { Layers, Satellite, ZoomIn, ZoomOut, Maximize2, AlertTriangle } from "lucide-react";
 
 export interface GeoConflict {
   conflict_id: string;
@@ -380,18 +380,18 @@ export default function HarmonizeReviewMap({
   }, [selectedConflict, mapLoaded]);
 
   return (
-    <div className={`relative w-full h-full min-h-[500px] overflow-hidden rounded-2xl border border-slate-200 shadow-sm ${className}`}>
+    <div className={`relative w-full h-full min-h-[500px] overflow-hidden rounded-lg border border-slate-200 shadow-sm ${className}`}>
       {/* Map Container */}
       <div ref={mapContainerRef} className="w-full h-full" />
 
       {/* Floating Basemap Controls */}
       <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
-        <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm p-1.5 rounded-xl border border-slate-200 shadow-sm text-xs font-medium text-slate-700">
+        <div className="flex items-center gap-1.5 bg-white/95 backdrop-blur-sm p-1.5 rounded-md border border-slate-200 shadow-sm text-xs font-medium text-slate-700">
           <button
             onClick={() => setBaseLayer("streets")}
             className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-colors ${
               baseLayer === "streets"
-                ? "bg-orange-600 text-white shadow-xs font-semibold"
+                ? "bg-brand-600 text-white shadow-xs font-semibold"
                 : "hover:bg-slate-100 text-slate-600"
             }`}
           >
@@ -402,7 +402,7 @@ export default function HarmonizeReviewMap({
             onClick={() => setBaseLayer("satellite")}
             className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg transition-colors ${
               baseLayer === "satellite"
-                ? "bg-orange-600 text-white shadow-xs font-semibold"
+                ? "bg-brand-600 text-white shadow-xs font-semibold"
                 : "hover:bg-slate-100 text-slate-600"
             }`}
           >
@@ -412,12 +412,12 @@ export default function HarmonizeReviewMap({
         </div>
 
         {/* Layer Toggle Checkboxes */}
-        <div className="bg-white/95 backdrop-blur-sm p-2.5 rounded-xl border border-slate-200 shadow-sm text-xs space-y-1.5">
+        <div className="bg-white/95 backdrop-blur-sm p-2.5 rounded-md border border-slate-200 shadow-sm text-xs space-y-1.5">
           <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Data Layers</div>
           {[
             { key: "parcels", label: "Harmonized Parcels", color: "bg-emerald-500" },
             { key: "conflicts", label: "Conflicts", color: "bg-red-500" },
-            { key: "cadastral", label: "Cadastral Baseline", color: "bg-orange-500" },
+            { key: "cadastral", label: "Cadastral Baseline", color: "bg-[#ea580c]" },
             { key: "drone", label: "Drone Survey", color: "bg-sky-500" },
             { key: "buildings", label: "Building Footprints", color: "bg-violet-500" },
             { key: "gnss", label: "GNSS Points", color: "bg-amber-500" },
@@ -427,7 +427,7 @@ export default function HarmonizeReviewMap({
                 type="checkbox"
                 checked={layerVisibility[layer.key as keyof typeof layerVisibility] ?? true}
                 onChange={(e) => setLayerVisibility((prev) => ({ ...prev, [layer.key]: e.target.checked }))}
-                className="w-3.5 h-3.5 rounded border-slate-300 text-orange-600 focus:ring-orange-500"
+                className="w-3.5 h-3.5 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
               />
               <span className={`w-2.5 h-2.5 rounded-sm ${layer.color}`} />
               <span className="text-slate-700 font-medium">{layer.label}</span>
@@ -437,14 +437,14 @@ export default function HarmonizeReviewMap({
       </div>
 
       {/* Legend Badge Overlay */}
-      <div className="absolute bottom-4 left-4 z-10 bg-slate-950/85 text-white backdrop-blur-md p-3 rounded-xl border border-slate-800 shadow-lg text-[11px] max-w-xs">
+      <div className="absolute bottom-4 left-4 z-10 bg-slate-950/85 text-white backdrop-blur-md p-3 rounded-md border border-slate-800 shadow-lg text-[11px] max-w-xs">
         <div className="font-semibold text-slate-300 mb-2 flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <Layers className="w-3.5 h-3.5 text-slate-400" />
           Map Spatial Layers
         </div>
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-xs bg-orange-500/80 border border-orange-400" />
+            <span className="w-3 h-3 rounded-xs bg-[#ea580c]/80 border border-[#c2410c]" />
             <span className="text-slate-300">Baseline Cadastral Boundary (B)</span>
           </div>
           <div className="flex items-center gap-2">
@@ -452,7 +452,7 @@ export default function HarmonizeReviewMap({
             <span className="text-slate-300">Candidate Drone Survey (A)</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-xs bg-red-500/90 border border-red-400 animate-pulse" />
+            <span className="w-3 h-3 rounded-xs bg-red-500/90 border border-red-400" />
             <span className="text-red-200 font-medium">Discrepancy / Drift Delta</span>
           </div>
           <div className="flex items-center gap-2 pt-1 border-t border-slate-800">

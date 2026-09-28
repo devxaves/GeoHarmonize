@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Confidence Scoring Engine
+GeoSync — Confidence Scoring Engine
 Implements EXACTLY the formula from PRD §5. Do not change weights.
 
 score = (

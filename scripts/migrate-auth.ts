@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Run Migration 0004
+ * GeoSync — Run Migration 0004
  * Run: npx tsx scripts/migrate-auth.ts
  */
 

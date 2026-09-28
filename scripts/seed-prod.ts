@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Production Seed Runner
+ * GeoSync — Production Seed Runner
  * Applies scripts/seed-prod.sql directly to the database.
  * Safe to re-run: uses ON CONFLICT DO NOTHING throughout.
  *
@@ -27,7 +27,7 @@ async function run() {
   const client = await pool.connect();
 
   try {
-    console.log('🌱  BhoomiSetu Production Seed Runner');
+    console.log('🌱  GeoSync Production Seed Runner');
     console.log('======================================\n');
 
     const sqlPath = path.resolve(__dirname, 'seed-prod.sql');

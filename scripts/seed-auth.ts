@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Seed Script
+ * GeoSync — Seed Script
  * Run: npx tsx scripts/seed-auth.ts
  * Creates default admin and citizen accounts with proper bcrypt hashes
  */

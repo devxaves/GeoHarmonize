@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — POST /api/demo/seed
+ * GeoSync — POST /api/demo/seed
  * One-click demo seed route:
  * 1. Uploads legacy cadastral sample
  * 2. Runs harmonization (seeds baseline parcels)

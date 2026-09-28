@@ -1,120 +1,105 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Sora, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google"
+import { Noto_Sans, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css"
-import { AuthProvider } from "@/components/AuthProvider"
+import Link from "next/link"
 import { LanguageProvider } from "@/components/LanguageProvider"
 import NavBar from "@/components/NavBar"
+import Logo, { LogoMark } from "@/components/Logo"
 import { Suspense } from "react"
 
-/* ── Google Font Configuration ─────────────────────────────────── */
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-})
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
+/* ── Font Configuration ────────────────────────────────────────── */
+// Noto Sans covers Latin + Devanagari, so the Hindi UI renders in the same face.
+const noto = Noto_Sans({
+  subsets: ["latin", "devanagari"],
+  variable: "--font-noto",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 })
 
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  display: "swap",
+  weight: ["400", "500", "600"],
+})
+
 export const metadata: Metadata = {
-  title: "GeoHarmonize — AI-Assisted Geospatial Land Record Integration",
+  title: "GeoSync — Geospatial Land Record Integration",
   description:
-    "AI-assisted multi-source geospatial land record integration platform. Harmonizes drone imagery, cadastral maps, revenue records, and GNSS data into a single, confidence-scored parcel database. Department of Land Resources (DoLR), Ministry of Rural Development, Government of India.",
+    "GeoSync consolidates drone imagery, cadastral maps, revenue records and GNSS survey data into a single, confidence-scored parcel database with human review and a complete audit trail.",
+  applicationName: "GeoSync",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/icon.svg",
+    icon: "/geosync-mark.svg",
+    shortcut: "/geosync-mark.svg",
+    apple: "/geosync-mark.svg",
   },
   keywords: [
-    "GeoHarmonize",
+    "GeoSync",
     "land record integration",
     "geospatial harmonization",
     "ULPIN",
     "cadastral maps",
-    "drone imagery",
-    "PostGIS",
-    "DoLR",
-    "Ministry of Rural Development",
-    "Digital India",
+    "drone survey",
+    "GIS",
+    "land records modernization",
   ],
+}
+
+export const viewport = {
+  themeColor: "#0B6BC2",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${sora.variable} ${jakarta.variable} ${spaceGrotesk.variable} font-sans min-h-dvh bg-background text-foreground antialiased`}
+        className={`${noto.variable} ${plexMono.variable} font-sans min-h-dvh bg-background text-foreground antialiased`}
       >
-        <AuthProvider>
           <LanguageProvider>
           <Suspense
             fallback={
               <div className="flex items-center justify-center min-h-screen bg-background">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="relative w-12 h-12">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-400 to-amber-500 animate-pulse" />
-                    <div className="absolute inset-1 rounded-xl bg-white flex items-center justify-center">
-                      <span className="text-lg font-black text-orange-600">G</span>
-                    </div>
-                  </div>
-                  <div className="text-sm font-medium text-muted-foreground animate-pulse font-heading">
-                    Loading GeoHarmonize…
-                  </div>
+                <div className="flex flex-col items-center gap-3" role="status">
+                  <LogoMark size={40} />
+                  <div className="text-sm font-medium text-muted-foreground">Loading GeoSync…</div>
                 </div>
               </div>
             }
           >
+            <a href="#main-content" className="skip-link">Skip to main content</a>
             <NavBar />
-            <main className="min-h-[calc(100vh-56px)]">{children}</main>
+            <main id="main-content" tabIndex={-1} className="min-h-[calc(100vh-56px)] focus:outline-none">{children}</main>
 
             {/* ── Footer ──────────────────────────────────────── */}
-            <footer className="relative border-t border-border bg-white">
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-300/40 to-transparent" />
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 py-5">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-                  {/* Left: Brand */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-orange-400 to-amber-500 shadow-sm">
-                      <span className="text-xs font-black text-white">G</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="font-heading font-bold text-foreground tracking-tight">
-                        <span className="text-orange-600">Geo</span>
-                        <span className="text-amber-600">Harmonize</span>
-                      </span>
-                      <span className="text-border">·</span>
-                      <span className="text-muted-foreground">AI-Assisted Land Record Integration Platform</span>
-                    </div>
+            <footer className="border-t border-slate-200 bg-white">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                  <div className="max-w-sm">
+                    <Logo size={28} />
+                    <p className="mt-3 text-xs leading-relaxed text-slate-500">
+                      Geospatial land record integration — one confidence-scored parcel database from drone,
+                      cadastral, revenue and GNSS sources.
+                    </p>
                   </div>
-
-                  {/* Right: Government attribution */}
-                  <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                    <span>Dept. of Land Resources</span>
-                    <span className="text-border">·</span>
-                    <span>Ministry of Rural Development</span>
-                    <span className="text-border">·</span>
-                    <span className="font-semibold text-foreground/60">Government of India</span>
-                  </div>
+                  <nav aria-label="Footer" className="grid grid-cols-2 gap-x-12 gap-y-2 text-sm">
+                    <Link href="/atlas" className="text-slate-600 hover:text-brand-700 hover:underline">Review Atlas</Link>
+                    <Link href="/docs" className="text-slate-600 hover:text-brand-700 hover:underline">Documentation</Link>
+                    <Link href="/upload" className="text-slate-600 hover:text-brand-700 hover:underline">Data Ingestion</Link>
+                    <Link href="/archive" className="text-slate-600 hover:text-brand-700 hover:underline">Audit Archive</Link>
+                    <Link href="/dashboard" className="text-slate-600 hover:text-brand-700 hover:underline">Dashboard</Link>
+                    <Link href="/admin" className="text-slate-600 hover:text-brand-700 hover:underline">Administration</Link>
+                  </nav>
+                </div>
+                <div className="mt-8 pt-5 border-t border-slate-100 flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-500">
+                  <span>© {new Date().getFullYear()} GeoSync. All rights reserved.</span>
+                  <span>Designed to WCAG 2.1 AA · Best viewed in the latest Chrome, Edge, Firefox or Safari</span>
                 </div>
               </div>
             </footer>
           </Suspense>
           </LanguageProvider>
-        </AuthProvider>
       </body>
     </html>
   )

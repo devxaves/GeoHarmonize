@@ -1,5 +1,5 @@
 # Product Requirements Document
-## GeoHarmonize — AI-Assisted Multi-Source Geospatial Land Record Integration Platform
+## GeoSync — AI-Assisted Multi-Source Geospatial Land Record Integration Platform
 ### SIH Problem Statement 26013 (Ministry of Rural Development / Department of Land Resources)
 
 **Document purpose:** This is a build specification for an autonomous coding agent. It is written to remove ambiguity, not to explain background — read it top to bottom before writing any code, and follow the build order in Section 9 sequentially. Do not skip ahead to UI polish before the core engine in Phase 2 works end-to-end.

@@ -1,16 +1,15 @@
 /**
- * GeoHarmonize — GET/POST /api/audit
+ * GeoSync — GET/POST /api/audit
  * Audit log — filterable by entity_type, entity_id, actor, action, date range.
  * Every human review action in the system is logged here (PRD §4.1).
  */
 
 import { NextRequest, NextResponse } from "next/server";
 import { query } from "@/lib/db/pool";
-import { requireAuth } from "@/lib/auth";
+import { getSystemActorId } from "@/lib/actor";
 
 export async function GET(req: NextRequest) {
   try {
-    const user = await requireAuth(req);
     const { searchParams } = new URL(req.url);
 
     const entityType = searchParams.get("entity_type");
@@ -55,9 +54,6 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({ total, limit, offset, entries: rows });
   } catch (err: any) {
-    if (err.message === "UNAUTHORIZED") {
-      return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    }
     console.error("Audit log error:", err);
     return NextResponse.json({ error: "Failed to fetch audit log." }, { status: 500 });
   }
@@ -69,7 +65,7 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
-    const user = await requireAuth(req);
+    const actorId = await getSystemActorId();
     const body = await req.json();
     const { entity_type, entity_id, action, before_state, after_state, notes } = body;
 
@@ -85,7 +81,7 @@ export async function POST(req: NextRequest) {
        VALUES ($1, $2, $3, $4, $5::jsonb, $6::jsonb, $7)
        RETURNING id`,
       [
-        user.id,
+        actorId,
         entity_type,
         entity_id,
         action,
@@ -97,9 +93,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ id: rows[0].id }, { status: 201 });
   } catch (err: any) {
-    if (err.message === "UNAUTHORIZED") {
-      return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    }
     console.error("Audit write error:", err);
     return NextResponse.json({ error: "Failed to write audit log." }, { status: 500 });
   }

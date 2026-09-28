@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Executive Dashboard Query Module (Raw SQL, No ORM)
+ * GeoSync — Executive Dashboard Query Module (Raw SQL, No ORM)
  *
  * Implements Section 5.7 of the specification:
  * - Hand-written SQL aggregations (GROUP BY state/district, status_flag, date_trunc)

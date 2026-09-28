@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — Domain-Specific NER (Named Entity Recognition)
+ * GeoSync — Domain-Specific NER (Named Entity Recognition)
  *
  * Two-stage pipeline:
  *   Stage 1: HuggingFace BERT-NER (dslim/bert-base-NER) via Inference API

@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Geo Engine (FastAPI)
+GeoSync — Geo Engine (FastAPI)
 Implements all routes from PRD §7 under prefix /api/geo
 
 Routes:
@@ -41,7 +41,7 @@ logger = logging.getLogger(__name__)
 
 # ── App ───────────────────────────────────────────────────────────────────────
 app = FastAPI(
-    title="GeoHarmonize Geo Engine",
+    title="GeoSync Geo Engine",
     description="AI-assisted multi-source geospatial land record integration — spatial processing service",
     version="1.0.0",
     docs_url="/api/geo/docs",
@@ -1006,7 +1006,7 @@ async def export_geojson(
     return FileResponse(
         str(tmp_path),
         media_type="application/geo+json",
-        filename="geoharmonize_export.geojson",
+        filename="geosync_export.geojson",
     )
 
 
@@ -1065,7 +1065,7 @@ async def export_geopackage(
     return FileResponse(
         str(tmp_path),
         media_type="application/geopackage+sqlite3",
-        filename="geoharmonize_export.gpkg",
+        filename="geosync_export.gpkg",
     )
 
 
@@ -1073,7 +1073,7 @@ async def export_geopackage(
 
 @app.on_event("startup")
 async def startup():
-    logger.info("GeoHarmonize Geo Engine starting up")
+    logger.info("GeoSync Geo Engine starting up")
     # Verify DB connection
     try:
         with get_db() as conn:
@@ -1089,4 +1089,4 @@ async def startup():
 async def shutdown():
     from database import close_pool
     close_pool()
-    logger.info("GeoHarmonize Geo Engine shutting down")
+    logger.info("GeoSync Geo Engine shutting down")

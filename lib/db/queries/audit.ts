@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Audit Log Query Module (Raw SQL)
+ * GeoSync — Audit Log Query Module (Raw SQL)
  * Immutable audit trail for all entity changes.
  */
 

@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Notifications Query Module (Raw SQL)
+ * GeoSync — Notifications Query Module (Raw SQL)
  * Statutory notification tracking (Section 11 / Section 19).
  */
 

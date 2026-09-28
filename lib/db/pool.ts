@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — PostgreSQL Connection Pool (Raw SQL, No ORM)
+ * GeoSync — PostgreSQL Connection Pool (Raw SQL, No ORM)
  *
  * Shared pg.Pool singleton using DATABASE_URL env var.
  * All query modules import from this file.

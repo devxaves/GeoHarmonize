@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Parcels Query Module (Raw SQL)
+ * GeoSync — Parcels Query Module (Raw SQL)
  * All parcel-related database operations, including ULPIN lookups.
  */
 

@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Geo Engine Configuration
+GeoSync — Geo Engine Configuration
 Reads from .env file and environment variables.
 """
 

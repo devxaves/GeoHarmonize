@@ -1,18 +1,15 @@
 /**
- * GeoHarmonize — GET /api/dashboard
+ * GeoSync — GET /api/dashboard
  * Aggregated KPIs: proxies geo-engine data + app DB audit log stats.
  * Used by the dashboard page for animated counter metrics.
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { requireAuth } from "@/lib/auth";
 
 const GEO_ENGINE_URL = process.env.GEO_ENGINE_URL || "http://localhost:8000";
 
 export async function GET(req: NextRequest) {
   try {
-    // Graceful session check
-
     // Fetch from geo-engine in parallel
     const [conflictsRes, parcelsRes, changesRes] = await Promise.allSettled([
       fetch(`${GEO_ENGINE_URL}/api/geo/conflicts?limit=1`),
@@ -71,9 +68,6 @@ export async function GET(req: NextRequest) {
       timestamp: new Date().toISOString(),
     });
   } catch (err: any) {
-    if (err.message === "UNAUTHORIZED") {
-      return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    }
     console.error("Dashboard error:", err);
     return NextResponse.json({ error: "Failed to fetch dashboard data." }, { status: 500 });
   }

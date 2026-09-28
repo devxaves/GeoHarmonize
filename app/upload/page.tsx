@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GeoHarmonize — Multi-Source Geospatial Ingestion & Harmonization Trigger (/upload)
+ * GeoSync — Multi-Source Geospatial Ingestion & Harmonization Trigger (/upload)
  *
  * Implements PRD §6.1, §6.2, §6.8, §9 (Phase 2 & Phase 4):
  * - Multi-source ingestion (Drone ORI, Cadastral, Scanned Revenue Maps, GNSS)
@@ -22,7 +22,9 @@ import {
   AlertTriangle,
   CheckCircle2,
   Loader2,
-  Sparkles,
+  ScanText,
+  Database,
+  GitMerge,
   ArrowRight,
   ShieldAlert,
   Download,
@@ -144,9 +146,9 @@ export default function UploadPage() {
         className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5"
       >
         <div>
-          <div className="flex items-center gap-2 text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-sm font-semibold text-brand-700 mb-1">
             <Layers className="w-4 h-4" />
-            DoLR Geospatial Ingestion Engine
+            Data Ingestion
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight font-heading">
             Multi-Source Land Record Ingestion
@@ -156,56 +158,56 @@ export default function UploadPage() {
           </p>
         </div>
 
-        {/* Quick Demo CTA */}
-        <div className="bg-orange-50/80 border border-orange-200 p-3 rounded-2xl flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-orange-600 text-white">
-            <Sparkles className="w-5 h-5" />
+        {/* Sample data */}
+        <div className="bg-white border border-slate-200 p-3 rounded-lg flex items-center gap-3">
+          <div className="p-2 rounded-md bg-slate-100 text-slate-600">
+            <Database className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-xs font-bold text-slate-900">SIH Evaluator Demo Flow</div>
-            <div className="text-[11px] text-slate-500">Seed sample cadastral + drone discrepancy layers</div>
+            <div className="text-sm font-semibold text-slate-900">Sample dataset</div>
+            <div className="text-xs text-slate-500">Load a cadastral layer and a drone survey with known discrepancies</div>
           </div>
           <button
             onClick={handleRunDemoFlow}
             disabled={isSeedingDemo}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-xs transition-transform disabled:opacity-50 cursor-pointer"
           >
             {isSeedingDemo ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Play className="w-3.5 h-3.5" />}
-            Run 1-Click Demo
+            Load sample
           </button>
         </div>
       </motion.div>
 
       {/* Demo Seed Result Banner */}
       {demoResult && (
-        <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-3">
+        <div className="p-5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 font-bold text-sm text-emerald-800">
               <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-              Demo Flow Executed Successfully! (PRD §13 Completed)
+              Sample data loaded and harmonised
             </div>
             <button
               onClick={() => router.push("/atlas")}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-xs transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-xs transition-all"
             >
-              Open Web-GIS Review Atlas
+              Open Review Atlas
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-            <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+            <div className="p-3 bg-white/80 rounded-md border border-emerald-100">
               <span className="text-slate-500">Baseline Cadastral:</span>
               <div className="font-bold text-slate-800">{demoResult.dataset_a.features} parcels inserted</div>
               <div className="text-[10px] text-slate-400 font-mono">CRS: {demoResult.dataset_a.crs.method}</div>
             </div>
-            <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+            <div className="p-3 bg-white/80 rounded-md border border-emerald-100">
               <span className="text-slate-500">Drone Survey:</span>
               <div className="font-bold text-slate-800">{demoResult.dataset_b.features} features matched</div>
               <div className="text-[10px] text-slate-400">Drift & typos detected</div>
             </div>
-            <div className="p-3 bg-white/80 rounded-xl border border-emerald-100">
+            <div className="p-3 bg-white/80 rounded-md border border-emerald-100">
               <span className="text-slate-500">Discrepancies Flagged:</span>
-              <div className="font-bold text-orange-600">{demoResult.dataset_b.conflicts_generated} conflicts generated</div>
+              <div className="font-bold text-brand-600">{demoResult.dataset_b.conflicts_generated} conflicts generated</div>
               <div className="text-[10px] text-slate-400">{demoResult.dataset_b.auto_linked} auto-linked · {demoResult.dataset_b.flagged_for_review} for review</div>
             </div>
           </div>
@@ -216,17 +218,17 @@ export default function UploadPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Upload Form (2 cols) */}
         <div className="lg:col-span-2 space-y-6">
-          <form onSubmit={handleUpload} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+          <form onSubmit={handleUpload} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Source Type Selector */}
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Source Layer Type (PRD §4.2)
+                  Source layer type
                 </label>
                 <select
                   value={sourceType}
                   onChange={(e) => setSourceType(e.target.value)}
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 bg-white font-medium text-slate-800 focus:ring-2 focus:ring-orange-500"
+                  className="w-full text-xs p-2.5 rounded-md border border-slate-200 bg-white font-medium text-slate-800 focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="cadastral">Cadastral Revenue Map (Vector / GeoJSON)</option>
                   <option value="drone_ori">Drone Orthorectified Imagery (ORI / Vector)</option>
@@ -240,12 +242,12 @@ export default function UploadPage() {
               {/* Declared CRS */}
               <div>
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
-                  Declared / Source CRS (PRD §6.1)
+                  Declared / source CRS
                 </label>
                 <select
                   value={declaredCrs}
                   onChange={(e) => setDeclaredCrs(e.target.value)}
-                  className="w-full text-xs p-2.5 rounded-xl border border-slate-200 bg-white font-medium text-slate-800 focus:ring-2 focus:ring-orange-500"
+                  className="w-full text-xs p-2.5 rounded-md border border-slate-200 bg-white font-medium text-slate-800 focus:ring-2 focus:ring-brand-500"
                 >
                   <option value="EPSG:4326">EPSG:4326 (WGS 84 - Standard Lat/Lng)</option>
                   <option value="EPSG:7755">EPSG:7755 (India National Grid System)</option>
@@ -257,7 +259,7 @@ export default function UploadPage() {
             </div>
 
             {/* Drop Zone */}
-            <div className="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-orange-400 transition-colors bg-slate-50/50">
+            <div className="border-2 border-dashed border-slate-200 rounded-lg p-8 text-center hover:border-brand-400 transition-colors bg-slate-50/50">
               <input
                 type="file"
                 id="file-upload"
@@ -266,7 +268,7 @@ export default function UploadPage() {
                 className="hidden"
               />
               <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center">
-                <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center mb-3">
                   <Upload className="w-6 h-6" />
                 </div>
                 <span className="text-sm font-bold text-slate-800">
@@ -286,7 +288,7 @@ export default function UploadPage() {
               <button
                 type="submit"
                 disabled={!file || isUploading}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-xs transition-transform disabled:opacity-50 cursor-pointer"
               >
                 {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
                 Upload & Validate Dataset
@@ -296,7 +298,7 @@ export default function UploadPage() {
 
           {/* Upload Results & Transformation Summary */}
           {uploadResult && (
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 font-bold text-slate-900 text-sm">
                   <FileCheck className="w-5 h-5 text-emerald-600" />
@@ -307,7 +309,7 @@ export default function UploadPage() {
 
               {/* CRS & Accuracy Details */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="p-3 bg-slate-50 rounded-md border border-slate-200">
                   <span className="text-slate-400 block mb-0.5">CRS Transformation:</span>
                   <strong className="text-slate-800">
                     {uploadResult.crs_transformation?.source_crs} → {uploadResult.crs_transformation?.target_crs}
@@ -317,13 +319,13 @@ export default function UploadPage() {
                   </div>
                 </div>
 
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="p-3 bg-slate-50 rounded-md border border-slate-200">
                   <span className="text-slate-400 block mb-0.5">Feature Count:</span>
                   <strong className="text-slate-800 font-mono text-base">{uploadResult.feature_count}</strong>
                   <span className="text-[10px] text-slate-500 block">polygons extracted</span>
                 </div>
 
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                <div className="p-3 bg-slate-50 rounded-md border border-slate-200">
                   <span className="text-slate-400 block mb-0.5">Horizontal Accuracy:</span>
                   <strong className="text-slate-800">±{uploadResult.crs_transformation?.horizontal_accuracy_m}m</strong>
                   <span className="text-[10px] text-slate-500 block">estimated RMS error</span>
@@ -331,9 +333,9 @@ export default function UploadPage() {
               </div>
 
               {/* Topology Report */}
-              <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs">
+              <div className="p-3.5 bg-slate-50 rounded-md border border-slate-200 text-xs">
                 <div className="font-bold text-slate-700 mb-1 flex items-center gap-1.5">
-                  <Compass className="w-4 h-4 text-orange-600" />
+                  <Compass className="w-4 h-4 text-brand-600" />
                   Topology Validation Report (ST_MakeValid):
                 </div>
                 <div className="text-slate-600">
@@ -348,16 +350,16 @@ export default function UploadPage() {
                   type="button"
                   onClick={handleHarmonize}
                   disabled={isHarmonizing}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-transform disabled:opacity-50 cursor-pointer"
                 >
-                  {isHarmonizing ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4 text-amber-400" />}
+                  {isHarmonizing ? <Loader2 className="w-4 h-4 animate-spin" /> : <GitMerge className="w-4 h-4" />}
                   Trigger Harmonization & Spatial Matching
                 </button>
 
                 {harmonizeResult && (
                   <button
                     onClick={() => router.push("/atlas")}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold transition-all shadow-xs"
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold transition-all shadow-xs"
                   >
                     View in Review Atlas
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -366,7 +368,7 @@ export default function UploadPage() {
               </div>
 
               {harmonizeResult && (
-                <div className="p-3 bg-emerald-50 text-emerald-900 rounded-xl border border-emerald-200 text-xs space-y-1">
+                <div className="p-3 bg-emerald-50 text-emerald-900 rounded-md border border-emerald-200 text-xs space-y-1">
                   <div className="font-bold">Harmonization Completed:</div>
                   <div>
                     Parcels Processed: {harmonizeResult.parcels_processed} · Conflicts Generated:{" "}
@@ -380,10 +382,10 @@ export default function UploadPage() {
 
         {/* Ingestion Info Panel (1 col) */}
         <div className="space-y-4">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm space-y-3">
             <h2 className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4 text-orange-600" />
-              DoLR Harmonization Rules
+              <ShieldAlert className="w-4 h-4 text-brand-600" />
+              Harmonisation rules
             </h2>
             <ul className="text-xs text-slate-600 space-y-2">
               <li className="flex items-start gap-2">
@@ -399,7 +401,7 @@ export default function UploadPage() {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <RotateCcw className="w-3.5 h-3.5 text-orange-600 flex-shrink-0 mt-0.5" />
+                <RotateCcw className="w-3.5 h-3.5 text-brand-600 flex-shrink-0 mt-0.5" />
                 <span>
                   <strong>Append-Only:</strong> Parcels are never deleted; version incremented upon approval.
                 </span>
@@ -407,27 +409,27 @@ export default function UploadPage() {
             </ul>
           </div>
 
-          <div className="bg-slate-900 text-slate-300 p-5 rounded-2xl shadow-sm text-xs space-y-2">
+          <div className="bg-slate-900 text-slate-300 p-5 rounded-lg shadow-sm text-xs space-y-2">
             <div className="text-white font-bold flex items-center gap-1.5">
-              <Compass className="w-4 h-4 text-amber-400" />
+              <Compass className="w-4 h-4 text-brand-300" />
               Supported CRS Projections
             </div>
             <p className="text-slate-400 text-[11px] leading-relaxed">
-              GeoHarmonize automatically validates coordinate systems against EPSG Registry definitions. Source CRS transformations are recorded permanently in metadata with estimated horizontal uncertainty.
+              GeoSync automatically validates coordinate systems against EPSG Registry definitions. Source CRS transformations are recorded permanently in metadata with estimated horizontal uncertainty.
             </p>
           </div>
 
           {/* ── OCR / NER Section ─────────────────────────────────────────── */}
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+          <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm space-y-4">
             <h2 className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-              <FileCheck className="w-4 h-4 text-orange-600" />
+              <FileCheck className="w-4 h-4 text-brand-600" />
               OCR & NER — Scanned Revenue Record Digitization
             </h2>
             <p className="text-xs text-slate-500">
               Upload a scanned revenue record (Khatiyan / RoR) to extract structured fields using OCR and NER.
             </p>
 
-            <div className="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-orange-400 transition-colors bg-slate-50/50">
+            <div className="border-2 border-dashed border-slate-200 rounded-lg p-6 text-center hover:border-brand-400 transition-colors bg-slate-50/50">
               <input
                 type="file"
                 id="ocr-file-upload"
@@ -443,7 +445,7 @@ export default function UploadPage() {
                 className="hidden"
               />
               <label htmlFor="ocr-file-upload" className="cursor-pointer flex flex-col items-center">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-2">
+                <div className="w-10 h-10 rounded-md bg-brand-100 text-brand-600 flex items-center justify-center mb-2">
                   <Upload className="w-5 h-5" />
                 </div>
                 <span className="text-sm font-bold text-slate-800">
@@ -493,15 +495,15 @@ export default function UploadPage() {
                   }
                 }}
                 disabled={isProcessingOcr}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-sm transition-transform active:scale-95 disabled:opacity-50 cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-sm transition-transform disabled:opacity-50 cursor-pointer"
               >
-                {isProcessingOcr ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+                {isProcessingOcr ? <Loader2 className="w-4 h-4 animate-spin" /> : <ScanText className="w-4 h-4" />}
                 {isProcessingOcr ? "Processing OCR..." : "Run OCR + NER"}
               </button>
             )}
 
             {ocrText && (
-              <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+              <div className="p-3 bg-slate-50 rounded-md border border-slate-200">
                 <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Extracted Text</div>
                 <pre className="text-xs text-slate-700 whitespace-pre-wrap max-h-32 overflow-y-auto">{ocrText.slice(0, 500)}</pre>
               </div>
@@ -512,7 +514,7 @@ export default function UploadPage() {
                 <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Extracted Fields (editable)</div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {nerEntities.map((entity, idx) => (
-                    <div key={idx} className="p-3 bg-slate-50 rounded-xl border border-slate-200">
+                    <div key={idx} className="p-3 bg-slate-50 rounded-md border border-slate-200">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-[10px] font-bold text-slate-500 uppercase">{entity.type.replace(/_/g, " ")}</span>
                         <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-full ${
@@ -531,12 +533,12 @@ export default function UploadPage() {
                         onChange={(e) =>
                           setEditedFields((prev) => ({ ...prev, [entity.type]: e.target.value }))
                         }
-                        className="w-full px-2 py-1.5 text-xs rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+                        className="w-full px-2 py-1.5 text-xs rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                       />
                     </div>
                   ))}
                 </div>
-                <button className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-sm transition-transform active:scale-95 cursor-pointer">
+                <button className="flex items-center gap-2 px-4 py-2 rounded-md bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-sm transition-transform cursor-pointer">
                   <CheckCircle2 className="w-4 h-4" />
                   Submit Corrected Fields to Matching Pipeline
                 </button>

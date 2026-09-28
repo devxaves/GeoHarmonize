@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — GET /api/conflicts
+ * GeoSync — GET /api/conflicts
  * Proxies conflict list from the geo-engine.
  */
 

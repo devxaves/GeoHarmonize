@@ -1,4 +1,4 @@
-# GeoHarmonize — AI-Assisted Multi-Source Geospatial Land Record Integration Platform
+# GeoSync — AI-Assisted Multi-Source Geospatial Land Record Integration Platform
 
 SIH Problem Statement 26013 | Department of Land Resources (DoLR), Ministry of Rural Development, Government of India
 

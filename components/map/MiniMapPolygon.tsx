@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — MiniMapPolygon Component
+ * GeoSync — MiniMapPolygon Component
  *
  * Custom polygon-drawing tool for admin geometry entry.
  * No MapboxDraw dependency — uses native MapLibre click events.

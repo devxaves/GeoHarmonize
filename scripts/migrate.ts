@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Custom SQL Migration Runner
+ * GeoSync — Custom SQL Migration Runner
  * Reads numbered .sql files from db/migrations/ and applies them in order.
  * Tracks applied migrations in the _migrations table.
  *
@@ -65,7 +65,7 @@ async function run() {
   const client = await pool.connect();
 
   try {
-    console.log('🏗️  BhoomiSetu Migration Runner');
+    console.log('🏗️  GeoSync Migration Runner');
     console.log('================================\n');
 
     // Ensure the _migrations tracking table exists

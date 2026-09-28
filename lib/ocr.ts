@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — OCR Pipeline (Tesseract.js)
+ * GeoSync — OCR Pipeline (Tesseract.js)
  *
  * Runs Tesseract.js v4 OCR on uploaded document files (PDF pages / images).
  * Returns raw text + per-word confidence scores + overall document confidence.

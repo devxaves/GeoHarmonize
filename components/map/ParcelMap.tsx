@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — ParcelMap Component (Advanced GIS Engine)
+ * GeoSync — ParcelMap Component (Advanced GIS Engine)
  *
  * Full-featured MapLibre GL map with:
  * - Raster tile sources: OSM, Esri Satellite, OpenTopoMap (toggle)
@@ -403,7 +403,7 @@ export default function ParcelMap({
     if (!mapRef.current) return;
     const canvas = mapRef.current.getCanvas();
     const link = document.createElement("a");
-     link.download = `geoharmonize-atlas-${new Date().toISOString().slice(0, 10)}.png`;
+     link.download = `geosync-atlas-${new Date().toISOString().slice(0, 10)}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
   }, []);
@@ -460,7 +460,7 @@ export default function ParcelMap({
 
   return (
     <div className={`relative flex ${className}`}>
-      <div ref={containerRef} className="flex-1 rounded-xl overflow-hidden" style={{ minHeight: 480 }} />
+      <div ref={containerRef} className="flex-1 rounded-md overflow-hidden" style={{ minHeight: 480 }} />
 
       <div className="absolute top-2 right-14 z-10 flex gap-1 bg-white/90 backdrop-blur rounded-lg shadow border p-1">
         {(Object.entries(RASTER_SOURCES) as [RasterLayer, typeof RASTER_SOURCES.osm][]).map(([key, src]) => (
@@ -518,7 +518,7 @@ export default function ParcelMap({
       </div>
 
       {selectedParcel && (
-        <div className="absolute top-2 left-2 z-20 w-80 bg-white rounded-xl shadow-lg border p-4 animate-fade-in max-h-[calc(100%-80px)] overflow-y-auto">
+        <div className="absolute top-2 left-2 z-20 w-80 bg-white rounded-md shadow-lg border p-4 animate-fade-in max-h-[calc(100%-80px)] overflow-y-auto">
           <div className="flex items-start justify-between mb-3">
             <div>
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">ULPIN (Bhu-Aadhaar)</div>
@@ -545,7 +545,7 @@ export default function ParcelMap({
                 <div><div className="font-semibold">Active Litigation</div><div className="text-[10px] text-red-500">Court stay order may apply</div></div>
               </div>
             )}
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-3 border mt-3">
+            <div className="bg-slate-50 rounded-lg p-3 border mt-3">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-600 font-semibold text-xs">Risk Assessment</span>
                 <a href="/risk" className="text-[10px] font-semibold text-indigo-600 hover:text-indigo-800 hover:underline">Full Analysis →</a>
@@ -556,10 +556,10 @@ export default function ParcelMap({
                     <circle cx="28" cy="28" r="24" stroke="#e5e7eb" strokeWidth="4" fill="none" />
                     <circle cx="28" cy="28" r="24" stroke={riskColor(Number(selectedParcel.risk_score ?? 0))} strokeWidth="4" fill="none" strokeDasharray={`${(Number(selectedParcel.risk_score ?? 0) / 100) * 150.8} 150.8`} strokeLinecap="round" />
                   </svg>
-                  <div className="absolute inset-0 flex items-center justify-center"><span className="text-sm font-black" style={{ color: riskColor(Number(selectedParcel.risk_score ?? 0)) }}>{Number(selectedParcel.risk_score ?? 0).toFixed(0)}</span></div>
+                  <div className="absolute inset-0 flex items-center justify-center"><span className="text-sm font-bold" style={{ color: riskColor(Number(selectedParcel.risk_score ?? 0)) }}>{Number(selectedParcel.risk_score ?? 0).toFixed(0)}</span></div>
                 </div>
                 <div>
-                  <div className="text-lg font-black" style={{ color: riskColor(Number(selectedParcel.risk_score ?? 0)) }}>{Number(selectedParcel.risk_score ?? 0).toFixed(1)} / 100</div>
+                  <div className="text-lg font-bold" style={{ color: riskColor(Number(selectedParcel.risk_score ?? 0)) }}>{Number(selectedParcel.risk_score ?? 0).toFixed(1)} / 100</div>
                   <div className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: riskColor(Number(selectedParcel.risk_score ?? 0)) }}>{riskLabel(Number(selectedParcel.risk_score ?? 0))} RISK</div>
                 </div>
               </div>

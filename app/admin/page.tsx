@@ -7,7 +7,6 @@ import useSWR from "swr";
 import {
   Shield,
   Database,
-  Users,
   Activity,
   Loader2,
   CheckCircle2,
@@ -15,21 +14,20 @@ import {
   Clock,
   Layers,
   MapPin,
-  Sparkles,
   RefreshCw,
   ChevronRight,
   Server,
   GitBranch,
   Eye,
+  Scale,
 } from "lucide-react";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-type Tab = "datasets" | "users" | "pipeline";
+type Tab = "datasets" | "pipeline";
 
 const TABS: { id: Tab; label: string; icon: React.ReactNode }[] = [
   { id: "datasets", label: "Dataset Registry", icon: <Database className="h-4 w-4" /> },
-  { id: "users", label: "User & Role Management", icon: <Users className="h-4 w-4" /> },
   { id: "pipeline", label: "Pipeline Run History", icon: <Activity className="h-4 w-4" /> },
 ];
 
@@ -70,12 +68,12 @@ function DatasetRegistry() {
             onClick={() => mutate()}
             className="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 transition-colors"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isValidating ? "animate-spin text-orange-600" : "text-slate-500"}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${isValidating ? "animate-spin text-brand-600" : "text-slate-500"}`} />
           </button>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+      <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-slate-50/80 text-slate-400 border-b border-slate-100 uppercase font-mono font-semibold text-[10px]">
@@ -101,7 +99,7 @@ function DatasetRegistry() {
                 </tr>
               ) : (
                 filtered.slice(0, 50).map((d: any) => (
-                  <tr key={d.parcel_uid} className="hover:bg-orange-50/20 transition-colors">
+                  <tr key={d.parcel_uid} className="hover:bg-brand-50/20 transition-colors">
                     <td className="p-3 font-mono text-[11px] text-slate-700">{d.parcel_uid}</td>
                     <td className="p-3">
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-600 border border-slate-200">
@@ -130,7 +128,7 @@ function DatasetRegistry() {
                     <td className="p-3 text-right">
                       <a
                         href={`/atlas?parcel=${d.parcel_uid}`}
-                        className="text-orange-600 hover:text-orange-700 font-semibold text-[11px]"
+                        className="text-brand-600 hover:text-brand-700 font-semibold text-[11px]"
                       >
                         View
                       </a>
@@ -140,104 +138,6 @@ function DatasetRegistry() {
               )}
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function UserManagement() {
-  const { data, isValidating } = useSWR<{ users: any[] }>("/api/me", fetcher, {
-    revalidateOnFocus: false,
-  });
-
-  const users = [
-    { id: "1", email: "admin@geoharmonize.gov.in", name: "System Administrator", role: "admin", status: "active" },
-    { id: "2", email: "reviewer@geoharmonize.gov.in", name: "Land Records Reviewer", role: "reviewer", status: "active" },
-  ];
-
-  return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-          {users.length} users configured
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {users.map((u) => (
-          <motion.div
-            key={u.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl border border-slate-200 p-5 space-y-3"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                    u.role === "admin"
-                      ? "bg-orange-100 text-orange-600"
-                      : "bg-emerald-100 text-emerald-600"
-                  }`}
-                >
-                  <Shield className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900">{u.name}</div>
-                  <div className="text-xs text-slate-500 font-mono">{u.email}</div>
-                </div>
-              </div>
-              <span
-                className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  u.role === "admin"
-                    ? "bg-orange-100 text-orange-800 border border-orange-200"
-                    : "bg-emerald-100 text-emerald-800 border border-emerald-200"
-                }`}
-              >
-                {u.role.toUpperCase()}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Active — last login today</span>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
-        <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Role Permissions</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {[
-            {
-              role: "Admin",
-              perms: ["Full system access", "User management", "Pipeline control", "Export data"],
-              color: "border-orange-200 bg-orange-50/50",
-            },
-            {
-              role: "Reviewer",
-              perms: ["View conflicts", "Approve/reject matches", "View audit trail", "Export data"],
-              color: "border-emerald-200 bg-emerald-50/50",
-            },
-            {
-              role: "Viewer",
-              perms: ["View dashboard", "View atlas", "View archive"],
-              color: "border-slate-200 bg-slate-50/50",
-            },
-          ].map((r) => (
-            <div key={r.role} className={`p-4 rounded-xl border ${r.color}`}>
-              <div className="text-xs font-bold text-slate-800 mb-2">{r.role}</div>
-              <ul className="space-y-1">
-                {r.perms.map((p) => (
-                  <li key={p} className="flex items-center gap-1.5 text-[11px] text-slate-600">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       </div>
     </div>
@@ -286,11 +186,11 @@ function PipelineHistory() {
             key={run.id}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl border border-slate-200 p-5 space-y-3"
+            className="bg-white rounded-lg border border-slate-200 p-5 space-y-3"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-md bg-brand-100 text-brand-600 flex items-center justify-center">
                   <Activity className="w-5 h-5" />
                 </div>
                 <div>
@@ -310,20 +210,20 @@ function PipelineHistory() {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div className="p-3 bg-slate-50 rounded-xl text-center">
-                <div className="text-lg font-black text-slate-900 font-mono">{run.parcels}</div>
+              <div className="p-3 bg-slate-50 rounded-md text-center">
+                <div className="text-lg font-bold text-slate-900 font-mono">{run.parcels}</div>
                 <div className="text-[10px] text-slate-500 uppercase tracking-wider">Parcels</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl text-center">
-                <div className="text-lg font-black text-orange-600 font-mono">{run.conflicts}</div>
+              <div className="p-3 bg-slate-50 rounded-md text-center">
+                <div className="text-lg font-bold text-brand-600 font-mono">{run.conflicts}</div>
                 <div className="text-[10px] text-slate-500 uppercase tracking-wider">Conflicts</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl text-center">
-                <div className="text-lg font-black text-emerald-600 font-mono">{run.autoLinked}</div>
+              <div className="p-3 bg-slate-50 rounded-md text-center">
+                <div className="text-lg font-bold text-emerald-600 font-mono">{run.autoLinked}</div>
                 <div className="text-[10px] text-slate-500 uppercase tracking-wider">Auto-Linked</div>
               </div>
-              <div className="p-3 bg-slate-50 rounded-xl text-center">
-                <div className="text-lg font-black text-amber-600 font-mono">
+              <div className="p-3 bg-slate-50 rounded-md text-center">
+                <div className="text-lg font-bold text-amber-600 font-mono">
                   {run.conflicts - run.autoLinked}
                 </div>
                 <div className="text-[10px] text-slate-500 uppercase tracking-wider">For Review</div>
@@ -333,7 +233,7 @@ function PipelineHistory() {
         ))}
       </div>
 
-      <div className="bg-slate-50 rounded-2xl border border-slate-200 p-5 space-y-3">
+      <div className="bg-slate-50 rounded-lg border border-slate-200 p-5 space-y-3">
         <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider">Pipeline Stages</h3>
         <div className="grid grid-cols-1 sm:grid-cols-7 gap-2">
           {[
@@ -341,7 +241,7 @@ function PipelineHistory() {
             { name: "CRS", icon: Server, status: "done" },
             { name: "Topology", icon: GitBranch, status: "done" },
             { name: "Match", icon: Layers, status: "done" },
-            { name: "Score", icon: Sparkles, status: "done" },
+            { name: "Score", icon: Scale, status: "done" },
             { name: "Review", icon: Eye, status: "active" },
             { name: "Publish", icon: CheckCircle2, status: "pending" },
           ].map((stage, i) => {
@@ -349,11 +249,11 @@ function PipelineHistory() {
             return (
               <div
                 key={stage.name}
-                className={`p-3 rounded-xl text-center border ${
+                className={`p-3 rounded-md text-center border ${
                   stage.status === "done"
                     ? "bg-emerald-50 border-emerald-200"
                     : stage.status === "active"
-                    ? "bg-orange-50 border-orange-200"
+                    ? "bg-brand-50 border-brand-200"
                     : "bg-slate-50 border-slate-200"
                 }`}
               >
@@ -362,7 +262,7 @@ function PipelineHistory() {
                     stage.status === "done"
                       ? "text-emerald-600"
                       : stage.status === "active"
-                      ? "text-orange-600"
+                      ? "text-brand-600"
                       : "text-slate-400"
                   }`}
                 />
@@ -371,7 +271,7 @@ function PipelineHistory() {
                     stage.status === "done"
                       ? "text-emerald-700"
                       : stage.status === "active"
-                      ? "text-orange-700"
+                      ? "text-brand-700"
                       : "text-slate-500"
                   }`}
                 >
@@ -390,37 +290,33 @@ export default function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>("datasets");
 
   return (
-    <div className="min-h-screen bg-[#fafaf9] py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl space-y-6">
         {/* Header */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex items-center gap-4">
-          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-orange-500 to-amber-500 rounded-l-2xl" />
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white shadow-md shadow-orange-500/20">
+        <div className="bg-white rounded-lg border border-slate-200 p-6 sm:p-8 shadow-sm flex items-center gap-4">
+          <div className="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center text-brand-700">
             <Shield className="h-6 w-6" />
           </div>
           <div>
-            <div className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-50 text-orange-700 border border-orange-200 mb-1">
-              <Sparkles className="w-3 h-3 text-orange-500" />
-              Admin Console
-            </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <div className="text-sm font-semibold text-brand-700 mb-0.5">Admin Console</div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
               System Administration
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              Dataset registry, user/role management, and pipeline run history.
+              Dataset registry and pipeline run history.
             </p>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-1.5 p-1 bg-slate-100/90 rounded-2xl w-fit border border-slate-200/60">
+        <div className="flex gap-1.5 p-1 bg-slate-100/90 rounded-lg w-fit border border-slate-200/60">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === tab.id
-                  ? "bg-white text-orange-700 shadow-sm"
+                  ? "bg-white text-brand-700 shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -431,9 +327,8 @@ export default function AdminPage() {
         </div>
 
         {/* Tab content */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+        <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 sm:p-8">
           {activeTab === "datasets" && <DatasetRegistry />}
-          {activeTab === "users" && <UserManagement />}
           {activeTab === "pipeline" && <PipelineHistory />}
         </div>
       </div>

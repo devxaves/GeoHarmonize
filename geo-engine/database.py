@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Database Connection Pool
+GeoSync — Database Connection Pool
 Uses psycopg2 with a simple connection pool.
 PostGIS extension must be enabled on the target database.
 """

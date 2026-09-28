@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Seed Data Generator
+GeoSync — Seed Data Generator
 Generates ~200 parcels with realistic discrepancies for demo purposes.
 
 Usage: python scripts/seed_data.py

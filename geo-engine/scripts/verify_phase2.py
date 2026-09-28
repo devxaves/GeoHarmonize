@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GeoHarmonize — Phase 2 End-to-End Verification Script
+GeoSync — Phase 2 End-to-End Verification Script
 
 PRD §9 Phase 2: "Prove this works via a script/test before touching UI"
 PRD §12: "Uploading a sample cadastral GeoJSON and a deliberately-shifted/renamed
@@ -45,7 +45,7 @@ def check(condition: bool, message: str):
 
 def main():
     print("\n" + "="*70)
-    print("GeoHarmonize — Phase 2 End-to-End Verification")
+    print("GeoSync — Phase 2 End-to-End Verification")
     print("="*70)
 
     # ── 1. Health check ───────────────────────────────────────────────────────

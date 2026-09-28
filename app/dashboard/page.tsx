@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GeoHarmonize — Executive GIS Analytics & Operations Dashboard (/dashboard)
+ * GeoSync — Executive GIS Analytics & Operations Dashboard (/dashboard)
  *
  * Implements PRD §6.10 & §11:
  * - Animated KPI counter metrics (Framer Motion)
@@ -28,7 +28,6 @@ import {
 import {
   ShieldAlert,
   Layers,
-  Sparkles,
   TrendingUp,
   CheckCircle2,
   Clock,
@@ -103,7 +102,7 @@ export default function DashboardPage() {
       {/* ── Header ────────────────────────────────────────────────────────── */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-5">
         <div>
-          <div className="flex items-center gap-2 text-xs font-bold text-orange-600 uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-xs font-bold text-brand-600 uppercase tracking-wider mb-1">
             <TrendingUp className="w-4 h-4" />
             Operational KPIs & Harmonization Velocity
           </div>
@@ -111,21 +110,21 @@ export default function DashboardPage() {
             Executive Land Harmonization Dashboard
           </h1>
           <p className="text-sm text-slate-500 mt-1 max-w-2xl">
-            Real-time analytics for the AI-assisted cadastral matching pipeline, auto-resolution rates, and manual effort reduction.
+            Analytics for the cadastral matching pipeline, auto-resolution rates, and manual effort reduction.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <button
             onClick={loadMetrics}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-md border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors cursor-pointer"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin text-orange-600" : ""}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin text-brand-600" : ""}`} />
             Refresh KPIs
           </button>
           <Link
             href="/atlas"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition-transform active:scale-95"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-xs transition-transform"
           >
             Open Review Atlas
             <ArrowRight className="w-3.5 h-3.5" />
@@ -140,13 +139,13 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-orange-300 transition-colors"
+          className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm relative overflow-hidden group hover:border-brand-300 transition-colors"
         >
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Parcels</span>
-            <Layers className="w-5 h-5 text-orange-600" />
+            <Layers className="w-5 h-5 text-brand-600" />
           </div>
-          <div className="text-3xl font-black text-slate-900 font-mono tracking-tight">
+          <div className="text-3xl font-bold text-slate-900 font-mono tracking-tight">
             {data?.totalParcels ?? 10}
           </div>
           <div className="text-xs text-slate-500 mt-1 flex items-center gap-1">
@@ -160,13 +159,13 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.05 }}
-          className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-emerald-300 transition-colors"
+          className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm relative overflow-hidden group hover:border-emerald-300 transition-colors"
         >
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Auto-Link Rate</span>
             <Zap className="w-5 h-5 text-emerald-600" />
           </div>
-          <div className="text-3xl font-black text-emerald-700 font-mono tracking-tight">
+          <div className="text-3xl font-bold text-emerald-700 font-mono tracking-tight">
             {data?.autoResolutionRate ?? 68}%
           </div>
           <div className="text-xs text-slate-500 mt-1">
@@ -179,13 +178,13 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-amber-300 transition-colors"
+          className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm relative overflow-hidden group hover:border-amber-300 transition-colors"
         >
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Effort Reduction</span>
             <Scale className="w-5 h-5 text-amber-600" />
           </div>
-          <div className="text-3xl font-black text-amber-600 font-mono tracking-tight">
+          <div className="text-3xl font-bold text-amber-600 font-mono tracking-tight">
             ~{data?.manualEffortReductionPct ?? 72}%
           </div>
           <div className="text-xs text-slate-500 mt-1">
@@ -198,17 +197,17 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.15 }}
-          className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-rose-300 transition-colors"
+          className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm relative overflow-hidden group hover:border-rose-300 transition-colors"
         >
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Review Queue</span>
             <ShieldAlert className="w-5 h-5 text-rose-600" />
           </div>
-          <div className="text-3xl font-black text-slate-900 font-mono tracking-tight">
+          <div className="text-3xl font-bold text-slate-900 font-mono tracking-tight">
             {data?.openConflicts ?? conflictsData.filter((c) => c.status === "open").length}
           </div>
           <div className="text-xs text-slate-500 mt-1 flex items-center gap-1">
-            <span className="text-orange-600 font-semibold">Requires review</span>
+            <span className="text-brand-600 font-semibold">Requires review</span>
             <span>(60–89% score)</span>
           </div>
         </motion.div>
@@ -217,13 +216,13 @@ export default function DashboardPage() {
       {/* ── Recharts Visualizations (PRD §3, §11) ─────────────────────────── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Chart 1: Confidence Tiers */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-sm font-bold text-slate-900">Confidence Tier Distribution</h2>
-              <p className="text-xs text-slate-500">Breakdown of matched features across PRD §5 decision thresholds</p>
+              <p className="text-xs text-slate-500">Breakdown of matched features by decision threshold</p>
             </div>
-            <Sparkles className="w-4 h-4 text-orange-600" />
+            <Scale className="w-4 h-4 text-brand-600" />
           </div>
 
           <div className="h-64 w-full">
@@ -246,7 +245,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Chart 2: Discrepancy Types */}
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-sm font-bold text-slate-900">Discrepancy Categorization</h2>
@@ -267,7 +266,7 @@ export default function DashboardPage() {
                 <Tooltip
                   contentStyle={{ backgroundColor: "#0f172a", borderRadius: "12px", color: "#fff", fontSize: "12px" }}
                 />
-                <Bar dataKey="count" fill="#ea580c" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="count" fill="#0b6bc2" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -275,7 +274,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Interoperability & Export Story (PRD §6.11) ────────────────────── */}
-      <div className="bg-slate-900 text-white p-6 rounded-2xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-slate-900 text-white p-6 rounded-lg shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="space-y-1 max-w-xl">
           <div className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
             <FileCheck className="w-4 h-4" />
@@ -293,7 +292,7 @@ export default function DashboardPage() {
           <a
             href="/api/export/geojson"
             download="harmonized_parcels.geojson"
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition-transform active:scale-95"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold shadow-xs transition-transform"
           >
             <Download className="w-4 h-4" />
             Export GeoJSON
@@ -301,7 +300,7 @@ export default function DashboardPage() {
           <a
             href="/api/export/geopackage"
             download="harmonized_parcels.gpkg"
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold shadow-xs transition-transform active:scale-95"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-bold shadow-xs transition-transform"
           >
             <Download className="w-4 h-4 text-slate-400" />
             Export GeoPackage

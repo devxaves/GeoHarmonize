@@ -1,11 +1,11 @@
 /**
- * GeoHarmonize — POST /api/conflicts/[id]/decision
+ * GeoSync — POST /api/conflicts/[id]/decision
  * Records human review decision on a conflict.
  * Proxies decision to geo-engine AND records the action in gh_audit_log (PRD §6.6, §12).
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentUser } from "@/lib/auth";
+import { getSystemActorId } from "@/lib/actor";
 import { query } from "@/lib/db/pool";
 
 const GEO_ENGINE_URL = process.env.GEO_ENGINE_URL || "http://localhost:8000";
@@ -27,19 +27,8 @@ export async function POST(
       );
     }
 
-    // 1. Get current actor from session if available
-    const user = await getCurrentUser();
-    let actorId = user?.id || null;
-
-    // Fallback: look up default reviewer from gh_users if not logged in
-    if (!actorId) {
-      const { rows } = await query(
-        `SELECT id FROM gh_users WHERE role = 'reviewer' OR role = 'admin' LIMIT 1`
-      );
-      if (rows.length > 0) {
-        actorId = rows[0].id;
-      }
-    }
+    // 1. Attribute the decision to the system reviewer account
+    const actorId = await getSystemActorId();
 
     // 2. Fetch before_state of the conflict
     let beforeState: any = null;
@@ -62,8 +51,8 @@ export async function POST(
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         action,
-        actor_id: user?.email || actorId || "reviewer@geoharmonize.gov.in",
-        notes: notes || "Review decision recorded via GeoHarmonize UI",
+        actor_id: actorId || "system",
+        notes: notes || "Review decision recorded via GeoSync",
       }),
     });
 

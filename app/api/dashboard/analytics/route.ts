@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — GET /api/dashboard/analytics
+ * GeoSync — GET /api/dashboard/analytics
  *
  * Returns aggregated executive metrics, status distributions, district compliance,
  * and monthly trajectory trends computed via hand-written SQL.

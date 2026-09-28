@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Documents Query Module (Raw SQL)
+ * GeoSync — Documents Query Module (Raw SQL)
  * All document-related database operations.
  * Documents are created by the /api/upload pipeline after OCR + NER.
  */

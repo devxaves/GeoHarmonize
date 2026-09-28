@@ -1,5 +1,5 @@
 """
-GeoHarmonize — Geospatial Processing Pipeline
+GeoSync — Geospatial Processing Pipeline
 Handles CRS detection, transformation, topology validation, and spatial matching.
 
 PRD §6 features implemented here:

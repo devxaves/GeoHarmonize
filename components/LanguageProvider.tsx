@@ -25,15 +25,8 @@ interface LanguageContextType {
 // ── Translations ──────────────────────────────────────────────────────────────
 const translations: Record<string, Record<string, string>> = {
   en: {
-    // Government strip
-    "govt.india": "भारत सरकार | Government of India",
-    "govt.mord": "Ministry of Rural Development",
-    "govt.dolr": "Department of Land Resources (DoLR)",
-    "govt.helpline": "Helpline",
-
     // Navigation
     "nav.home": "Home",
-    "nav.atlas": "Web-GIS Atlas",
     "nav.upload": "Ingest Data",
     "nav.analytics": "Analytics",
     "nav.archive": "Audit Trail",
@@ -41,26 +34,18 @@ const translations: Record<string, Record<string, string>> = {
     "nav.ocr": "Data Ingestion & OCR",
     "nav.admin": "Admin Console",
     "nav.ulpinSearch": "ULPIN Search",
-    "nav.login": "Official Login",
-    "nav.signOut": "Sign Out",
+    "nav.uploadCta": "Upload data",
     "nav.atlas": "Review Atlas",
 
     // Hero / Search
     "hero.searchLabel": "Spatial Conflict Review",
 
     // Footer / Misc
-    "footer.modules": "Core Modules",
+    "footer.modules": "Navigation",
   },
   hi: {
-    // Government strip
-    "govt.india": "भारत सरकार | Government of India",
-    "govt.mord": "ग्रामीण विकास मंत्रालय",
-    "govt.dolr": "भूमि संसाधन विभाग (DoLR)",
-    "govt.helpline": "हेल्पलाइन",
-
     // Navigation
     "nav.home": "होम",
-    "nav.atlas": "वेब-जीआईएस एटलस",
     "nav.upload": "डेटा अपलोड",
     "nav.analytics": "विश्लेषण",
     "nav.archive": "ऑडिट ट्रेल",
@@ -68,15 +53,14 @@ const translations: Record<string, Record<string, string>> = {
     "nav.ocr": "डेटा अंतर्ग्रहण और OCR",
     "nav.admin": "व्यवस्थापक कंसोल",
     "nav.ulpinSearch": "ULPIN खोज",
-    "nav.login": "आधिकारिक लॉगिन",
-    "nav.signOut": "साइन आउट",
-    "nav.atlas": "स्पेशियल कॉन्फ्लिक्ट समीक्षा",
+    "nav.uploadCta": "डेटा अपलोड करें",
+    "nav.atlas": "समीक्षा एटलस",
 
     // Hero / Search
     "hero.searchLabel": "स्पेशियल कॉन्फ्लिक्ट समीक्षा",
 
     // Footer / Misc
-    "footer.modules": "मुख्य मॉड्यूल",
+    "footer.modules": "नेविगेशन",
   },
 };
 

@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — GET /api/parcels
+ * GeoSync — GET /api/parcels
  * Proxies parcel list queries to geo-engine.
  */
 

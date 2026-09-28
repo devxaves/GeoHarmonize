@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — POST /api/harmonize/[id]
+ * GeoSync — POST /api/harmonize/[id]
  * Triggers matching + confidence scoring pipeline on an uploaded dataset.
  */
 

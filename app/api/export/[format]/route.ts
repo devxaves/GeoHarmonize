@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — GET /api/export/[format]
+ * GeoSync — GET /api/export/[format]
  * Proxies GeoJSON or GeoPackage exports from the geo-engine.
  */
 
@@ -30,7 +30,7 @@ export async function GET(
     const contentType = resp.headers.get("content-type") || "application/octet-stream";
     const contentDisposition =
       resp.headers.get("content-disposition") ||
-      `attachment; filename="geoharmonize_export.${format === "geopackage" ? "gpkg" : "geojson"}"`;
+      `attachment; filename="geosync_export.${format === "geopackage" ? "gpkg" : "geojson"}"`;
 
     const blob = await resp.arrayBuffer();
 

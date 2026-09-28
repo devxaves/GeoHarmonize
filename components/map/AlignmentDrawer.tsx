@@ -1,5 +1,5 @@
 /**
- * GeoHarmonize — AlignmentDrawer Component
+ * GeoSync — AlignmentDrawer Component
  *
  * Sub-panel used on /atlas and /admin to:
  * 1. Toggle MapLibre Draw polygon mode on the parent ParcelMap

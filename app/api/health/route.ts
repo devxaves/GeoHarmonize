@@ -1,5 +1,5 @@
 /**
- * BhoomiSetu — Health Check API
+ * GeoSync — Health Check API
  * GET /api/health
  * Verifies raw SQL pool connectivity to Neon PostgreSQL.
  */

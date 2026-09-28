@@ -1,551 +1,338 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   MapPin,
   Upload,
-  AlertTriangle,
   BarChart3,
   Archive,
-  Search,
   ArrowRight,
   CheckCircle2,
   Shield,
   Layers,
   GitBranch,
   Compass,
-  Sparkles,
-  FileSearch,
-  Database,
-  Zap,
   Eye,
   CheckCircle,
   XCircle,
   Clock,
   TrendingUp,
+  Scale,
+  FileCheck2,
+  Lock,
+  Languages,
 } from "lucide-react";
 
 const pipelineStages = [
-  {
-    id: 1,
-    icon: Upload,
-    title: "Ingest",
-    desc: "Multi-source upload: drone ORI, cadastral maps, revenue records, GNSS points",
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-  },
-  {
-    id: 2,
-    icon: Compass,
-    title: "CRS Normalize",
-    desc: "Auto-detect & transform to EPSG:4326 — always logged, never silent",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-  },
-  {
-    id: 3,
-    icon: GitBranch,
-    title: "Topology Fix",
-    desc: "ST_MakeValid repair, sliver detection, gap and overlap analysis",
-    color: "text-violet-600",
-    bg: "bg-violet-50",
-  },
-  {
-    id: 4,
-    icon: Layers,
-    title: "Match",
-    desc: "Spatial matching via bounding-box + ST_DWithin, then IoU scoring",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-  },
-  {
-    id: 5,
-    icon: Sparkles,
-    title: "Score",
-    desc: "5-factor confidence: IoU 35%, RapidFuzz 20%, ID 15%, Reliability 15%, Recency 15%",
-    color: "text-orange-600",
-    bg: "bg-orange-50",
-  },
-  {
-    id: 6,
-    icon: Eye,
-    title: "Human Review",
-    desc: "Conflict queue with dual-geometry map, explainable score breakdown",
-    color: "text-rose-600",
-    bg: "bg-rose-50",
-  },
-  {
-    id: 7,
-    icon: CheckCircle,
-    title: "Publish",
-    desc: "Append-only versioning, GeoJSON/GeoPackage export, audit trail",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-  },
+  { icon: Upload, title: "Ingest", desc: "Drone ORI, cadastral maps, revenue records and GNSS points in their native formats." },
+  { icon: Compass, title: "Normalise CRS", desc: "Source projections detected and transformed to EPSG:4326. Every transform is logged." },
+  { icon: GitBranch, title: "Repair topology", desc: "Invalid geometries repaired; slivers, gaps and overlaps flagged for review." },
+  { icon: Layers, title: "Match", desc: "Candidate parcels paired by spatial proximity, then compared by overlap (IoU)." },
+  { icon: Scale, title: "Score", desc: "Each match gets a weighted five-factor confidence score with a stored breakdown." },
+  { icon: Eye, title: "Review", desc: "Uncertain matches go to a reviewer with both geometries shown side by side." },
+  { icon: CheckCircle, title: "Publish", desc: "Approved parcels are versioned, never overwritten, and exportable as GeoJSON or GeoPackage." },
 ];
 
 const modules = [
   {
-    category: "WEB-GIS ATLAS",
-    title: "Spatial Conflict Review",
-    desc: "Map-first review workspace with dual-geometry visualization, 5-factor explainable scoring, and human approve/reject workflow.",
+    title: "Review Atlas",
+    desc: "Map-first workspace to inspect conflicting boundaries, read the score breakdown and approve or reject each match.",
     href: "/atlas",
     icon: MapPin,
-    accent: "text-orange-600",
-    bg: "bg-orange-50",
-    badge: "MapLibre GL + PostGIS",
+    tone: "text-brand-700 bg-brand-50",
   },
   {
-    category: "DATA INGESTION",
-    title: "Multi-Source Upload",
-    desc: "Drone ORI, cadastral GeoJSON, scanned revenue records, GNSS survey points — with CRS detection and topology validation.",
+    title: "Data Ingestion",
+    desc: "Upload cadastral GeoJSON, drone survey layers, GNSS points and scanned revenue records with automatic CRS detection.",
     href: "/upload",
     icon: Upload,
-    accent: "text-blue-600",
-    bg: "bg-blue-50",
-    badge: "FastAPI + GeoPandas",
+    tone: "text-emerald-700 bg-emerald-50",
   },
   {
-    category: "EXECUTIVE ANALYTICS",
     title: "Operations Dashboard",
-    desc: "Real-time KPIs: parcels processed, auto-resolution rate, manual effort reduction, confidence tier distribution.",
+    desc: "Parcels processed, auto-resolution rate, review backlog and confidence distribution across the district.",
     href: "/dashboard",
     icon: BarChart3,
-    accent: "text-amber-600",
-    bg: "bg-amber-50",
-    badge: "Recharts + Framer Motion",
+    tone: "text-violet-700 bg-violet-50",
   },
   {
-    category: "AUDIT & EXPORT",
-    title: "Digital Archive",
-    desc: "Immutable audit trail, parcel version history, conflict log, and GeoJSON/GeoPackage export for inter-departmental exchange.",
+    title: "Audit Archive",
+    desc: "Append-only audit log, parcel version history and exports for inter-departmental data exchange.",
     href: "/archive",
     icon: Archive,
-    accent: "text-emerald-600",
-    bg: "bg-emerald-50",
-    badge: "Append-Only",
+    tone: "text-crimson-700 bg-crimson-50",
   },
   {
-    category: "CHANGE DETECTION",
-    title: "Temporal Comparison",
-    desc: "Two-vintage comparison flagging boundary shifts, subdivisions, new buildings, and demolitions — all labeled verification required.",
+    title: "Change Detection",
+    desc: "Compare two survey vintages to flag boundary shifts, subdivisions and new construction for field verification.",
     href: "/atlas",
     icon: TrendingUp,
-    accent: "text-violet-600",
-    bg: "bg-violet-50",
-    badge: "Hausdorff + IoU",
+    tone: "text-amber-800 bg-amber-50",
   },
   {
-    category: "ADMIN CONSOLE",
-    title: "System Administration",
-    desc: "Dataset registry, user/role management, pipeline run history, and confidence threshold configuration.",
+    title: "Administration",
+    desc: "Manage datasets, users and roles, pipeline runs and the confidence thresholds used for auto-linking.",
     href: "/admin",
     icon: Shield,
-    accent: "text-slate-600",
-    bg: "bg-slate-100",
-    badge: "RBAC",
+    tone: "text-slate-700 bg-slate-100",
   },
 ];
 
-const stats = [
-  { value: "200+", label: "Parcels per Ward", sub: "Multi-Source Harmonized" },
-  { value: "5-Factor", label: "Confidence Scoring", sub: "Fully Explainable" },
-  { value: "100%", label: "Audit Trail", sub: "Append-Only Versioning" },
-  { value: "7-Stage", label: "Pipeline", sub: "Ingest to Publish" },
+const scoringFactors = [
+  { factor: "Geometry overlap", weight: 35, desc: "Intersection-over-union of the two boundaries", color: "bg-brand-600" },
+  { factor: "Owner name match", weight: 20, desc: "Fuzzy comparison of recorded owner names", color: "bg-emerald-600" },
+  { factor: "Identifier match", weight: 15, desc: "Survey number or property ID agreement", color: "bg-violet-600" },
+  { factor: "Source reliability", weight: 15, desc: "Fixed weight per source type", color: "bg-amber-500" },
+  { factor: "Recency", weight: 15, desc: "More recent surveys score higher", color: "bg-crimson-500" },
+];
+
+const principles = [
+  { icon: FileCheck2, title: "Explainable", desc: "Every automated decision stores the factors that produced it." },
+  { icon: Lock, title: "Append-only", desc: "Records are versioned, never deleted. Every change is attributable." },
+  { icon: Eye, title: "Human-reviewed", desc: "Anything below the auto-link threshold waits for a reviewer." },
+  { icon: Languages, title: "Accessible", desc: "Built to WCAG 2.1 AA with English and Hindi interfaces." },
 ];
 
 export default function LandingPage() {
-  const [activeStage, setActiveStage] = useState(0);
-
   return (
-    <div className="min-h-screen bg-[#fafaf9] text-slate-900">
+    <div className="bg-white text-slate-900">
       {/* ── HERO ────────────────────────────────────────────────────── */}
-      <section className="relative border-b border-slate-200 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-50/60 via-white to-amber-50/40" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-14 lg:py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            {/* Left: Text + Search */}
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 lg:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-200 bg-orange-50/90 text-orange-800 text-xs font-semibold shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                <span>SIH 26013 · Department of Land Resources · GoI</span>
-              </div>
+              <p className="text-sm font-semibold text-brand-700">Land record integration platform</p>
 
-              <div className="space-y-3">
-                <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-slate-900 leading-[1.12]">
-                  AI-Assisted Geospatial
-                  <br />
-                  <span className="text-orange-600">Land Record</span>{" "}
-                  <span className="text-amber-600">Integration</span>
-                </h1>
-                <p className="text-base text-slate-500 leading-relaxed max-w-xl">
-                  Ingest multi-source land data — drone imagery, cadastral maps, revenue records, GNSS points —
-                  and produce a single, confidence-scored, harmonized parcel database. Every decision explainable,
-                  reversible, and routed to a human reviewer when uncertain.
-                </p>
-              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold tracking-tight text-slate-900 leading-[1.15]">
+                One reliable parcel record from every survey source
+              </h1>
+              <p className="text-base text-slate-600 leading-relaxed max-w-xl">
+                GeoSync brings drone imagery, cadastral maps, revenue records and GNSS surveys into a single
+                parcel database. Matches are scored transparently, uncertain cases go to a reviewer, and every
+                change is kept on record.
+              </p>
 
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex flex-wrap gap-3 pt-1">
                 <Link
                   href="/atlas"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold shadow-sm transition-transform active:scale-95"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition-colors"
                 >
-                  <MapPin className="w-4 h-4" />
                   Open Review Atlas
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/upload"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-sm font-semibold transition-colors"
                 >
-                  <Upload className="w-4 h-4 text-orange-600" />
-                  Ingest Data
-                </Link>
-                <Link
-                  href="/dashboard"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-sm font-semibold transition-colors"
-                >
-                  <BarChart3 className="w-4 h-4 text-amber-600" />
-                  Dashboard
+                  <Upload className="w-4 h-4 text-slate-500" />
+                  Upload survey data
                 </Link>
               </div>
 
-              <div className="flex flex-wrap gap-x-5 gap-y-1.5 pt-4 border-t border-slate-200/60">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-5 border-t border-slate-200">
                 {[
-                  "5-Factor Explainable Scoring",
-                  "Append-Only Versioning",
-                  "GeoJSON / GeoPackage Export",
-                  "Human-in-the-Loop Review",
+                  "Five-factor explainable scoring",
+                  "Append-only version history",
+                  "GeoJSON and GeoPackage export",
+                  "Reviewer sign-off on uncertain matches",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                  <li key={item} className="flex items-center gap-2 text-sm text-slate-600">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     {item}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            {/* Right: Pipeline Visual */}
-            <div className="relative rounded-2xl bg-slate-950 overflow-hidden shadow-2xl border border-slate-700/80 p-6 lg:p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900" />
-              <div className="relative space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
-                    Harmonization Pipeline
-                  </span>
-                  <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold border border-emerald-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    LIVE
-                  </span>
-                </div>
+            {/* Product visual: survey imagery with parcel overlay */}
+            <figure className="relative rounded-lg overflow-hidden border border-slate-200 bg-white shadow-sm">
+              <div className="flex items-center justify-between px-4 py-2.5 border-b border-slate-200 bg-white text-xs">
+                <span className="font-semibold text-slate-700">Ward 12 · Drone ORI vs. cadastral</span>
+                <span className="text-slate-500 font-mono">EPSG:4326</span>
+              </div>
+              <div className="relative aspect-[16/10]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/roadImage.png"
+                  alt="Aerial drone image of a road corridor with land parcel boundaries overlaid"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <svg viewBox="0 0 400 250" className="absolute inset-0 w-full h-full" aria-hidden="true">
+                  {/* Cadastral baseline (dashed) */}
+                  <g fill="none" stroke="#ffffff" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.9">
+                    <path d="M205 95 L290 78 L318 128 L228 150 Z" />
+                    <path d="M228 150 L318 128 L340 185 L250 205 Z" />
+                  </g>
+                  {/* Surveyed geometry */}
+                  <path d="M210 98 L292 83 L322 131 L232 152 Z" fill="rgb(3 139 230 / 0.28)" stroke="#038BE6" strokeWidth="2" />
+                  <path d="M232 152 L322 131 L348 190 L262 214 Z" fill="rgb(227 55 95 / 0.25)" stroke="#E3375F" strokeWidth="2" />
+                  <path d="M60 150 L130 135 L150 185 L78 200 Z" fill="rgb(16 185 129 / 0.25)" stroke="#10B981" strokeWidth="2" />
+                </svg>
 
-                <div className="space-y-2">
-                  {pipelineStages.map((stage, idx) => {
-                    const Icon = stage.icon;
-                    const isActive = idx === activeStage;
-                    const isPassed = idx < activeStage;
-                    return (
-                      <motion.button
-                        key={stage.id}
-                        onClick={() => setActiveStage(idx)}
-                        className={`w-full flex items-center gap-3 p-3 rounded-xl border transition-all cursor-pointer text-left ${
-                          isActive
-                            ? "bg-orange-500/10 border-orange-500/40 shadow-lg"
-                            : isPassed
-                            ? "bg-emerald-500/5 border-emerald-500/20"
-                            : "bg-white/[0.03] border-white/[0.06] hover:border-white/[0.12]"
-                        }`}
-                        whileHover={{ scale: 1.01 }}
-                        whileTap={{ scale: 0.99 }}
-                      >
-                        <div
-                          className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                            isActive
-                              ? "bg-orange-500 text-white"
-                              : isPassed
-                              ? "bg-emerald-500/20 text-emerald-400"
-                              : "bg-white/[0.06] text-slate-400"
-                          }`}
-                        >
-                          {isPassed ? <CheckCircle2 className="w-4 h-4" /> : <Icon className="w-4 h-4" />}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div
-                            className={`text-xs font-bold ${
-                              isActive ? "text-orange-300" : isPassed ? "text-emerald-300" : "text-slate-300"
-                            }`}
-                          >
-                            Stage {stage.id}: {stage.title}
-                          </div>
-                          <div className="text-[10px] text-slate-500 truncate">{stage.desc}</div>
-                        </div>
-                        <div
-                          className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                            isActive
-                              ? "bg-orange-500/20 text-orange-300"
-                              : isPassed
-                              ? "bg-emerald-500/20 text-emerald-300"
-                              : "bg-white/[0.06] text-slate-500"
-                          }`}
-                        >
-                          {String(stage.id).padStart(2, "0")}
-                        </div>
-                      </motion.button>
-                    );
-                  })}
-                </div>
-
-                <div className="pt-3 border-t border-slate-800">
-                  <div className="flex justify-between text-[10px] text-slate-500 mb-1">
-                    <span>Pipeline Progress</span>
-                    <span className="text-orange-400 font-bold">
-                      Stage {activeStage + 1} of {pipelineStages.length}
-                    </span>
+                <div className="absolute left-3 bottom-3 right-3 sm:right-auto sm:w-64 rounded-md bg-white/95 border border-slate-200 shadow-sm p-3 text-xs">
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-slate-900">Survey No. 214/3</span>
+                    <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 font-semibold">Review</span>
                   </div>
-                  <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full"
-                      animate={{ width: `${((activeStage + 1) / pipelineStages.length) * 100}%` }}
-                      transition={{ duration: 0.3 }}
-                    />
+                  <div className="mt-2 flex items-center gap-2">
+                    <div className="h-1.5 flex-1 rounded-full bg-slate-100 overflow-hidden">
+                      <div className="h-full bg-amber-500" style={{ width: "74%" }} />
+                    </div>
+                    <span className="font-mono font-semibold text-slate-700">74%</span>
                   </div>
+                  <p className="mt-1.5 text-slate-500">Boundary shifted 3.8 m against 1998 cadastral map</p>
                 </div>
               </div>
-            </div>
+              <figcaption className="flex flex-wrap gap-x-4 gap-y-1 px-4 py-2.5 border-t border-slate-200 text-[11px] text-slate-600">
+                <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-brand-500" /> Auto-linked</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-crimson-500" /> Conflict</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-emerald-500" /> New parcel</span>
+                <span className="flex items-center gap-1.5"><span className="w-3 border-t border-dashed border-slate-500" /> Cadastral baseline</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      {/* ── STATS STRIP ─────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden border-y border-slate-800 py-10">
+      {/* ── KEY FACTS ───────────────────────────────────────────────── */}
+      <section className="border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-            {stats.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-orange-400/40 hover:bg-white/[0.06] transition-all text-center"
-              >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-orange-400 font-mono tracking-tight">
-                  {s.value}
-                </div>
-                <div className="text-xs sm:text-sm text-slate-200 font-semibold mt-1.5">{s.label}</div>
-                <div className="text-[10px] text-slate-400 mt-0.5 font-mono">{s.sub}</div>
-              </motion.div>
+          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-0 lg:divide-x divide-slate-200">
+            {[
+              { value: "7", label: "Pipeline stages", sub: "From ingest to publish" },
+              { value: "5", label: "Scoring factors", sub: "Each stored and explainable" },
+              { value: "≥ 90%", label: "Auto-link threshold", sub: "Configurable by administrators" },
+              { value: "100%", label: "Changes audited", sub: "Append-only history" },
+            ].map((s) => (
+              <div key={s.label} className="py-7 lg:px-6 lg:first:pl-0">
+                <dt className="text-sm font-medium text-slate-600">{s.label}</dt>
+                <dd className="mt-1 text-3xl font-bold text-slate-900 tracking-tight">{s.value}</dd>
+                <dd className="mt-0.5 text-xs text-slate-500">{s.sub}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
-      {/* ── MODULE GRID ─────────────────────────────────────────────── */}
-      <section className="py-16 border-b border-slate-200/50">
+      {/* ── MODULES ─────────────────────────────────────────────────── */}
+      <section className="py-14 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-9 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
-              <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2">
-                Platform Architecture
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                Core Platform Modules
-              </h2>
-              <p className="text-sm text-slate-500 mt-1 max-w-2xl">
-                End-to-end geospatial data harmonization — from multi-source ingestion to confidence-scored publish.
-              </p>
-            </div>
-            <Link
-              href="/dashboard"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 hover:text-orange-800 bg-orange-50 hover:bg-orange-100 border border-orange-200 px-3.5 py-2 rounded-xl transition-colors self-start md:self-auto"
-            >
-              <span>Executive KPI View</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+          <div className="mb-8 max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">What GeoSync does</h2>
+            <p className="text-base text-slate-600 mt-2">
+              Six modules cover the full workflow, from raw survey files to a published, auditable parcel record.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {modules.map((mod, i) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {modules.map((mod) => {
               const Icon = mod.icon;
               return (
-                <motion.div
-                  key={mod.href + i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
+                <Link
+                  key={mod.title}
+                  href={mod.href}
+                  className="group flex flex-col p-5 rounded-lg bg-white border border-slate-200 hover:border-brand-300 hover:shadow-sm transition-all"
                 >
-                  <Link
-                    href={mod.href}
-                    className="group flex flex-col justify-between p-6 rounded-2xl bg-white border border-slate-200 hover:border-orange-300 hover:shadow-md transition-all h-full"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-bold font-mono tracking-wider px-2 py-0.5 rounded bg-slate-100 text-slate-600 uppercase border border-slate-200">
-                          {mod.category}
-                        </span>
-                        <span className="text-[10px] font-medium text-orange-600 bg-orange-50 px-2 py-0.5 rounded-full border border-orange-200/60">
-                          {mod.badge}
-                        </span>
-                      </div>
-                      <div className="flex items-start gap-3.5 mb-3">
-                        <div
-                          className={`p-3 rounded-xl ${mod.bg} flex-shrink-0 group-hover:scale-110 transition-transform`}
-                        >
-                          <Icon className={`w-5 h-5 ${mod.accent}`} />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-slate-900 text-base group-hover:text-orange-700 transition-colors">
-                            {mod.title}
-                          </h3>
-                        </div>
-                      </div>
-                      <p className="text-xs text-slate-500 leading-relaxed">{mod.desc}</p>
-                    </div>
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-orange-600 group-hover:text-orange-700">
-                      <span>Launch Module</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </Link>
-                </motion.div>
+                  <div className={`w-10 h-10 rounded-md ${mod.tone} flex items-center justify-center mb-4`}>
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 text-base group-hover:text-brand-700">{mod.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed mt-1.5 flex-1">{mod.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
+                    Open
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </span>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* ── CONFIDENCE SCORING FORMULA ──────────────────────────────── */}
-      <section className="py-16 bg-gradient-to-b from-orange-50/20 via-white to-amber-50/20 border-b border-slate-200">
+      {/* ── PIPELINE ────────────────────────────────────────────────── */}
+      <section className="py-14 lg:py-16 bg-slate-50 border-y border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-10 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/70 border border-orange-200 text-orange-800 text-xs font-bold mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-              <span>EXPLAINABLE AI</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              5-Factor Confidence Scoring
-            </h2>
-            <p className="text-sm text-slate-500 mt-2 leading-relaxed">
-              Every automated match is scored with a transparent, weighted formula. No black boxes.
-              The full breakdown is stored and rendered for every conflict.
+          <div className="mb-8 max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">How records are processed</h2>
+            <p className="text-base text-slate-600 mt-2">
+              Every dataset follows the same seven steps. Nothing is published without passing through each one.
             </p>
           </div>
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3">
+            {pipelineStages.map((stage, idx) => {
+              const Icon = stage.icon;
+              return (
+                <li key={stage.title} className="bg-white rounded-lg border border-slate-200 p-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-full bg-brand-600 text-white text-xs font-semibold flex items-center justify-center">
+                      {idx + 1}
+                    </span>
+                    <Icon className="w-4 h-4 text-slate-400" />
+                  </div>
+                  <h3 className="mt-3 text-sm font-semibold text-slate-900">{stage.title}</h3>
+                  <p className="mt-1 text-xs text-slate-600 leading-relaxed">{stage.desc}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              { factor: "Geometry Overlap", weight: "35%", desc: "IoU between candidate geometries", color: "bg-blue-500" },
-              { factor: "Attribute Match", weight: "20%", desc: "RapidFuzz on owner names", color: "bg-emerald-500" },
-              { factor: "Identifier Match", weight: "15%", desc: "Survey number / property ID", color: "bg-violet-500" },
-              { factor: "Source Reliability", weight: "15%", desc: "Static weight per source type", color: "bg-amber-500" },
-              { factor: "Temporal Recency", weight: "15%", desc: "Newer data scores higher", color: "bg-rose-500" },
-            ].map((f, i) => (
-              <motion.div
-                key={f.factor}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl border border-slate-200 p-5 text-center shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className={`w-3 h-3 rounded-full ${f.color} mx-auto mb-3`} />
-                <div className="text-2xl font-black text-slate-900 font-mono">{f.weight}</div>
-                <div className="text-xs font-bold text-slate-800 mt-1">{f.factor}</div>
-                <div className="text-[10px] text-slate-500 mt-1">{f.desc}</div>
-              </motion.div>
-            ))}
+      {/* ── CONFIDENCE SCORING ──────────────────────────────────────── */}
+      <section className="py-14 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-5 gap-10">
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">How confidence is scored</h2>
+            <p className="text-base text-slate-600 mt-2 leading-relaxed">
+              Each candidate match is scored with a fixed, published formula. The full breakdown is stored
+              with the record and shown to the reviewer.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm">
+              <li className="flex items-center gap-2.5 p-3 rounded-md bg-emerald-50 border border-emerald-200">
+                <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
+                <span className="text-emerald-900"><strong>90% and above</strong> — linked automatically (reversible)</span>
+              </li>
+              <li className="flex items-center gap-2.5 p-3 rounded-md bg-amber-50 border border-amber-200">
+                <Clock className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                <span className="text-amber-900"><strong>60–89%</strong> — sent to a reviewer</span>
+              </li>
+              <li className="flex items-center gap-2.5 p-3 rounded-md bg-red-50 border border-red-200">
+                <XCircle className="w-4 h-4 text-red-700 flex-shrink-0" />
+                <span className="text-red-900"><strong>Below 60%</strong> — left unresolved for field verification</span>
+              </li>
+            </ul>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-              <span className="font-semibold text-emerald-800">Score &gt;= 90% → Auto-Linked</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs">
-              <Clock className="w-4 h-4 text-amber-600 flex-shrink-0" />
-              <span className="font-semibold text-amber-800">60-89% → Human Review</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs">
-              <XCircle className="w-4 h-4 text-rose-600 flex-shrink-0" />
-              <span className="font-semibold text-rose-800">&lt;60% → Unresolved</span>
-            </div>
+          <div className="lg:col-span-3 rounded-lg border border-slate-200 divide-y divide-slate-200">
+            {scoringFactors.map((f) => (
+              <div key={f.factor} className="p-4 sm:px-5 grid grid-cols-[1fr_auto] sm:grid-cols-[12rem_1fr_3rem] items-center gap-x-4 gap-y-2">
+                <div>
+                  <div className="text-sm font-semibold text-slate-900">{f.factor}</div>
+                  <div className="text-xs text-slate-500">{f.desc}</div>
+                </div>
+                <div className="hidden sm:block h-2 rounded-full bg-slate-100 overflow-hidden">
+                  <div className={`h-full ${f.color}`} style={{ width: `${(f.weight / 35) * 100}%` }} />
+                </div>
+                <div className="text-right text-sm font-mono font-semibold text-slate-900">{f.weight}%</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── ROLE ACCESS CARDS ────────────────────────────────────────── */}
-      <section className="py-16 bg-slate-50/50">
+      {/* ── PRINCIPLES ──────────────────────────────────────────────── */}
+      <section className="py-14 bg-slate-50 border-t border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <div className="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2">Access Control</div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-              Role-Based Portals
-            </h2>
-            <p className="text-sm text-slate-500 mt-1 max-w-xl mx-auto">
-              Purpose-built interfaces for every stakeholder in the land record integration workflow.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Land Records Reviewer",
-                badge: "Review Queue Access",
-                desc: "Inspect spatial conflicts on the map, review the 5-factor score breakdown, and approve or reject matches with full audit logging.",
-                href: "/atlas",
-                cta: "Open Review Atlas",
-                icon: MapPin,
-                color: "border-orange-200 bg-orange-50/40 hover:border-orange-300",
-                iconColor: "text-orange-700 bg-orange-100",
-                ctaColor: "bg-orange-600 hover:bg-orange-700",
-              },
-              {
-                title: "System Administrator",
-                badge: "Full Admin Console",
-                desc: "Manage datasets, users, roles, pipeline runs, and confidence thresholds. Monitor system health and audit trail.",
-                href: "/admin",
-                cta: "Admin Console",
-                icon: Shield,
-                color: "border-slate-200 bg-slate-50/50 hover:border-slate-300",
-                iconColor: "text-slate-600 bg-slate-100",
-                ctaColor: "bg-slate-800 hover:bg-slate-900",
-              },
-              {
-                title: "Data Analyst",
-                badge: "Analytics & Export",
-                desc: "Explore harmonized parcel data, track pipeline KPIs, perform temporal change detection, and export to GeoJSON/GeoPackage.",
-                href: "/dashboard",
-                cta: "View Dashboard",
-                icon: BarChart3,
-                color: "border-amber-200 bg-amber-50/50 hover:border-amber-300",
-                iconColor: "text-amber-600 bg-amber-100",
-                ctaColor: "bg-amber-700 hover:bg-amber-800",
-              },
-            ].map((role) => {
-              const Icon = role.icon;
+          <h2 className="text-2xl font-bold text-slate-900 mb-8">Built for public records</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {principles.map((p) => {
+              const Icon = p.icon;
               return (
-                <div
-                  key={role.href}
-                  className={`p-6 rounded-2xl border ${role.color} flex flex-col gap-4 transition-all`}
-                >
-                  <div className={`w-10 h-10 rounded-xl ${role.iconColor} flex items-center justify-center`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold font-mono uppercase tracking-wider text-slate-500">
-                      {role.badge}
-                    </span>
-                    <h3 className="font-bold text-slate-900 text-sm mt-1">{role.title}</h3>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1">{role.desc}</p>
-                  </div>
-                  <Link
-                    href={role.href}
-                    className={`mt-auto inline-flex items-center gap-2 px-4 py-2 rounded-lg ${role.ctaColor} text-white text-xs font-semibold transition-colors shadow-sm w-fit`}
-                  >
-                    {role.cta}
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                <div key={p.title}>
+                  <Icon className="w-6 h-6 text-brand-600" />
+                  <h3 className="mt-3 text-base font-semibold text-slate-900">{p.title}</h3>
+                  <p className="mt-1 text-sm text-slate-600 leading-relaxed">{p.desc}</p>
                 </div>
               );
             })}
@@ -553,39 +340,28 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── FOOTER CTA ──────────────────────────────────────────────── */}
-      <section className="relative bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white py-16 overflow-hidden border-t border-slate-800">
-        <div className="absolute -left-20 -top-20 w-72 h-72 rounded-full bg-orange-500/15 blur-3xl" />
-        <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-emerald-500/15 blur-3xl" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* ── CTA ─────────────────────────────────────────────────────── */}
+      <section className="bg-brand-800 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30 text-xs font-mono mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-orange-400" />
-              <span>PostGIS + MapLibre GL + FastAPI</span>
-            </div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-1.5">
-              Ready to harmonize your land records?
-            </h2>
-            <p className="text-sm text-slate-400 max-w-xl leading-relaxed">
-              Upload multi-source geospatial data, let the AI match and score conflicts,
-              review on the map, and publish a single harmonized parcel database.
+            <h2 className="text-xl sm:text-2xl font-bold text-white">Start with your existing survey data</h2>
+            <p className="text-sm text-brand-100 mt-1.5 max-w-xl leading-relaxed">
+              Upload a cadastral layer and a recent survey. GeoSync will match, score and queue conflicts for review.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 flex-shrink-0">
             <Link
-              href="/atlas"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold shadow-lg shadow-orange-500/20 transition-transform active:scale-95"
+              href="/upload"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-white hover:bg-brand-50 text-brand-800 text-sm font-semibold transition-colors"
             >
-              <MapPin className="w-4 h-4" />
-              <span>Open Review Atlas</span>
+              Upload data
+              <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/login"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-700 hover:border-slate-500 bg-slate-900 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-colors shadow-sm"
+              href="/atlas"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md border border-brand-400 hover:bg-brand-700 text-white text-sm font-semibold transition-colors"
             >
-              <Shield className="w-4 h-4 text-orange-400" />
-              <span>Official Login</span>
+              Open Review Atlas
             </Link>
           </div>
         </div>

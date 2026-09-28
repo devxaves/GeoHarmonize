@@ -1,19 +1,18 @@
 /**
- * GeoHarmonize — POST /api/upload
+ * GeoSync — POST /api/upload
  * Forwards uploaded files to the geo-engine, optionally runs OCR/NER on scanned docs.
  * Stores processed document metadata in documents table.
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { getCurrentUser } from "@/lib/auth";
+import { getSystemActorId } from "@/lib/actor";
 import { query } from "@/lib/db/pool";
 
 const GEO_ENGINE_URL = process.env.GEO_ENGINE_URL || "http://localhost:8000";
 
 export async function POST(req: NextRequest) {
   try {
-    const user = await getCurrentUser();
-    const actorId = user?.id || null;
+    const actorId = await getSystemActorId();
 
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
@@ -31,7 +30,7 @@ export async function POST(req: NextRequest) {
     const geoFormData = new FormData();
     geoFormData.append("file", file);
     geoFormData.append("source_type", sourceType);
-    geoFormData.append("uploaded_by", user?.email || "anonymous");
+    geoFormData.append("uploaded_by", actorId || "system");
     if (declaredCrs) geoFormData.append("declared_crs", declaredCrs);
 
     const geoRes = await fetch(`${GEO_ENGINE_URL}/api/geo/datasets/upload`, {
@@ -67,9 +66,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(geoData, { status: 200 });
   } catch (err: any) {
-    if (err.message === "UNAUTHORIZED") {
-      return NextResponse.json({ error: "Authentication required." }, { status: 401 });
-    }
     console.error("Upload proxy error:", err);
     return NextResponse.json({ error: err?.message || "Upload failed." }, { status: 500 });
   }

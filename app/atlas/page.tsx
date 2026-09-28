@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * GeoHarmonize — Web-GIS Harmonization & Spatial Conflict Review (/atlas)
+ * GeoSync — Web-GIS Harmonization & Spatial Conflict Review (/atlas)
  *
  * Implements PRD §6.6, §6.10, §9 (Phase 3 & Phase 5):
  * - Map view rendering candidate & baseline geometries with conflict delta
@@ -26,7 +26,6 @@ import {
   RefreshCw,
   SlidersHorizontal,
   ChevronRight,
-  Sparkles,
   MapPin,
   Check,
   AlertTriangle,
@@ -42,11 +41,10 @@ const HarmonizeReviewMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-2xl">
-        <Loader2 className="w-8 h-8 animate-spin text-orange-600 mb-2" />
-        <div className="text-sm font-semibold text-slate-700">Loading MapLibre GIS Engine…</div>
-        <div className="text-xs text-slate-400">Department of Land Resources (DoLR)</div>
-      </div>
+      <div className="w-full h-full flex flex-col items-center justify-center bg-slate-50 border border-slate-200 rounded-lg">
+        <Loader2 className="w-8 h-8 animate-spin text-brand-600 mb-2" />
+        <div className="text-sm font-semibold text-slate-700">Loading map…</div>
+              </div>
     ),
   }
 );
@@ -180,26 +178,26 @@ export default function AtlasReviewPage() {
       {/* ── Top Bar ────────────────────────────────────────────────────────── */}
       <header className="flex items-center justify-between px-6 py-3 bg-white border-b border-slate-200 z-20 shadow-2xs">
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-orange-600 text-white shadow-xs">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-600 text-white shadow-xs">
             <Layers className="w-4 h-4" />
           </div>
           <div>
             <h1 className="text-base font-bold text-slate-900 leading-tight">
-              Web-GIS Spatial Harmonization & Review
+              Review Atlas
             </h1>
             <p className="text-xs text-slate-500">
-              Department of Land Resources · PostGIS & AI Multi-Source Parcel Matching
+              Compare survey geometries, review confidence scores and resolve conflicts
             </p>
           </div>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center gap-1 bg-slate-100 rounded-xl p-1">
+        <div className="flex items-center gap-1 bg-slate-100 rounded-md p-1">
           <button
             onClick={() => setActiveTab("conflicts")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === "conflicts"
-                ? "bg-white text-orange-700 shadow-sm"
+                ? "bg-white text-brand-700 shadow-sm"
                 : "text-slate-600 hover:text-slate-900"
             }`}
           >
@@ -210,7 +208,7 @@ export default function AtlasReviewPage() {
             onClick={() => setActiveTab("changes")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === "changes"
-                ? "bg-white text-orange-700 shadow-sm"
+                ? "bg-white text-brand-700 shadow-sm"
                 : "text-slate-600 hover:text-slate-900"
             }`}
           >
@@ -237,7 +235,7 @@ export default function AtlasReviewPage() {
             onClick={() => loadData()}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors"
           >
-            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin text-orange-600" : ""}`} />
+            <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? "animate-spin text-brand-600" : ""}`} />
             Refresh
           </button>
 
@@ -245,7 +243,7 @@ export default function AtlasReviewPage() {
           <div className="flex items-center gap-1 border-l border-slate-200 pl-2">
             <a
               href="/api/export/geojson"
-              download="geoharmonize_parcels.geojson"
+              download="geosync_parcels.geojson"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-colors"
             >
               <Download className="w-3.5 h-3.5" />
@@ -253,7 +251,7 @@ export default function AtlasReviewPage() {
             </a>
             <a
               href="/api/export/geopackage"
-              download="geoharmonize_parcels.gpkg"
+              download="geosync_parcels.gpkg"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-semibold shadow-xs transition-colors"
             >
               <Download className="w-3.5 h-3.5 text-slate-600" />
@@ -266,14 +264,14 @@ export default function AtlasReviewPage() {
       {/* ── Main Workspace: 3 Columns (Queue, Map, Detail Panel) ───────────── */}
       <div className="flex-1 flex overflow-hidden p-4 gap-4">
         {/* ── Column 1: Conflict Queue Sidebar ─────────────────────────────── */}
-        <aside className="w-80 lg:w-96 flex flex-col bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex-shrink-0">
+        <aside className="w-80 lg:w-96 flex flex-col bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex-shrink-0">
           {/* Header & Tabs */}
           <div className="p-3.5 border-b border-slate-200 bg-slate-50/60">
             <div className="flex items-center justify-between mb-2.5">
               <div className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                 {activeTab === "conflicts" ? (
                   <>
-                    <ShieldAlert className="w-4 h-4 text-orange-600" />
+                    <ShieldAlert className="w-4 h-4 text-brand-600" />
                     Conflict Queue
                   </>
                 ) : (
@@ -283,7 +281,7 @@ export default function AtlasReviewPage() {
                   </>
                 )}
               </div>
-              <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-orange-100 text-orange-800 border border-orange-200 font-mono">
+              <span className="px-2 py-0.5 rounded-full text-xs font-bold bg-brand-100 text-brand-800 border border-brand-200 font-mono">
                 {activeTab === "conflicts"
                   ? `${filteredConflicts.length} of ${conflicts.length}`
                   : `${changes.length} events`}
@@ -291,7 +289,7 @@ export default function AtlasReviewPage() {
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex items-center p-0.5 rounded-xl bg-slate-200/80 text-xs font-medium text-slate-600 mb-2.5">
+            <div className="flex items-center p-0.5 rounded-md bg-slate-200/80 text-xs font-medium text-slate-600 mb-2.5">
               <button
                 onClick={() => setFilterStatus("all")}
                 className={`flex-1 py-1 rounded-lg text-center transition-all ${
@@ -334,7 +332,7 @@ export default function AtlasReviewPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search survey #, owner, or ID…"
-                className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-orange-500 focus:border-transparent text-slate-800 placeholder:text-slate-400"
+                className="w-full pl-8 pr-3 py-1.5 text-xs rounded-md border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-brand-500 focus:border-transparent text-slate-800 placeholder:text-slate-400"
               />
             </div>
           </div>
@@ -343,7 +341,7 @@ export default function AtlasReviewPage() {
           <div className="flex-1 overflow-y-auto p-2 space-y-2">
             {isLoading ? (
               <div className="flex flex-col items-center justify-center p-8 text-slate-400">
-                <Loader2 className="w-6 h-6 animate-spin text-orange-600 mb-2" />
+                <Loader2 className="w-6 h-6 animate-spin text-brand-600 mb-2" />
                 <span className="text-xs">Fetching data…</span>
               </div>
             ) : activeTab === "changes" ? (
@@ -362,7 +360,7 @@ export default function AtlasReviewPage() {
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       onClick={() => setSelectedChange(e)}
-                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                      className={`p-3 rounded-md border transition-all cursor-pointer ${
                         isSelected
                           ? "bg-violet-50/80 border-violet-500 shadow-xs"
                           : "bg-white hover:bg-slate-50 border-slate-200"
@@ -415,9 +413,9 @@ export default function AtlasReviewPage() {
                     whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     onClick={() => setSelectedConflict(c)}
-                    className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                    className={`p-3 rounded-md border transition-all cursor-pointer ${
                       isSelected
-                        ? "bg-orange-50/80 border-orange-500 shadow-xs"
+                        ? "bg-brand-50/80 border-brand-500 shadow-xs"
                         : "bg-white hover:bg-slate-50 border-slate-200"
                     }`}
                   >
@@ -465,7 +463,7 @@ export default function AtlasReviewPage() {
         </aside>
 
         {/* ── Column 2: Web-GIS Interactive Map ────────────────────────────── */}
-        <main className="flex-1 flex flex-col rounded-2xl overflow-hidden relative">
+        <main className="flex-1 flex flex-col rounded-lg overflow-hidden relative">
           <HarmonizeReviewMap
             conflicts={conflicts}
             selectedConflict={selectedConflict}
@@ -484,7 +482,7 @@ export default function AtlasReviewPage() {
               transition={{ duration: 0.2 }}
               className="w-80 lg:w-[420px] flex-shrink-0 h-full"
             >
-              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm h-full flex flex-col overflow-hidden">
+              <div className="bg-white rounded-lg border border-slate-200 shadow-sm h-full flex flex-col overflow-hidden">
                 <div className="p-4 border-b border-slate-200 bg-slate-50/60">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-bold text-slate-900 capitalize">
@@ -527,7 +525,7 @@ export default function AtlasReviewPage() {
                       {selectedChange.area_delta_sqm ? `${selectedChange.area_delta_sqm} sqm` : "N/A"}
                     </div>
                   </div>
-                  <div className="p-3 rounded-xl bg-amber-50 border border-amber-200">
+                  <div className="p-3 rounded-md bg-amber-50 border border-amber-200">
                     <div className="flex items-center gap-1.5 text-[11px] font-bold text-amber-800 uppercase tracking-wider">
                       <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
                       Verification Required

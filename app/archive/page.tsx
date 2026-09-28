@@ -71,25 +71,22 @@ export default function ArchivePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafaf9] py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl space-y-6">
         {/* Header */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-white rounded-lg border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-white shadow-md shadow-orange-500/20">
+            <div className="w-12 h-12 rounded-lg bg-brand-50 flex items-center justify-center text-brand-700">
               <Archive className="h-6 w-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-50 text-orange-700 border border-orange-200">
-                  <Archive className="w-3 h-3 text-orange-500" />
-                  Digital Archive
-                </span>
+                <span className="text-sm font-semibold text-brand-700">Audit Archive</span>
                 <span className="text-xs text-slate-400 font-mono hidden sm:inline-block">
                   Append-Only · Immutable
                 </span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
                 Harmonized Data Archive
               </h1>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
@@ -102,7 +99,7 @@ export default function ArchivePage() {
             <a
               href={csvExportUrl()}
               download
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-md transition-all cursor-pointer font-mono uppercase tracking-wider"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 shadow-md transition-all cursor-pointer font-mono uppercase tracking-wider"
             >
               <Download className="h-4 w-4" />
               Export CSV
@@ -111,7 +108,7 @@ export default function ArchivePage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-1.5 p-1 bg-slate-100/90 rounded-2xl w-fit border border-slate-200/60">
+        <div className="flex gap-1.5 p-1 bg-slate-100/90 rounded-lg w-fit border border-slate-200/60">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -119,9 +116,9 @@ export default function ArchivePage() {
                 setActiveTab(tab.id);
                 setPage(1);
               }}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === tab.id
-                  ? "bg-white text-orange-700 shadow-sm"
+                  ? "bg-white text-brand-700 shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -132,7 +129,7 @@ export default function ArchivePage() {
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+        <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-5 space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
             <div className="sm:col-span-5 relative">
               <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" />
@@ -144,10 +141,10 @@ export default function ArchivePage() {
                   setSearchQuery(e.target.value);
                   setPage(1);
                 }}
-                className="w-full pl-10 pr-8 py-2.5 text-xs rounded-xl border border-slate-200 bg-slate-50/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all placeholder:text-slate-400"
+                className="w-full pl-10 pr-8 py-2.5 text-xs rounded-md border border-slate-200 bg-slate-50/60 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all placeholder:text-slate-400"
               />
             </div>
-            <div className="sm:col-span-3 inline-flex rounded-xl border border-slate-200 bg-slate-100/80 p-1 text-xs">
+            <div className="sm:col-span-3 inline-flex rounded-md border border-slate-200 bg-slate-100/80 p-1 text-xs">
               {["all", "open", "approved", "rejected"].map((s) => (
                 <button
                   key={s}
@@ -169,7 +166,7 @@ export default function ArchivePage() {
         </div>
 
         {/* Data Table */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
           {activeTab === "parcels" && (
             <ParcelsTable data={parcelsData?.parcels || []} isLoading={isLoading} />
           )}
@@ -189,14 +186,14 @@ export default function ArchivePage() {
               <button
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
                 disabled={page <= 1}
-                className="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 rounded-md border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer"
               >
                 Previous
               </button>
               <button
                 onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 disabled={page >= totalPages}
-                className="px-3.5 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer"
+                className="px-3.5 py-1.5 rounded-md border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-40 transition-colors cursor-pointer"
               >
                 Next
               </button>
@@ -212,7 +209,7 @@ function ParcelsTable({ data, isLoading }: { data: any[]; isLoading: boolean }) 
   if (isLoading) {
     return (
       <div className="p-8 text-center text-slate-400">
-        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-orange-600" />
+        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-brand-600" />
         <span className="text-xs">Loading parcels...</span>
       </div>
     );
@@ -245,7 +242,7 @@ function ParcelsTable({ data, isLoading }: { data: any[]; isLoading: boolean }) 
         </thead>
         <tbody className="divide-y divide-slate-100">
           {data.map((p) => (
-            <tr key={p.parcel_uid} className="hover:bg-orange-50/20 transition-colors">
+            <tr key={p.parcel_uid} className="hover:bg-brand-50/20 transition-colors">
               <td className="p-3.5 font-mono text-[11px] text-slate-700">{p.parcel_uid}</td>
               <td className="p-3.5">
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-600 border border-slate-200">
@@ -274,7 +271,7 @@ function ParcelsTable({ data, isLoading }: { data: any[]; isLoading: boolean }) 
               <td className="p-3.5 text-right">
                 <a
                   href={`/atlas?parcel=${p.parcel_uid}`}
-                  className="text-orange-600 hover:text-orange-700 font-semibold text-[11px]"
+                  className="text-brand-600 hover:text-brand-700 font-semibold text-[11px]"
                 >
                   View
                 </a>
@@ -291,7 +288,7 @@ function ConflictsTable({ data, isLoading }: { data: any[]; isLoading: boolean }
   if (isLoading) {
     return (
       <div className="p-8 text-center text-slate-400">
-        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-orange-600" />
+        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-brand-600" />
         <span className="text-xs">Loading conflicts...</span>
       </div>
     );
@@ -323,7 +320,7 @@ function ConflictsTable({ data, isLoading }: { data: any[]; isLoading: boolean }
         </thead>
         <tbody className="divide-y divide-slate-100">
           {data.map((c) => (
-            <tr key={c.conflict_id} className="hover:bg-orange-50/20 transition-colors">
+            <tr key={c.conflict_id} className="hover:bg-brand-50/20 transition-colors">
               <td className="p-3.5 font-mono text-[11px] text-slate-700">{c.conflict_id.slice(0, 8)}...</td>
               <td className="p-3.5">
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-600 border border-slate-200 capitalize">
@@ -371,7 +368,7 @@ function ChangesTable({ data, isLoading }: { data: any[]; isLoading: boolean }) 
   if (isLoading) {
     return (
       <div className="p-8 text-center text-slate-400">
-        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-orange-600" />
+        <RefreshCw className="w-6 h-6 animate-spin mx-auto mb-2 text-brand-600" />
         <span className="text-xs">Loading change events...</span>
       </div>
     );
@@ -403,7 +400,7 @@ function ChangesTable({ data, isLoading }: { data: any[]; isLoading: boolean }) 
         </thead>
         <tbody className="divide-y divide-slate-100">
           {data.map((e) => (
-            <tr key={e.id} className="hover:bg-orange-50/20 transition-colors">
+            <tr key={e.id} className="hover:bg-brand-50/20 transition-colors">
               <td className="p-3.5 font-mono text-[11px] text-slate-700">{e.id?.slice(0, 8)}...</td>
               <td className="p-3.5 font-mono text-[11px]">{e.parcel_uid}</td>
               <td className="p-3.5">
