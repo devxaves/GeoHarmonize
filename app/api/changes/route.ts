@@ -12,7 +12,8 @@ export async function GET(req: NextRequest) {
     params.set("offset", String(offset));
     if (changeType) params.set("change_type", changeType);
 
-    const resp = await fetch(`${process.env.GEO_ENGINE_URL}/api/geo/changes?${params}`);
+    const GEO_ENGINE_URL = process.env.GEO_ENGINE_URL || "http://localhost:8000";
+    const resp = await fetch(`${GEO_ENGINE_URL}/api/geo/changes?${params}`);
     const data = await resp.json();
 
     return NextResponse.json({
