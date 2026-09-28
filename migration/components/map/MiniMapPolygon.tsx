@@ -1,24 +1,21 @@
 /**
- * GeoSync — MiniMapPolygon Component
+ * BhoomiSetu — MiniMapPolygon Component
  *
  * Custom polygon-drawing tool for admin geometry entry.
  * No MapboxDraw dependency — uses native MapLibre click events.
  * Features:
  * - Nominatim India geocoder search
  * - Click-to-place polygon vertices
- * - Real-time polygon preview with live area readout
+ * - Real-time polygon preview
  * - Auto-zoom to drawn geometry
- * - Streets / satellite basemap toggle (trace boundaries off imagery)
- * - Optional reference layer of existing registry parcels; features with
- *   `properties.highlight = true` render as overlapping/matched parcels
  */
 
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import type { Map as MapLibreMap, MapMouseEvent } from "maplibre-gl";
-import type { FeatureCollection, Polygon } from "geojson";
-import { PenLine, Trash2, CheckCircle2, Search, MapPin, Undo2, Map as MapIcon, Satellite } from "lucide-react";
+import type { Polygon } from "geojson";
+import { PenLine, Trash2, CheckCircle2, Search, MapPin, Undo2 } from "lucide-react";
 
 // Simple bbox computation — avoids turf dynamic import chunk errors
 function computeBbox(coords: [number, number][]): [number, number, number, number] {
@@ -32,78 +29,13 @@ function computeBbox(coords: [number, number][]): [number, number, number, numbe
   return [minLng, minLat, maxLng, maxLat];
 }
 
-// Spherical ring area in sqm (same formula as turf/area) for the live readout
-export function ringAreaSqm(coords: [number, number][]): number {
-  if (coords.length < 3) return 0;
-  const R = 6378137;
-  const rad = (d: number) => (d * Math.PI) / 180;
-  let total = 0;
-  for (let i = 0; i < coords.length; i++) {
-    const [lng1, lat1] = coords[i];
-    const [lng2, lat2] = coords[(i + 1) % coords.length];
-    total += rad(lng2 - lng1) * (2 + Math.sin(rad(lat1)) + Math.sin(rad(lat2)));
-  }
-  return Math.abs((total * R * R) / 2);
-}
-
-export function formatArea(sqm: number): string {
-  if (sqm >= 1_000_000) return `${(sqm / 1_000_000).toLocaleString("en-IN", { maximumFractionDigits: 2 })} km²`;
-  if (sqm >= 10000) return `${(sqm / 10000).toFixed(3)} ha`;
-  return `${Math.round(sqm).toLocaleString("en-IN")} sqm`;
-}
-
-const EMPTY_FC: FeatureCollection = { type: "FeatureCollection", features: [] };
-
-// True when segments p1–p2 and p3–p4 properly cross each other
-function segmentsCross(
-  p1: [number, number], p2: [number, number], p3: [number, number], p4: [number, number]
-): boolean {
-  const cross = (a: [number, number], b: [number, number], c: [number, number]) =>
-    (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
-  const d1 = cross(p3, p4, p1);
-  const d2 = cross(p3, p4, p2);
-  const d3 = cross(p1, p2, p3);
-  const d4 = cross(p1, p2, p4);
-  return ((d1 > 0 && d2 < 0) || (d1 < 0 && d2 > 0)) && ((d3 > 0 && d4 < 0) || (d3 < 0 && d4 > 0));
-}
-
-function isSelfIntersecting(pts: [number, number][]): boolean {
-  const n = pts.length;
-  if (n < 4) return false;
-  for (let i = 0; i < n; i++) {
-    for (let j = i + 2; j < n; j++) {
-      if (i === 0 && j === n - 1) continue; // adjacent via the closing edge
-      if (segmentsCross(pts[i], pts[(i + 1) % n], pts[j], pts[(j + 1) % n])) return true;
-    }
-  }
-  return false;
-}
-
-/**
- * Vertices in the order they should be joined. Click order is kept when it
- * forms a valid outline (so concave parcels can be drawn); if edges would
- * cross, vertices are ordered by angle around their centre so the outline
- * runs around the outermost points instead of forming a bow-tie.
- */
-export function orderRing(pts: [number, number][]): { ring: [number, number][]; reordered: boolean } {
-  if (!isSelfIntersecting(pts)) return { ring: pts, reordered: false };
-  const cx = pts.reduce((s, p) => s + p[0], 0) / pts.length;
-  const cy = pts.reduce((s, p) => s + p[1], 0) / pts.length;
-  const ring = [...pts].sort(
-    (a, b) => Math.atan2(a[1] - cy, a[0] - cx) - Math.atan2(b[1] - cy, b[0] - cx)
-  );
-  return { ring, reordered: true };
-}
-
 interface MiniMapPolygonProps {
   value?: Polygon | null;
   onChange: (geojson: Polygon | null) => void;
   height?: number;
-  /** Existing parcels drawn beneath the sketch for context */
-  referenceParcels?: FeatureCollection | null;
 }
 
-export default function MiniMapPolygon({ value, onChange, height = 320, referenceParcels }: MiniMapPolygonProps) {
+export default function MiniMapPolygon({ value, onChange, height = 320 }: MiniMapPolygonProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -114,13 +46,10 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
   const [searching, setSearching] = useState(false);
   const [searchResults, setSearchResults] = useState<{ label: string; coordinates: [number, number] }[]>([]);
   const [showResults, setShowResults] = useState(false);
-  const [baseLayer, setBaseLayer] = useState<"streets" | "satellite">("streets");
 
   // Refs for points so click handler always sees latest
   const pointsRef = useRef<[number, number][]>([]);
   const drawingRef = useRef(false);
-  const referenceRef = useRef<FeatureCollection | null | undefined>(referenceParcels);
-  referenceRef.current = referenceParcels;
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -139,20 +68,8 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
               tileSize: 256,
               attribution: "© OpenStreetMap",
             },
-            esri: {
-              type: "raster" as const,
-              tiles: [
-                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-              ],
-              tileSize: 256,
-              attribution: "© Esri",
-              maxzoom: 19,
-            },
           },
-          layers: [
-            { id: "osm", type: "raster" as const, source: "osm" },
-            { id: "esri", type: "raster" as const, source: "esri", layout: { visibility: "none" as const } },
-          ],
+          layers: [{ id: "osm", type: "raster" as const, source: "osm" }],
         },
         center: [78.9629, 20.5937],
         zoom: 5,
@@ -167,27 +84,6 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
       (map as any).__currentMarker = null;
 
       map.on("load", () => {
-        // Reference layer (existing registry parcels) sits beneath the sketch
-        map.addSource("reference", { type: "geojson", data: referenceRef.current ?? EMPTY_FC });
-        map.addLayer({
-          id: "reference-fill",
-          type: "fill",
-          source: "reference",
-          paint: {
-            "fill-color": ["case", ["boolean", ["get", "highlight"], false], "#e3375f", "#0b6bc2"],
-            "fill-opacity": ["case", ["boolean", ["get", "highlight"], false], 0.3, 0.08],
-          },
-        });
-        map.addLayer({
-          id: "reference-line",
-          type: "line",
-          source: "reference",
-          paint: {
-            "line-color": ["case", ["boolean", ["get", "highlight"], false], "#c9264e", "#0b6bc2"],
-            "line-width": ["case", ["boolean", ["get", "highlight"], false], 2.5, 1],
-          },
-        });
-
         // Add empty source + layers for polygon drawing
         map.addSource("draw-poly", {
           type: "geojson",
@@ -249,8 +145,6 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
           const ring = value.coordinates[0] as [number, number][];
           const b = computeBbox(ring);
           map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 40 });
-        } else if (referenceRef.current?.features.length) {
-          fitToFeatures(map, referenceRef.current);
         }
 
         setLoaded(true);
@@ -281,45 +175,6 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Keep the reference layer in sync with the prop
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !loaded) return;
-    const src = map.getSource("reference") as any;
-    src?.setData(referenceParcels ?? EMPTY_FC);
-  }, [referenceParcels, loaded]);
-
-  // Parent cleared the value (e.g. after a successful submit) — wipe the sketch
-  useEffect(() => {
-    if (value || drawingRef.current || pointsRef.current.length === 0) return;
-    pointsRef.current = [];
-    setPoints([]);
-    setHasGeom(false);
-    const map = mapRef.current;
-    if (!map) return;
-    ["draw-poly", "draw-points", "draw-preview"].forEach((src) => {
-      const s = map.getSource(src) as any;
-      if (s) s.setData(EMPTY_FC);
-    });
-  }, [value]);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map || !loaded) return;
-    map.setLayoutProperty("osm", "visibility", baseLayer === "streets" ? "visible" : "none");
-    map.setLayoutProperty("esri", "visibility", baseLayer === "satellite" ? "visible" : "none");
-  }, [baseLayer, loaded]);
-
-  function fitToFeatures(map: MapLibreMap, fc: FeatureCollection) {
-    const coords: [number, number][] = [];
-    for (const f of fc.features) {
-      if (f.geometry?.type === "Polygon") coords.push(...(f.geometry.coordinates[0] as [number, number][]));
-    }
-    if (coords.length === 0) return;
-    const b = computeBbox(coords);
-    map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 40, maxZoom: 17, duration: 0 });
-  }
-
   function updateDrawLayers(map: MapLibreMap, pts: [number, number][], isComplete: boolean) {
     // Update points layer
     const pointsSource = map.getSource("draw-points") as any;
@@ -336,8 +191,7 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
 
     if (isComplete && pts.length >= 3) {
       // Complete polygon
-      const { ring } = orderRing(pts);
-      const polyCoords = [...ring, ring[0]]; // Close the ring
+      const polyCoords = [...pts, pts[0]]; // Close the ring
       const polyFeature = {
         type: "Feature" as const,
         geometry: {
@@ -360,8 +214,7 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
       onChange(polygon);
     } else if (pts.length >= 2) {
       // Preview polygon (not closed yet)
-      const { ring } = orderRing(pts);
-      const previewCoords = [...ring, ring[0]];
+      const previewCoords = [...pts, pts[0]];
       const previewSource = map.getSource("draw-preview") as any;
       if (previewSource) {
         previewSource.setData({
@@ -500,21 +353,18 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
     }
   }, []);
 
-  const { ring: orderedRing, reordered } = orderRing(points);
-  const liveArea = points.length >= 3 ? ringAreaSqm(orderedRing) : 0;
-
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1.5 text-sm font-medium text-slate-700">
-          <PenLine className="h-4 w-4 text-brand-600" />
+        <div className="flex items-center gap-1.5 text-sm font-medium text-gray-700">
+          <PenLine className="h-4 w-4 text-indigo-600" />
           Draw Boundary
         </div>
         {hasGeom && !drawing && (
           <div className="flex items-center gap-2">
-            <span className="flex items-center gap-1 text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+            <span className="flex items-center gap-1 text-xs text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
               <CheckCircle2 className="h-3 w-3" />
-              Polygon captured · <span className="tabular-nums">{formatArea(liveArea)}</span>
+              Polygon captured
             </span>
             <button
               type="button"
@@ -539,14 +389,14 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
               value={searchQuery}
               onChange={(e) => { setSearchQuery(e.target.value); setShowResults(true); }}
               onKeyDown={(e) => { if (e.key === "Enter") handleSearch(); }}
-              className="w-full pl-8 pr-3 py-1.5 text-xs border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-400"
+              className="w-full pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
             />
           </div>
           <button
             type="button"
             onClick={handleSearch}
             disabled={searching}
-            className="px-3 py-1.5 bg-brand-50 text-brand-700 border border-brand-200 text-xs font-medium rounded-lg hover:bg-brand-100 disabled:opacity-50 transition-colors flex items-center gap-1 shrink-0"
+            className="px-3 py-1.5 bg-amber-100 text-amber-700 text-xs font-medium rounded-lg hover:bg-amber-200 disabled:opacity-50 transition-colors flex items-center gap-1 shrink-0"
           >
             {searching ? <span className="animate-spin">⟳</span> : <MapPin className="h-3 w-3" />}
             Go
@@ -560,7 +410,7 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
                 key={i}
                 type="button"
                 onClick={() => flyToResult(r.coordinates, r.label)}
-                className="w-full text-left px-3 py-2 text-xs hover:bg-brand-50 border-b last:border-0 transition-colors"
+                className="w-full text-left px-3 py-2 text-xs hover:bg-amber-50 border-b last:border-0 transition-colors"
               >
                 <div className="font-medium text-gray-800 truncate">{r.label.split(",")[0]}</div>
                 <div className="text-[10px] text-gray-400 truncate">{r.label}</div>
@@ -576,10 +426,10 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
           <button
             type="button"
             onClick={startDrawing}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-brand-600 text-white text-xs font-semibold rounded-lg hover:bg-brand-700 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
           >
             <PenLine className="h-3.5 w-3.5" />
-            {hasGeom ? "Redraw" : "Start Drawing"}
+            Start Drawing
           </button>
         ) : (
           <>
@@ -587,7 +437,7 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
               type="button"
               onClick={finishDrawing}
               disabled={points.length < 3}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600 text-white text-xs font-semibold rounded-lg hover:bg-emerald-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-green-600 text-white text-xs font-semibold rounded-lg hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <CheckCircle2 className="h-3.5 w-3.5" />
               Finish ({points.length} pts{points.length < 3 ? `, need ${3 - points.length} more` : ""})
@@ -596,7 +446,7 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
               type="button"
               onClick={undoPoint}
               disabled={points.length === 0}
-              className="flex items-center gap-1 px-2 py-1.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-lg hover:bg-slate-200 disabled:opacity-40 transition-colors"
+              className="flex items-center gap-1 px-2 py-1.5 bg-gray-100 text-gray-600 text-xs font-medium rounded-lg hover:bg-gray-200 disabled:opacity-40 transition-colors"
             >
               <Undo2 className="h-3.5 w-3.5" />
               Undo
@@ -612,48 +462,22 @@ export default function MiniMapPolygon({ value, onChange, height = 320, referenc
           </>
         )}
         {drawing && (
-          <span className="text-[10px] text-amber-700 font-medium ml-1">
-            {points.length >= 3
-              ? <>Area so far <span className="tabular-nums font-semibold">{formatArea(liveArea)}</span></>
-              : "Click on map to place vertices"}
-          </span>
-        )}
-        {reordered && points.length >= 4 && (
-          <span className="text-[10px] text-slate-500 ml-1" title="Edges crossed in click order, so the outline follows the outermost points">
-            · outline follows outer points
+          <span className="text-[10px] text-amber-600 font-medium ml-1 animate-pulse">
+            Click on map to place points
           </span>
         )}
       </div>
 
-      <div className="relative">
-        <div
-          ref={containerRef}
-          className="rounded-lg overflow-hidden border border-slate-200"
-          style={{ height }}
-        />
+      <div
+        ref={containerRef}
+        className="rounded-lg overflow-hidden border border-gray-200 relative"
+        style={{ height }}
+      >
         {!loaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-slate-50 rounded-lg">
-            <div className="text-sm text-slate-400 animate-pulse">Loading map…</div>
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
+            <div className="text-sm text-gray-400 animate-pulse">Loading map…</div>
           </div>
         )}
-        <div className="absolute top-2 left-2 flex rounded-lg overflow-hidden border border-slate-200 bg-white shadow-sm text-[11px] font-semibold">
-          {([
-            { id: "streets", label: "Streets", icon: MapIcon },
-            { id: "satellite", label: "Satellite", icon: Satellite },
-          ] as const).map(({ id, label, icon: Icon }) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setBaseLayer(id)}
-              className={`flex items-center gap-1 px-2.5 py-1.5 transition-colors ${
-                baseLayer === id ? "bg-brand-600 text-white" : "text-slate-600 hover:bg-slate-50"
-              }`}
-            >
-              <Icon className="h-3 w-3" />
-              {label}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   );

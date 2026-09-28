@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import useSWR from "swr";
+import DemarcateParcelPanel, { REGISTRY_KEY } from "@/components/admin/DemarcateParcelPanel";
 
 import {
   Shield,
@@ -20,19 +21,21 @@ import {
   GitBranch,
   Eye,
   Scale,
+  PenLine,
 } from "lucide-react";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-type Tab = "datasets" | "pipeline";
+type Tab = "demarcate" | "datasets" | "pipeline";
 
 const TABS: { id: Tab; label: string; icon: React.ReactNode }[] = [
+  { id: "demarcate", label: "Demarcate Parcel", icon: <PenLine className="h-4 w-4" /> },
   { id: "datasets", label: "Dataset Registry", icon: <Database className="h-4 w-4" /> },
   { id: "pipeline", label: "Pipeline Run History", icon: <Activity className="h-4 w-4" /> },
 ];
 
 function DatasetRegistry() {
-  const { data, isValidating, mutate } = useSWR<{ datasets: any[] }>("/api/parcels?limit=1000", fetcher, {
+  const { data, isValidating, mutate } = useSWR<{ parcels?: any[] }>(REGISTRY_KEY, fetcher, {
     revalidateOnFocus: false,
   });
 
@@ -287,7 +290,7 @@ function PipelineHistory() {
 }
 
 export default function AdminPage() {
-  const [activeTab, setActiveTab] = useState<Tab>("datasets");
+  const [activeTab, setActiveTab] = useState<Tab>("demarcate");
 
   return (
     <div className="min-h-screen bg-slate-50 py-8 px-4 sm:px-6 lg:px-8">
@@ -303,7 +306,7 @@ export default function AdminPage() {
               System Administration
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-              Dataset registry and pipeline run history.
+              Demarcate parcel boundaries on the map, browse the parcel registry and review pipeline runs.
             </p>
           </div>
         </div>
@@ -328,6 +331,7 @@ export default function AdminPage() {
 
         {/* Tab content */}
         <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 sm:p-8">
+          {activeTab === "demarcate" && <DemarcateParcelPanel />}
           {activeTab === "datasets" && <DatasetRegistry />}
           {activeTab === "pipeline" && <PipelineHistory />}
         </div>

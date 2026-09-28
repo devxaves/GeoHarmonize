@@ -373,6 +373,80 @@ async def get_dataset_validation(dataset_id: str):
             return dict(row)
 
 
+# ── Shared matching helpers ───────────────────────────────────────────────────
+
+def _load_active_parcel_candidates(cur) -> list:
+    """Load every current (non-superseded) parcel as a ParcelCandidate for matching."""
+    from scoring import ParcelCandidate
+    cur.execute(
+        """
+        SELECT parcel_uid, ST_AsGeoJSON(geometry)::json as geometry,
+               survey_number, plot_number, property_id,
+               owner_name, owner_name_normalized,
+               source_system as source_type,
+               recorded_area_sqm, created_at
+        FROM urban_parcel
+        WHERE superseded_by IS NULL
+        """
+    )
+    candidates = []
+    for r in cur.fetchall():
+        r = dict(r)
+        candidates.append(ParcelCandidate(
+            parcel_uid=r["parcel_uid"],
+            geometry=r["geometry"],
+            survey_number=r.get("survey_number"),
+            plot_number=r.get("plot_number"),
+            property_id=r.get("property_id"),
+            owner_name=r.get("owner_name"),
+            owner_name_normalized=r.get("owner_name_normalized"),
+            source_type=r.get("source_type") or "cadastral",
+            recorded_area_sqm=r.get("recorded_area_sqm"),
+            created_at=r.get("created_at") or datetime.now(timezone.utc),
+        ))
+    return candidates
+
+
+def _insert_conflict(cur, parcel_uid_a: str, parcel_uid_b: str, score_result) -> str:
+    """Write one scored candidate pair to spatial_conflicts; returns the conflict_id."""
+    diff_geojson = json.dumps(score_result.geometry_diff) if score_result.geometry_diff else None
+    cur.execute(
+        """
+        INSERT INTO spatial_conflicts (
+            parcel_uid_a, parcel_uid_b, conflict_type,
+            geometry_diff, difference_value, confidence_score,
+            score_reasons, recommended_action, status
+        ) VALUES (
+            %s, %s, %s,
+            CASE WHEN %s::text IS NULL THEN NULL
+                 ELSE ST_SetSRID(ST_GeomFromGeoJSON(%s::text), 4326) END,
+            %s, %s,
+            %s::jsonb, %s, 'open'
+        )
+        RETURNING conflict_id
+        """,
+        (
+            parcel_uid_a,
+            parcel_uid_b,
+            score_result.conflict_type,
+            diff_geojson,
+            diff_geojson,
+            score_result.difference_value,
+            round(score_result.score, 4),
+            json.dumps([r.to_dict() for r in score_result.score_reasons]),
+            score_result.recommended_action,
+        ),
+    )
+    return str(cur.fetchone()["conflict_id"])
+
+
+def _approx_area_sqm(geom) -> float:
+    """Planar area of an EPSG:4326 shapely geometry, scaled to square metres at its centroid."""
+    import math
+    deg_to_m = 111320.0 * math.cos(math.radians(geom.centroid.y))
+    return geom.area * deg_to_m ** 2
+
+
 # ── POST /api/geo/datasets/{id}/harmonize ─────────────────────────────────────
 
 @app.post("/api/geo/datasets/{dataset_id}/harmonize")
@@ -424,35 +498,7 @@ async def harmonize_dataset(
 
     with get_db() as conn:
         with get_cursor(conn) as cur:
-            # Load existing parcels for matching
-            cur.execute(
-                """
-                SELECT parcel_uid, ST_AsGeoJSON(geometry)::json as geometry,
-                       survey_number, plot_number, property_id,
-                       owner_name, owner_name_normalized,
-                       source_system as source_type,
-                       recorded_area_sqm, created_at
-                FROM urban_parcel
-                WHERE superseded_by IS NULL
-                """
-            )
-            from scoring import ParcelCandidate
-            existing_rows = cur.fetchall()
-            existing_parcels = []
-            for r in existing_rows:
-                r = dict(r)
-                existing_parcels.append(ParcelCandidate(
-                    parcel_uid=r["parcel_uid"],
-                    geometry=r["geometry"],
-                    survey_number=r.get("survey_number"),
-                    plot_number=r.get("plot_number"),
-                    property_id=r.get("property_id"),
-                    owner_name=r.get("owner_name"),
-                    owner_name_normalized=r.get("owner_name_normalized"),
-                    source_type=r.get("source_type") or "cadastral",
-                    recorded_area_sqm=r.get("recorded_area_sqm"),
-                    created_at=r.get("created_at") or datetime.now(timezone.utc),
-                ))
+            existing_parcels = _load_active_parcel_candidates(cur)
 
     with get_db() as conn:
         with get_cursor(conn) as cur:
@@ -462,13 +508,8 @@ async def harmonize_dataset(
                 top_score = matches[0][1].score if matches else 0.0
                 initial_status = "auto_linked" if top_score >= settings.auto_link_threshold else "unverified"
 
-                # Compute area
-                import math
                 from shapely.geometry import shape as shp
-                geom = shp(new_p.geometry)
-                centroid_lat = geom.centroid.y
-                deg_to_m = 111320.0 * math.cos(math.radians(centroid_lat))
-                area_sqm = geom.area * deg_to_m ** 2
+                area_sqm = _approx_area_sqm(shp(new_p.geometry))
 
                 cur.execute(
                     """
@@ -500,61 +541,9 @@ async def harmonize_dataset(
                 parcels_inserted += 1
 
                 for existing_p, score_result in matches[:3]:  # top 3 candidates
-                    diff_geojson = json.dumps(score_result.geometry_diff) if score_result.geometry_diff else None
-                    if diff_geojson:
-                        cur.execute(
-                            """
-                            INSERT INTO spatial_conflicts (
-                                parcel_uid_a, parcel_uid_b, conflict_type,
-                                geometry_diff, difference_value, confidence_score,
-                                score_reasons, recommended_action, status
-                            ) VALUES (
-                                %s, %s, %s,
-                                ST_SetSRID(ST_GeomFromGeoJSON(%s), 4326),
-                                %s, %s,
-                                %s::jsonb, %s, 'open'
-                            )
-                            RETURNING conflict_id
-                            """,
-                            (
-                                new_p.parcel_uid,
-                                existing_p.parcel_uid,
-                                score_result.conflict_type,
-                                diff_geojson,
-                                score_result.difference_value,
-                                round(score_result.score, 4),
-                                json.dumps([r.to_dict() for r in score_result.score_reasons]),
-                                score_result.recommended_action,
-                            ),
-                        )
-                    else:
-                        cur.execute(
-                            """
-                            INSERT INTO spatial_conflicts (
-                                parcel_uid_a, parcel_uid_b, conflict_type,
-                                geometry_diff, difference_value, confidence_score,
-                                score_reasons, recommended_action, status
-                            ) VALUES (
-                                %s, %s, %s,
-                                NULL,
-                                %s, %s,
-                                %s::jsonb, %s, 'open'
-                            )
-                            RETURNING conflict_id
-                            """,
-                            (
-                                new_p.parcel_uid,
-                                existing_p.parcel_uid,
-                                score_result.conflict_type,
-                                score_result.difference_value,
-                                round(score_result.score, 4),
-                                json.dumps([r.to_dict() for r in score_result.score_reasons]),
-                                score_result.recommended_action,
-                            ),
-                        )
-                    row = cur.fetchone()
+                    conflict_id = _insert_conflict(cur, new_p.parcel_uid, existing_p.parcel_uid, score_result)
                     conflicts_created.append({
-                        "conflict_id": str(row["conflict_id"]),
+                        "conflict_id": conflict_id,
                         "score": round(score_result.score, 4),
                         "recommended_action": score_result.recommended_action,
                         "parcel_uid_a": new_p.parcel_uid,
@@ -569,6 +558,228 @@ async def harmonize_dataset(
         "auto_linked": sum(1 for c in conflicts_created if c["recommended_action"] == "auto_merge"),
         "flagged_for_review": sum(1 for c in conflicts_created if c["recommended_action"] == "human_review"),
         "conflicts": conflicts_created,
+    }
+
+
+# ── POST /api/geo/parcels/manual ──────────────────────────────────────────────
+
+class ManualParcelBody(BaseModel):
+    geometry: dict                     # GeoJSON Polygon drawn on the web map (EPSG:4326)
+    # What the officer digitised from — drives the source-reliability factor (PRD §5)
+    survey_basis: Literal["gnss", "drone_ori", "cadastral", "municipal", "revenue"] = "gnss"
+    ulpin: Optional[str] = None
+    survey_number: Optional[str] = None
+    plot_number: Optional[str] = None
+    property_id: Optional[str] = None
+    owner_name: Optional[str] = None
+    recorded_area_sqm: Optional[float] = None
+    land_use: Optional[str] = None
+    state: str = "UNK"
+    district: str = "UNK"
+    ulb: str = "UNK"
+    ward: str = "UNK"
+    surveyed_by: Optional[str] = None
+    notes: Optional[str] = None
+    dry_run: bool = False              # score against the registry without writing anything
+
+
+def _clean(value: Optional[str]) -> Optional[str]:
+    return value.strip() if value and value.strip() else None
+
+
+@app.post("/api/geo/parcels/manual")
+async def create_manual_parcel(body: ManualParcelBody):
+    """
+    Officer-demarcated parcel: a boundary drawn by hand on the web map.
+
+    Runs through the same pipeline as an uploaded dataset — topology check,
+    parcel UID generation, spatial matching and confidence scoring — so a
+    hand-drawn boundary is never trusted blindly: any overlap with an existing
+    parcel lands in spatial_conflicts for human review.
+
+    The entry is recorded as its own one-feature dataset_metadata row so its
+    provenance (who drew it, from what basis, when) is never lost.
+    """
+    from shapely.geometry import shape as shp, mapping as to_geojson
+    from shapely.validation import make_valid
+    from pipeline import generate_parcel_uid, find_candidate_matches, SLIVER_THRESHOLD_SQM
+    from scoring import ParcelCandidate, normalize_name
+
+    if body.geometry.get("type") != "Polygon":
+        raise HTTPException(422, "Boundary must be a single GeoJSON Polygon.")
+    try:
+        geom = shp(body.geometry)
+    except Exception as e:
+        raise HTTPException(422, f"Invalid polygon coordinates: {e}")
+
+    minx, miny, maxx, maxy = geom.bounds
+    if minx < -180 or maxx > 180 or miny < -90 or maxy > 90:
+        raise HTTPException(422, "Coordinates must be longitude/latitude in EPSG:4326.")
+
+    repaired = False
+    if not geom.is_valid:
+        geom = make_valid(geom)
+        repaired = True
+        if geom.geom_type != "Polygon":
+            raise HTTPException(
+                422,
+                "Boundary edges cross each other. Redraw the parcel so that no two edges intersect.",
+            )
+
+    area_sqm = _approx_area_sqm(geom)
+    if area_sqm < SLIVER_THRESHOLD_SQM:
+        raise HTTPException(
+            422,
+            f"Drawn area is {area_sqm:.1f} sqm — below the {SLIVER_THRESHOLD_SQM:.0f} sqm sliver threshold. "
+            "Zoom in further and redraw the boundary.",
+        )
+
+    geom_dict = to_geojson(geom)
+    parcel_uid = generate_parcel_uid(body.state, body.district, body.ulb, body.ward, geom_dict)
+    owner_name = _clean(body.owner_name)
+    now = datetime.now(timezone.utc)
+
+    candidate = ParcelCandidate(
+        parcel_uid=parcel_uid,
+        geometry=geom_dict,
+        survey_number=_clean(body.survey_number),
+        plot_number=_clean(body.plot_number),
+        property_id=_clean(body.property_id),
+        owner_name=owner_name,
+        owner_name_normalized=normalize_name(owner_name),
+        source_type=body.survey_basis,
+        recorded_area_sqm=body.recorded_area_sqm,
+        created_at=now,
+    )
+
+    with get_db() as conn:
+        with get_cursor(conn) as cur:
+            existing_parcels = _load_active_parcel_candidates(cur)
+
+    matches = find_candidate_matches(candidate, existing_parcels)[:3]
+    top_score = matches[0][1].score if matches else 0.0
+    initial_status = "auto_linked" if top_score >= settings.auto_link_threshold else "unverified"
+
+    area_check = None
+    if body.recorded_area_sqm:
+        diff_pct = abs(area_sqm - body.recorded_area_sqm) / body.recorded_area_sqm * 100
+        area_check = {
+            "recorded_area_sqm": body.recorded_area_sqm,
+            "drawn_area_sqm": round(area_sqm, 2),
+            "difference_pct": round(diff_pct, 1),
+            "requires_verification": diff_pct > 10,
+        }
+
+    def describe(existing_p, score_result, conflict_id=None) -> dict:
+        return {
+            "conflict_id": conflict_id,
+            "parcel_uid": existing_p.parcel_uid,
+            "survey_number": existing_p.survey_number,
+            "owner_name": existing_p.owner_name,
+            "source_type": existing_p.source_type,
+            "geometry": existing_p.geometry,
+            **score_result.to_dict(),
+        }
+
+    base_response = {
+        "parcel_uid": parcel_uid,
+        "geometry": geom_dict,
+        "geometry_area_sqm": round(area_sqm, 2),
+        "geometry_repaired": repaired,
+        "initial_status": initial_status,
+        "area_check": area_check,
+        "source_reliability": settings.source_reliability(body.survey_basis),
+    }
+
+    if body.dry_run:
+        return {
+            **base_response,
+            "dry_run": True,
+            "matches": [describe(p, r) for p, r in matches],
+        }
+
+    with get_db() as conn:
+        with get_cursor(conn) as cur:
+            cur.execute("SELECT 1 FROM urban_parcel WHERE parcel_uid = %s", (parcel_uid,))
+            if cur.fetchone():
+                raise HTTPException(
+                    409,
+                    f"Parcel {parcel_uid} already exists at this location. "
+                    "Open it in the Atlas to review it instead of drawing it again.",
+                )
+
+            dataset_id = str(uuid.uuid4())
+            cur.execute(
+                """
+                INSERT INTO dataset_metadata (
+                    id, source_type, original_filename, source_crs, target_crs,
+                    transformation_method, feature_count, uploaded_by, storage_path,
+                    validation_report
+                ) VALUES (%s, %s, %s, 'EPSG:4326', 'EPSG:4326', %s, 1, %s, NULL, %s)
+                """,
+                (
+                    dataset_id,
+                    body.survey_basis,
+                    f"manual_demarcation:{parcel_uid}",
+                    "manual_web_map_capture:EPSG:4326 (no transform)",
+                    _clean(body.surveyed_by),
+                    json.dumps({
+                        "entry_method": "manual_demarcation",
+                        "total_features": 1,
+                        "invalid_count": 1 if repaired else 0,
+                        "repaired_count": 1 if repaired else 0,
+                        "sliver_count": 0,
+                        "gap_count": 0,
+                        "overlap_count": sum(1 for _, r in matches if r.geometry_diff),
+                        "area_check": area_check,
+                        "notes": _clean(body.notes),
+                        "errors": [],
+                    }),
+                ),
+            )
+
+            cur.execute(
+                """
+                INSERT INTO urban_parcel (
+                    parcel_uid, ulpin, geometry, survey_number, plot_number, property_id,
+                    owner_name, owner_name_normalized, recorded_area_sqm, geometry_area_sqm,
+                    land_use, source_system, source_dataset_id, validation_status, version
+                )
+                VALUES (
+                    %s, %s, ST_SetSRID(ST_GeomFromGeoJSON(%s), 4326), %s, %s, %s,
+                    %s, %s, %s, %s,
+                    %s, %s, %s, %s, 1
+                )
+                """,
+                (
+                    parcel_uid,
+                    _clean(body.ulpin),
+                    json.dumps(geom_dict),
+                    candidate.survey_number,
+                    candidate.plot_number,
+                    candidate.property_id,
+                    owner_name,
+                    candidate.owner_name_normalized,
+                    body.recorded_area_sqm,
+                    round(area_sqm, 2),
+                    _clean(body.land_use),
+                    body.survey_basis,
+                    dataset_id,
+                    initial_status,
+                ),
+            )
+
+            recorded_matches = [
+                describe(p, r, _insert_conflict(cur, parcel_uid, p.parcel_uid, r))
+                for p, r in matches
+            ]
+
+    return {
+        **base_response,
+        "dry_run": False,
+        "dataset_id": dataset_id,
+        "validation_status": initial_status,
+        "matches": recorded_matches,
     }
 
 
